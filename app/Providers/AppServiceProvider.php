@@ -26,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Filament::serving(function () {
+            Filament::registerNavigationGroups([
+                'Gestion e-commerce',
+                'Gestion site internet'
+            ]);
+        });
     }
 }
