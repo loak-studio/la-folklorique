@@ -198,7 +198,7 @@ return [
             'alignment' => 'center',
         ],
         'sidebar' => [
-            'is_collapsible_on_desktop' => true,
+            'is_collapsible_on_desktop' => false,
             'groups' => [
                 'are_collapsible' => false,
             ],
