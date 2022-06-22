@@ -1,0 +1,71 @@
+@keyframes leafOneLeft {
+    0% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+@keyframes leafOneRight {
+    0% {
+        transform: rotate(-50deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+.leafOneLeft {
+    animation: leafOneLeft 1s ease-out;
+}
+.leafOneRight {
+    animation: leafOneRight 1s ease-out;
+}
+
+@keyframes leafTwoLeft {
+    0% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(-25deg);
+    }
+}
+@keyframes leafTwoRight {
+    0% {
+        transform: rotate(-50deg);
+    }
+    100% {
+        transform: rotate(25deg);
+    }
+}
+
+.leafTwoLeft {
+    animation: leafTwoLeft 1s ease-out;
+}
+.leafTwoRight {
+    animation: leafTwoRight 1s ease-out;
+}
+
+@keyframes leafThreeLeft {
+    0% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+@keyframes leafThreeRight {
+    0% {
+        transform: rotate(-50deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+.leafThreeLeft {
+    animation: leafThreeLeft 1s ease-out;
+}
+.leafThreeRight {
+    animation: leafThreeRight 1s ease-out;
+}

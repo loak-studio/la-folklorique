@@ -1,0 +1,23 @@
+@import url('./filament.css');
+@import './animation.css';
+@import "./fonts.css";
+@import "./markdown.css";
+@import './button.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.font-folklard{
+    margin-bottom: -0.5ch;
+}
+
+
+
+input[type="text"], input[type="email"], textarea{
+    @apply focus:ring-primary-500 focus:border-transparent;
+}
+
+input[type="radio"]:checked{
+    @apply bg-primary-500 hover:bg-primary-500 focus:bg-primary-500;
+}

@@ -1,0 +1,10 @@
+.md-parsed{
+    @apply max-w-[64ch] text-white w-full mx-auto space-y-7;
+}
+
+.md-parsed h2{
+    @apply text-3xl font-semibold;
+}
+.md-parsed h3{
+    @apply text-lg font-semibold;
+}
