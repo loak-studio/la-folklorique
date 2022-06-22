@@ -18,10 +18,10 @@ class HandleCart
     public function handle(Request $request, Closure $next)
     {
 
-        if (!$request->session()->has('cart')) {
+        if (!session()->has('cart')) {
             $cart = new Cart();
             $cart->save();
-            $request->session()->put('cart', $cart);
+            session()->put('cart', $cart);
         }
 
         return $next($request);

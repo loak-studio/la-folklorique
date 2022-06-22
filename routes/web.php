@@ -29,8 +29,8 @@ Route::middleware(HandleCart::class)->group(function () {
     Route::view('/contact', 'pages.contact')->name('contact');
     Route::post('/contact', [PagesController::class, 'getContactFrom'])->name('send-contact');
 
-    Route::get('/boutique', [ShopController::class, 'shop'])->name('boutique');
-    Route::get('/boutique/{slug}', [ShopController::class, 'product'])->name('produit');
+    Route::get('/boutique', [PagesController::class, 'shop'])->name('boutique');
+    Route::get('/boutique/{slug}', [PagesController::class, 'product'])->name('produit');
     Route::get('/panier', [ShopController::class, 'cart'])->name('panier');
     Route::get('/paiement', [ShopController::class, 'payment'])->name('paiement'); //Composant livewire
 });

@@ -3412,6 +3412,12 @@ html {
 .mt-12{
   margin-top: 3rem;
 }
+.mt-8{
+  margin-top: 2rem;
+}
+.mb-7{
+  margin-bottom: 1.75rem;
+}
 .block{
   display: block;
 }
@@ -3432,6 +3438,9 @@ html {
 }
 .hidden{
   display: none;
+}
+.aspect-\[5\/6\]{
+  aspect-ratio: 5/6;
 }
 .h-screen{
   height: 100vh;
@@ -3501,6 +3510,9 @@ html {
 }
 .h-\[2px\]{
   height: 2px;
+}
+.h-44{
+  height: 11rem;
 }
 .max-h-96{
   max-height: 24rem;
@@ -3587,6 +3599,9 @@ html {
 }
 .w-\[2px\]{
   width: 2px;
+}
+.w-36{
+  width: 9rem;
 }
 .min-w-0{
   min-width: 0px;
@@ -4049,6 +4064,9 @@ html {
 .overflow-y-hidden{
   overflow-y: hidden;
 }
+.overflow-x-scroll{
+  overflow-x: scroll;
+}
 .overflow-y-scroll{
   overflow-y: scroll;
 }
@@ -4475,6 +4493,12 @@ html {
 }
 .pb-20{
   padding-bottom: 5rem;
+}
+.pt-4{
+  padding-top: 1rem;
+}
+.pb-8{
+  padding-bottom: 2rem;
 }
 .text-left{
   text-align: left;
@@ -6033,6 +6057,10 @@ html {
     width: 20rem;
   }
 
+  .sm\:w-8\/12{
+    width: 66.666667%;
+  }
+
   .sm\:max-w-lg{
     max-width: 32rem;
   }
@@ -6514,12 +6542,20 @@ html {
     display: none;
   }
 
+  .lg\:h-64{
+    height: 16rem;
+  }
+
   .lg\:w-9\/12{
     width: 75%;
   }
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:w-52{
+    width: 13rem;
   }
 
   .lg\:min-w-\[140px\]{
@@ -6641,6 +6677,10 @@ html {
 
   .lg\:gap-8{
     gap: 2rem;
+  }
+
+  .lg\:gap-24{
+    gap: 6rem;
   }
 
   .lg\:border-r{
@@ -8518,6 +8558,12 @@ select{
 .mt-12{
   margin-top: 3rem;
 }
+.mt-8{
+  margin-top: 2rem;
+}
+.mb-7{
+  margin-bottom: 1.75rem;
+}
 .block{
   display: block;
 }
@@ -8538,6 +8584,9 @@ select{
 }
 .hidden{
   display: none;
+}
+.aspect-\[5\/6\]{
+  aspect-ratio: 5/6;
 }
 .h-screen{
   height: 100vh;
@@ -8607,6 +8656,9 @@ select{
 }
 .h-\[2px\]{
   height: 2px;
+}
+.h-44{
+  height: 11rem;
 }
 .max-h-96{
   max-height: 24rem;
@@ -8693,6 +8745,9 @@ select{
 }
 .w-\[2px\]{
   width: 2px;
+}
+.w-36{
+  width: 9rem;
 }
 .min-w-0{
   min-width: 0px;
@@ -9151,6 +9206,9 @@ select{
 .overflow-y-hidden{
   overflow-y: hidden;
 }
+.overflow-x-scroll{
+  overflow-x: scroll;
+}
 .overflow-y-scroll{
   overflow-y: scroll;
 }
@@ -9577,6 +9635,12 @@ select{
 }
 .pb-20{
   padding-bottom: 5rem;
+}
+.pt-4{
+  padding-top: 1rem;
+}
+.pb-8{
+  padding-bottom: 2rem;
 }
 .text-left{
   text-align: left;
@@ -11144,6 +11208,9 @@ input[type="radio"]:checked:focus{
   .sm\:w-80{
     width: 20rem;
   }
+  .sm\:w-8\/12{
+    width: 66.666667%;
+  }
   .sm\:max-w-lg{
     max-width: 32rem;
   }
@@ -11511,11 +11578,17 @@ input[type="radio"]:checked:focus{
   .lg\:hidden{
     display: none;
   }
+  .lg\:h-64{
+    height: 16rem;
+  }
   .lg\:w-9\/12{
     width: 75%;
   }
   .lg\:w-full{
     width: 100%;
+  }
+  .lg\:w-52{
+    width: 13rem;
   }
   .lg\:min-w-\[140px\]{
     min-width: 140px;
@@ -11607,6 +11680,9 @@ input[type="radio"]:checked:focus{
   }
   .lg\:gap-8{
     gap: 2rem;
+  }
+  .lg\:gap-24{
+    gap: 6rem;
   }
   .lg\:border-r{
     border-right-width: 1px;
