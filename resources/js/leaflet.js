@@ -1,0 +1,39 @@
+import leaflet, {
+    icon
+} from 'leaflet'
+
+const binche = {
+    lat:"50.412824846085",
+    lon:"4.1701677159951"
+}
+
+window.addEventListener('load',()=>{
+    const map = document.querySelector('#map')
+    if(map){
+        const map = L.map('map', {
+            zoomControl: true,
+        scrollWheelZoom:false,
+        }).setView([binche.lat, binche.lon], 10);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
+        map.attributionControl.setPrefix('')
+
+        const shops = document.querySelectorAll('[data-name]')
+        shops.forEach(shop=>{
+            const name = shop.dataset.name
+            const street = shop.dataset.street
+            const city = shop.dataset.city
+            const latitude = shop.dataset.latitude
+            const longitude = shop.dataset.longitude
+            let m = L.marker([latitude,longitude]).addTo(map)
+            m.bindPopup(`
+            <p>${name}</p>
+            <p>${street}, ${city}</p>
+            <a target="_blank" href="${'https://www.google.be/maps?hl=fr&q=' + street +" " + city}">
+            Itinéraire
+            </a>
+            
+            `);
+
+        })
+    }
+})

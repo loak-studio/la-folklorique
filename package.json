@@ -19,5 +19,8 @@
         "postcss": "^8.4.14",
         "tailwindcss": "^3.1.4",
         "tippy.js": "^6.3.7"
+    },
+    "dependencies": {
+        "leaflet": "^1.8.0"
     }
 }

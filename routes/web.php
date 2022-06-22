@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use App\Http\Middleware\HandleCart;
 use Illuminate\Support\Facades\Route;
 
