@@ -135,6 +135,6 @@
     </div>
     <div class="flex flex-col items-center justify-center gap-12 mb-12 lg:flex-row">
         <span>&copy; Belgian Dream - {{ date('Y') }}</span>
-        <x-badge-loak />
+        <x-layout.badge-loak />
     </div>
 </footer>

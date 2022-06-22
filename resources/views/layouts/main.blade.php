@@ -38,7 +38,7 @@
 <body class="relative flex flex-col h-full min-h-screen overflow-x-hidden font-outfit bg-dark">
     @include('layouts.header')
     @if (count($breadcrumb) > 0)
-        <x-breadcrumb :hideTitle="$hideTitle" :title="$title" :items="$breadcrumb" />
+        <x-layout.breadcrumb :hideTitle="$hideTitle" :title="$title" :items="$breadcrumb" />
     @endif
     <main class="flex-1">
         {{ $slot }}
