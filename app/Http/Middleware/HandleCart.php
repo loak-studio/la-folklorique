@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\Cart;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class HandleCart
 {
@@ -18,10 +19,13 @@ class HandleCart
     public function handle(Request $request, Closure $next)
     {
 
-        if (!session()->has('cart')) {
+        if ($request->session()->has('cart_uuid')) {
+            View::share('cart', Cart::where('uuid', $request->session()->get('cart_uuid'))->first());
+        } else {
             $cart = new Cart();
             $cart->save();
-            session()->put('cart', $cart);
+            $request->session()->put('cart_uuid', $cart->uuid);
+            View::share('cart', Cart::where('uuid', $cart->uuid)->first());
         }
 
         return $next($request);

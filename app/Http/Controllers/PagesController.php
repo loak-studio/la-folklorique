@@ -46,6 +46,7 @@ class PagesController extends Controller
     }
     public function cgv()
     {
+        dd(session('cart')->items->count());
         $content = Content::where('key', 'cgv')->first();
         return view('pages.markdown', ['content' => $content->value, 'title' => 'Conditions générales de ventes']);
     }

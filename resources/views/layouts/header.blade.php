@@ -39,6 +39,6 @@ $navLinks = collect([
         </ul>
     </nav>
     <div class="absolute right-4 lg:right-11">
-
+        <livewire:header.cart />
     </div>
 </header>
