@@ -4025,6 +4025,9 @@ html {
   --tw-divide-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-divide-opacity));
 }
+.self-start{
+  align-self: flex-start;
+}
 .self-center{
   align-self: center;
 }
@@ -4466,6 +4469,12 @@ html {
 }
 .pb-2{
   padding-bottom: 0.5rem;
+}
+.pt-32{
+  padding-top: 8rem;
+}
+.pb-20{
+  padding-bottom: 5rem;
 }
 .text-left{
   text-align: left;
@@ -9118,6 +9127,9 @@ select{
   --tw-divide-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-divide-opacity));
 }
+.self-start{
+  align-self: flex-start;
+}
 .self-center{
   align-self: center;
 }
@@ -9559,6 +9571,12 @@ select{
 }
 .pb-2{
   padding-bottom: 0.5rem;
+}
+.pt-32{
+  padding-top: 8rem;
+}
+.pb-20{
+  padding-bottom: 5rem;
 }
 .text-left{
   text-align: left;
