@@ -16,7 +16,8 @@ $navLinks = collect([
 ]);
 
 @endphp
-<header class="absolute flex items-center justify-center w-full px-4 pt-5 text-white lg:p-11">
+<header
+    class="{{ Route::current()->getName() == 'home' ? 'absolute' : '' }}  flex items-center justify-center w-full px-4 pt-5 text-white lg:p-11">
     <button class="absolute bg-red-500 left-4 lg:hidden">
         Menu
     </button>
