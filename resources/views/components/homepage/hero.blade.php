@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="flex items-end justify-end w-9/12 h-[340px] lg:hidden select-none">
-        <figure class="relative flex justify-center w-px h-px">
+        <div class="relative flex justify-center w-px h-px">
             <img data-leafs="1l"
                 class="absolute bottom-0 mb-12 -ml-48 min-w-[152px] max-w-[152px] origin-bottom rotate-[10deg]"
                 src="/assets/leaf_left.png" alt="">
@@ -44,11 +44,11 @@
                 src="/assets/orange3.webp" alt="">
             <img class="absolute -mb-16 bottom-0 min-w-[330px] max-w-[330px]" src="/assets/bouteille.webp"
                 alt="">
-        </figure>
+        </div>
     </div>
     <div class="relative items-end justify-end hidden w-3/12 h-screen select-none bg-primary-500 -z-50 lg:flex">
         <div class="absolute left-0 w-px h-px bottom-[15%]">
-            <figure class="relative flex justify-center w-full h-px">
+            <div class="relative flex justify-center w-full h-px">
                 <img data-leafs="1l"
                     class="absolute bottom-0 mb-12 -ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px]  origin-bottom rotate-[10deg]"
                     src="/assets/leaf_left.png" alt="">
@@ -75,7 +75,7 @@
                     src="/assets/orange3.webp" alt="">
                 <img class="absolute -mb-16 bottom-0 2xl:min-w-[450px] 2xl:max-w-[450px] xl:min-w-[430px] xl:max-w-[430px] lg:min-w-[410px] lg:max-w-[410px]"
                     src="/assets/bouteille.webp" alt="">
-            </figure>
+            </div>
         </div>
     </div>
 </div>
