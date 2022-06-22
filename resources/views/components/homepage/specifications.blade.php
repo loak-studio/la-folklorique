@@ -1,3 +1,31 @@
+@php
+$specifications = [
+    [
+        'key' => 'Catégorie',
+        'value' => 'Pale ale ambrée',
+    ],
+    [
+        'key' => 'Type',
+        'value' => 'Fruitée (nonsucrée)',
+    ],
+    [
+        'key' => 'Arôme',
+        'value' => 'Parfum d\'orange',
+    ],
+    [
+        'key' => 'Procédé',
+        'value' => 'Artisanal',
+    ],
+    [
+        'key' => 'EBC',
+        'value' => '18',
+    ],
+    [
+        'key' => 'IBU',
+        'value' => '20',
+    ],
+];
+@endphp
 <div class="relative flex items-center w-full max-w-5xl mx-auto mb-24 text-white lg:mt-48 h-96">
     <img class="absolute bottom-0 hidden w-full max-w-3xl rounded-md lg:flex" src="assets/caracteristiques.webp"
         alt="">
@@ -13,31 +41,13 @@
             33cl - 6,5% ALC/VOL
         </p>
         <ul>
-            <li class="relative font-medium">
-                Catégorie
-                <span class="absolute inset-0 pl-32 font-normal md:pl-48 lg:pl-48">Pale ale ambrée</span>
-            </li>
-            <li class="relative font-medium">
-                Type
-                <span class="absolute inset-0 pl-32 font-normal md:pl-48 lg:pl-48">Fruitée (non
-                    sucrée)</span>
-            </li>
-            <li class="relative font-medium">
-                Arôme
-                <span class="absolute inset-0 pl-32 font-normal md:pl-48 lg:pl-48">Parfum d'orange</span>
-            </li>
-            <li class="relative font-medium">
-                Procédé
-                <span class="absolute inset-0 pl-32 font-normal md:pl-48 lg:pl-48">Artisanal</span>
-            </li>
-            <li class="relative font-medium">
-                EBC
-                <span class="absolute inset-0 pl-32 font-normal md:pl-48 lg:pl-48">18</span>
-            </li>
-            <li class="relative font-medium">
-                IBU
-                <span class="absolute inset-0 pl-32 font-normal md:pl-48 lg:pl-48">20</span>
-            </li>
+            @foreach ($specifications as $specification)
+                <li class="grid grid-cols-2 font-medium">
+                    <span>{{ $specification['key'] }}</span>
+                    <span>{{ $specification['value'] }}</span>
+                </li>
+            @endforeach
+
         </ul>
         <img class="absolute bottom-0 z-10 flex w-full md:max-w-md max-w-xs -mb-64 ml-14 md:-mb-32 md:ml-80 lg:hidden md:rotate-[15deg] rotate-[25deg]"
             src="assets/bouteille.webp" alt="">
