@@ -17,8 +17,10 @@ class InputNumber extends Component
 
     public function decrease()
     {
-        $this->quantity--;
-        $this->emit('quantityChanged', $this->quantity, $this->cartItem);
+        if ($this->quantity > 1) {
+            $this->quantity--;
+            $this->emit('quantityChanged', $this->quantity, $this->cartItem);
+        }
     }
 
     public function render()

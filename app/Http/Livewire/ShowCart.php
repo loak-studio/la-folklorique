@@ -17,6 +17,7 @@ class ShowCart extends Component
     {
         $this->cart->items->where('id', $id)->first()->update(['quantity' => $value]);
         $this->emit('updateCartDisplayedQuantity');
+        $this->emit('updatePrice');
     }
 
     public function deleteItem($id)
@@ -24,6 +25,7 @@ class ShowCart extends Component
         $item = CartItem::find($id);
         $item->delete();
         $this->emit('updateCartDisplayedQuantity');
+        $this->emit('updatePrice');
     }
 
 

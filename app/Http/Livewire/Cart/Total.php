@@ -12,7 +12,12 @@ class Total extends Component
     public $coupon;
     public $cart;
 
-    protected $listeners = ['updateCoupon'];
+    protected $listeners = ['updateCoupon', 'updatePrice'];
+
+    public function updatePrice()
+    {
+        $this->cart = Cart::getCart();
+    }
 
     public function updateCoupon()
     {
