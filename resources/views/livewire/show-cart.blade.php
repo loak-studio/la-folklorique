@@ -24,5 +24,5 @@
             </li>
         @endforeach
     </ul>
-    <livewire:cart.total />
+    <livewire:cart.total type="cart" />
 </div>

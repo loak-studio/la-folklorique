@@ -11,12 +11,23 @@ class Total extends Component
     public $shipping_cost;
     public $coupon;
     public $cart;
+    public $buttonLabel = "Passer la commande";
+    public $type;
 
     protected $listeners = ['updateCoupon', 'updatePrice'];
 
     public function updatePrice()
     {
         $this->cart = Cart::getCart();
+    }
+
+    public function handleButton()
+    {
+        if ($this->type == 'cart') {
+            return redirect()->route('paiement');
+        } else {
+            $this->emit('nextStep');
+        }
     }
 
     public function updateCoupon()

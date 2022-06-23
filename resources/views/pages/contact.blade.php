@@ -6,8 +6,8 @@
                 <form method="POST" class="flex flex-col w-full max-w-md gap-4 rounded-md bg-zinc-900 p-7"
                     action="{{ route('send-contact') }}">
                     @csrf
-                    <x-input label="Votre nom" name="name" />
-                    <x-input label="Votre email" name="email" type="email" />
+                    <x-input required label="Votre nom" name="name" />
+                    <x-input required label="Votre email" name="email" type="email" />
                     <label for="message" class="mb-4 text-gray-400">Votre message</label>
                     <textarea required name="message" id="message" rows="4"
                         class="text-white border-gray-600 rounded-md bg-zinc-700"></textarea>
