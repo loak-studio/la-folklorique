@@ -1,11 +1,28 @@
-<div class="grid w-full max-w-5xl grid-cols-10 mx-auto bg-zinc-900">
-    <ul class="col-span-6 text-white">
-        {{ dump($cart->items) }}
-        @foreach ($cart->items as $card_item)
-            <li>
-                {{ $cart_item->product->name }}
+<div class="grid w-full max-w-5xl grid-cols-10 gap-5 p-5 mx-auto mb-24 bg-zinc-900">
+    <ul class="col-span-6 p-5 text-white bg-zinc-800">
+        @if ($cart->items->count() == 0)
+            <p class="text-center">Votre panier est vide</p>
+        @endif
+        @foreach ($cart->items as $cart_item)
+            <li class="flex gap-9">
+                <figure class=" aspect-[3/4] w-36">
+                    <img src="/{{ $cart_item->product->pictures[0] }}" alt="">
+                </figure>
+                <div>
+                    <h2>{{ $cart_item->product->name }}</h2>
+                    <span>Prix unitaire: {{ $cart_item->product->price }}</span>
+                    <div class="flex">
+                        <livewire:input-number wire:key="{{ $loop->index }}" :quantity="$cart_item->quantity" :cartItem="$cart_item->id" />
+                        <span>
+                            {{ $cart_item->quantity * $cart_item->product->price }}€
+                        </span>
+                    </div>
+                    <button wire:click="deleteItem({{ $cart_item->id }})">
+                        Supprimer
+                    </button>
+                </div>
             </li>
         @endforeach
     </ul>
-    <livewire:card.total />
+    <livewire:cart.total />
 </div>

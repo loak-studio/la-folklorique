@@ -11,10 +11,18 @@ class Cart extends Component
     public $color = "#ffffff";
     public $quantity = 0;
 
+    protected $listeners = ['updateCartDisplayedQuantity'];
+
+    public function updateCartDisplayedQuantity()
+    {
+        $cart = ModelsCart::where('uuid', session('cart_uuid'))->first();
+        $this->quantity = $cart->items->sum('quantity');
+    }
+
     public function mount()
     {
         $cart = ModelsCart::where('uuid', session('cart_uuid'))->first();
-        $this->quantity = $cart->items->count();
+        $this->quantity = $cart->items->sum('quantity');
     }
 
     public function render()

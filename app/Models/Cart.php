@@ -23,6 +23,11 @@ class Cart extends Model
         return $total;
     }
 
+    public static function getCart()
+    {
+        return Cart::where('uuid', session('cart_uuid'))->first();
+    }
+
     public static function boot()
     {
         parent::boot();

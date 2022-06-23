@@ -20,7 +20,7 @@ class HandleCart
     {
 
         if ($request->session()->has('cart_uuid')) {
-            View::share('cart', Cart::where('uuid', $request->session()->get('cart_uuid'))->first());
+            View::share('cart', Cart::getCart());
         } else {
             $cart = new Cart();
             $cart->save();
