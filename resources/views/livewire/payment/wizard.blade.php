@@ -125,7 +125,79 @@
             @break
 
             @case(3)
-                <p>récap</p>
+                <h2 class="my-5 text-3xl font-semibold text-white">Récapitulatif</h2>
+                <h3 class="my-5 text-2xl font-semibold text-white">
+                    Commande
+                </h3>
+                <ul>
+                    @foreach ($cart->items as $cart_item)
+                        <li class="text-white">
+                            {{ $cart_item->product->name }} ({{ $cart_item->quantity }}) -
+                            {{ $cart_item->quantity * $cart_item->product->price }}
+                        </li>
+                    @endforeach
+                </ul>
+                <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
+                    Paiement <span wire:click="setStep(2)">crayon</span>
+                </h3>
+                <div class="text-white">
+                    @switch($paymentMethod)
+                        @case('creditCard')
+                            <span>Carte de crédit</span>
+                        @break
+
+                        @case('paypal')
+                            <span>Paypal</span>
+                        @break
+
+                        @case('bankTransfer')
+                            <span>Virement</span>
+                        @break
+
+                        @default
+                    @endswitch
+                </div>
+                <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
+                    Adresse <span wire:click="setStep(1)">crayon</span>
+                </h3>
+                @if ($shippingPlace == 'home')
+                    <h4 class="my-5 text-xl font-semibold text-white">
+                        Adresse de livraison
+                    </h4>
+                    <ul class="text-white">
+                        <li>
+                            {{ $shipping_address['first_name'] }} {{ $shipping_address['last_name'] }}
+                        </li>
+                        <li>
+                            {{ $shipping_address['street'] }} {{ $shipping_address['number'] }}
+                            {{ $shipping_address['box'] }}, {{ $shipping_address['zip'] }}
+                            {{ $shipping_address['city'] }}
+                            ({{ $shipping_address['country'] }})
+                        </li>
+
+                    </ul>
+                @endif
+
+                <h4 class="my-5 text-xl font-semibold text-white">
+                    Adresse de facturation
+                </h4>
+                <ul class="text-white">
+                    <li>
+                        {{ $billing_address['first_name'] }} {{ $shipping_address['last_name'] }}
+                    </li>
+                    <li>
+                        {{ $billing_address['street'] }} {{ $billing_address['number'] }}
+                        {{ $billing_address['box'] }}, {{ $billing_address['zip'] }} {{ $billing_address['city'] }}
+                        ({{ $billing_address['country'] }})
+                    </li>
+                    <li>
+                        {{ $billing_address['phone'] }}
+                    </li>
+                    <li>
+                        {{ $billing_address['email'] }}
+                    </li>
+
+                </ul>
             @break
 
             @default
