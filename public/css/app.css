@@ -4607,6 +4607,10 @@ html {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-7xl{
+  font-size: 4.5rem;
+  line-height: 1;
+}
 .font-bold{
   font-weight: 700;
 }
@@ -9873,6 +9877,10 @@ select{
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-7xl{
+  font-size: 4.5rem;
+  line-height: 1;
 }
 .font-bold{
   font-weight: 700;

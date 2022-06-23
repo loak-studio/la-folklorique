@@ -13,12 +13,18 @@ class Total extends Component
     public $cart;
     public $buttonLabel = "Passer la commande";
     public $type;
+    public $acceptCGV = false;
 
     protected $listeners = ['updateCoupon', 'updatePrice'];
 
     public function updatePrice()
     {
         $this->cart = Cart::getCart();
+    }
+
+    public function setCGV()
+    {
+        $this->emit('CGVupdate', $this->acceptCGV);
     }
 
     public function handleButton()

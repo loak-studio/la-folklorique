@@ -1,5 +1,5 @@
-<div class="grid w-full max-w-5xl grid-cols-10 gap-5 p-5 mx-auto mb-24 bg-zinc-900">
-    <ul class="col-span-6 p-5 text-white bg-zinc-800">
+<div class="grid w-full max-w-5xl gap-5 p-5 mx-auto mb-24 lg:grid-cols-10 bg-zinc-900">
+    <ul class="p-5 text-white lg:col-span-6 bg-zinc-800">
         @if ($cart->items->count() == 0)
             <p class="text-center">Votre panier est vide</p>
         @endif

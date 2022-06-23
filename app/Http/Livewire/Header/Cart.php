@@ -22,7 +22,12 @@ class Cart extends Component
     public function mount()
     {
         $cart = ModelsCart::where('uuid', session('cart_uuid'))->first();
-        $this->quantity = $cart->items->sum('quantity');
+        if ($cart) {
+
+            $this->quantity = $cart->items->sum('quantity');
+        } else {
+            $this->quantity = 0;
+        }
     }
 
     public function render()

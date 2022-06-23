@@ -2,9 +2,12 @@
 
 namespace App\Http\Livewire\Payment;
 
+use App\Http\Livewire\Cart\Coupon;
 use App\Models\Cart;
+use App\Models\Coupon as ModelsCoupon;
 use App\Models\Order;
 use App\Models\OrderItem;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 use Livewire\Component;
 use Illuminate\Validation\Rule;
@@ -18,28 +21,29 @@ class Wizard extends Component
     public $differentBillingAddress = false;
     public $paymentMethod = "creditCard";
     public $notes;
+    public $acceptCGV;
     public $step = 1;
     public $shipping_address = [
-        'first_name' => 'b',
-        'last_name' => 'b',
-        'street' => 'b',
-        'city' => 'b',
-        'zip' => 'b',
-        'country' => 'b',
-        'number' => 'b',
-        'box' => 'n'
+        'first_name' => '',
+        'last_name' => '',
+        'street' => '',
+        'city' => '',
+        'zip' => '',
+        'country' => '',
+        'number' => '',
+        'box' => ''
     ];
     public $billing_address = [
-        'first_name' => 'benjamin',
-        'last_name' => 'geets',
-        'street' => 'rue ',
-        'city' => 'ville',
-        'zip' => '7500',
-        'country' => 'be',
-        'email' => 'b@b.b',
-        'phone' => 'd',
-        'number' => '1',
-        'box' => 'a'
+        'first_name' => '',
+        'last_name' => '',
+        'street' => '',
+        'city' => '',
+        'zip' => '',
+        'country' => '',
+        'email' => '',
+        'phone' => '',
+        'number' => '',
+        'box' => ''
     ];
 
     protected function rules()
@@ -70,11 +74,7 @@ class Wizard extends Component
                     'billing_address.street' => 'required',
                     'billing_address.number' => 'required',
                     'billing_address.city' => 'required',
-                    'billing_address.zip' =>
-                    [
-                        'required', 'digits:4',
-                        Rule::in($zipcodes)
-                    ],
+                    'billing_address.zip' => 'required|integer|between:6000,8000',
                     'billing_address.country' => 'required',
                     'billing_address.email' => 'required|email',
                     'billing_address.phone' => 'required',
@@ -83,11 +83,7 @@ class Wizard extends Component
                     'shipping_address.street' => 'required',
                     'shipping_address.number' => 'required',
                     'shipping_address.city' => 'required',
-                    'shipping_address.zip' =>
-                    [
-                        'required', 'digits:4',
-                        Rule::in($zipcodes)
-                    ],
+                    'shipping_address.zip' => 'required|integer|between:6000,8000',
                     'shipping_address.country' => 'required',
                 ];
             } else {
@@ -106,18 +102,19 @@ class Wizard extends Component
                     'shipping_address.street' => 'required',
                     'shipping_address.number' => 'required',
                     'shipping_address.city' => 'required',
-                    'shipping_address.zip' =>
-                    [
-                        'required', 'digits:4',
-                        Rule::in($zipcodes)
-                    ],
+                    'shipping_address.zip' => 'required|integer|between:6000,8000',
                     'shipping_address.country' => 'required',
                 ];
             }
         }
     }
 
-    protected $listeners = ['shippingPlaceChanged', 'updateDifferentBillingAddress', 'nextStep'];
+    protected $listeners = ['shippingPlaceChanged', 'updateDifferentBillingAddress', 'nextStep', 'CGVupdate'];
+
+    public function CGVupdate($value)
+    {
+        $this->acceptCGV = $value;
+    }
 
     public function setStep($value)
     {
@@ -139,6 +136,10 @@ class Wizard extends Component
         }
         if ($this->step == 3) {
             $order = new Order();
+            $coupon = ModelsCoupon::where('code', session('coupon_code'))->first();
+            if ($coupon) {
+                $order->coupon_id = $coupon->id;
+            }
             $order->billing_first_name = $this->billing_address['first_name'];
             $order->billing_last_name = $this->billing_address['last_name'];
             $order->billing_street = $this->billing_address['street'];
@@ -158,11 +159,13 @@ class Wizard extends Component
                 $order->shipping_city = $this->shipping_address['city'];
                 $order->shipping_zip = $this->shipping_address['zip'];
                 $order->shipping_country = $this->shipping_address['country'];
-                $order->shipping_phone = $this->shipping_address['phone'];
-                $order->shipping_email = $this->shipping_address['email'];
             }
-            $order->shipping_cost = 5;
-            $order->notes = "non";
+            if ($this->shippingPlace == "home") {
+                $order->shipping_cost = 500;
+            } else {
+                $order->shipping_cost = 0;
+            }
+            $order->notes = $this->notes;
             if ($this->paymentMethod == "creditCard") {
                 $order->payment = "stripe";
             }
@@ -188,7 +191,7 @@ class Wizard extends Component
             }
             switch ($this->paymentMethod) {
                 case 'paypal':
-                    $total = $this->cart->getTotal();
+                    $total = $this->cart->getTotal() + $order->shipping_cost - $coupon->value;
                     $gateway = Omnipay::create('PayPal_rest');
                     $gateway->setClientId(env('PAYPAL_CLIENT_ID'));
                     $gateway->setSecret(env('PAYPAL_SECRET'));
@@ -203,18 +206,29 @@ class Wizard extends Component
                     break;
                 case 'creditCard':
                     $cart = [];
+                    $total = 0;
                     foreach ($this->cart->items as $item) {
-                        array_push($cart, [
-                            'price_data' => [
-                                'currency' => 'eur',
-                                'product_data' => [
-                                    'name' => $item->product->name,
-                                ],
-                                'unit_amount' => $item->product->price * 100
-                            ],
-                            'quantity' => $item->quantity
-                        ]);
+                        $total += $item->product->price * $item->quantity;
                     }
+                    if ($coupon && $coupon->free_shipping) {
+                        $total += 0;
+                    } else {
+                        $total += $order->shipping_cost;
+                    }
+                    if ($coupon) {
+                        $total -= $coupon->value;
+                    }
+                    $total = $total * 100;
+                    array_push($cart, [
+                        'price_data' => [
+                            'currency' => 'eur',
+                            'product_data' => [
+                                'name' => "Commande La Folklorique",
+                            ],
+                            'unit_amount' => $total,
+                        ],
+                        'quantity' => "1"
+                    ]);
 
                     \Stripe\Stripe::setApiKey(env('STRIPE_KEY'));
                     $payment_link = \Stripe\Checkout\Session::create([
@@ -233,7 +247,10 @@ class Wizard extends Component
             }
             return redirect()->route('home');
         }
-        $this->step++;
+        if ($this->acceptCGV) {
+
+            $this->step++;
+        }
     }
     public function updateDifferentBillingAddress($value)
     {

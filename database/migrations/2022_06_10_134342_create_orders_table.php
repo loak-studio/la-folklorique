@@ -37,7 +37,7 @@ return new class extends Migration
             $table->enum('payment', ['stripe', 'paypal', 'cash']);
             $table->enum('shipping', ['shipping', 'collect']);
             $table->boolean('paid')->default(false);
-            $table->text('notes');
+            $table->text('notes')->nullable();
             $table->string('price');
             $table->boolean('has_been_send')->default(false);
             $table->foreignId('coupon_id')->nullable()->constrained()->cascadeOnDelete();

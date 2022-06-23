@@ -1,5 +1,5 @@
-<div class="grid w-full max-w-5xl grid-cols-10 gap-5 p-5 mx-auto mb-24 bg-zinc-900">
-    <div class="col-span-6">
+<div class="grid w-full max-w-5xl gap-5 p-5 mx-auto mb-24 lg:grid-cols-10 bg-zinc-900">
+    <div class="p-5 lg:col-span-6 bg-zinc-800">
         @switch($step)
             @case(1)
                 <livewire:payment.shipping-place />
@@ -140,18 +140,36 @@
                 <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
                     Paiement <span wire:click="setStep(2)">crayon</span>
                 </h3>
-                <div class="text-white">
+                <div class="flex justify-between text-white">
                     @switch($paymentMethod)
                         @case('creditCard')
                             <span>Carte de crédit</span>
+                            <ul class="flex gap-5">
+                                <li>
+                                    <x-payment.mastercard />
+                                </li>
+                                <li>
+                                    <x-payment.maestro />
+                                </li>
+                                <li>
+                                    <x-payment.visa />
+                                </li>
+                                <li>
+                                    <x-payment.bancontact />
+                                </li>
+                            </ul>
                         @break
 
                         @case('paypal')
                             <span>Paypal</span>
+
+                            <x-payment.paypal />
                         @break
 
                         @case('bankTransfer')
                             <span>Virement</span>
+
+                            <x-payment.virement />
                         @break
 
                         @default
@@ -204,7 +222,7 @@
         @endswitch
 
     </div>
-    <div class="col-span-4">
+    <div class="lg:col-span-4">
         <livewire:cart.total buttonLabel="Confirmer" type="payment" />
 
     </div>
