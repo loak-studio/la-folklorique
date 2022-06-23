@@ -68,8 +68,6 @@ class DatabaseSeeder extends Seeder
         $order->shipping_city = "City";
         $order->shipping_zip = "12345";
         $order->shipping_country = "Country";
-        $order->shipping_phone = "123456789";
-        $order->shipping_email = "john@doe.com";
         $order->billing_first_name = "John";
         $order->billing_last_name = "Doe";
         $order->billing_street = "Street";
