@@ -19,14 +19,8 @@ class PagesController extends Controller
     }
 
 
-    public function product($slug)
+    public function category($slug)
     {
-        $product = Product::where('slug', $slug)->first();
-
-        if (!empty($product)) {
-            return view('pages.product', ['product' => $product, 'products' => Product::where('id', '!=', $product->id)->limit(4)->inRandomOrder()->get()]);
-        }
-
         $category = Category::where('slug', $slug)->first();
         if (!empty($category)) {
             return view('pages.category', ['category' => $category, 'products' => $category->products]);

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Livewire\ShowCart;
+use App\Http\Livewire\ShowProduct;
 use App\Http\Middleware\HandleCart;
 use Illuminate\Support\Facades\Route;
 
@@ -28,9 +30,10 @@ Route::middleware(HandleCart::class)->group(function () {
     Route::view('/servir-parfaitement', 'pages.servir')->name('servir');
     Route::view('/contact', 'pages.contact')->name('contact');
     Route::post('/contact', [PagesController::class, 'getContactFrom'])->name('send-contact');
-
     Route::get('/boutique', [PagesController::class, 'shop'])->name('boutique');
-    Route::get('/boutique/{slug}', [PagesController::class, 'product'])->name('produit');
-    Route::get('/panier', [ShopController::class, 'cart'])->name('panier');
+    // Route::get('/boutique/{slug}', [PagesController::class, 'product'])->name('produit');
+    Route::get('/produit/{slug}', ShowProduct::class)->name('product');
+    Route::get('/categorie/{slug}',  [PagesController::class, 'category'])->name('category');
+    Route::get('/panier', ShowCart::class)->name('panier');
     Route::get('/paiement', [ShopController::class, 'payment'])->name('paiement'); //Composant livewire
 });
