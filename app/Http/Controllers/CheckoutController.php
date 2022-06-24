@@ -122,13 +122,19 @@ class CheckoutController extends Controller
             case 'paypal':
                 $link = $this->getPaypalLink($order->id);
                 break;
+            case 'cash':
+                $link = "https://geets.dev/cash";
+                break;
+            case 'transfer':
+                $link = "https://geets.dev/transfer";
+                break;
         }
         return redirect($link);
     }
 
     private function getPaypalLink($order_id)
     {
-        $total = Cart::getCart()->getTotal();
+        $total = Cart::getCart()->getTotalWithShippingCost();
         $gateway = Omnipay::create('PayPal_rest');
         $gateway->setClientId(env('PAYPAL_CLIENT_ID'));
         $gateway->setSecret(env('PAYPAL_SECRET'));
@@ -144,7 +150,7 @@ class CheckoutController extends Controller
 
     private function getStripeLink($order_id)
     {
-        $price =  Cart::getCart()->getTotal();
+        $price =  Cart::getCart()->getTotalWithShippingCost();
         $cart = [[
             'price_data' => [
                 'currency' => 'eur',

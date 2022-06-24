@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('billing_phone');
             $table->string('billing_email');
             $table->decimal('shipping_cost', 10, 2);
-            $table->enum('payment', ['stripe', 'paypal', 'cash']);
+            $table->enum('payment', ['stripe', 'paypal', 'cash', 'transfer']);
             $table->enum('shipping', ['shipping', 'collect']);
             $table->boolean('paid')->default(false);
             $table->text('notes')->nullable();

@@ -28,7 +28,7 @@
                 </li>
 
                 <li class="flex">
-                    <input @checked(session('payment_method') === 'bankTransfer') value="cash" type="radio" class="mr-5"
+                    <input @checked(session('payment_method') === 'transfer') value="transfer" type="radio" class="mr-5"
                         name="payment_method" value="bankTransfer" id="bankTransfer">
                     <label for="bankTransfer" class="w-full">Virement bancaire</label>
                     <x-payment.virement />
@@ -36,7 +36,7 @@
 
                 @if (session('shipping_place') == 'home')
                     <li class="flex items-center">
-                        <input @checked(session('payment_method') === 'afterShipping') value="afterShipping" type="radio" class="mr-5"
+                        <input @checked(session('payment_method') === 'cash') value="cash" type="radio" class="mr-5"
                             name="payment_method" value="afterShipping" id="afterShipping">
                         <label for="afterShipping" class="flex flex-col">
                             <span>Paiement à la livraison <br><small class="text-sm">Moyen de paiement disponible

@@ -36,15 +36,25 @@
                         <x-payment.paypal />
                     @break
 
-                    @case('cash')
+                    @case('transfer')
                         <span>Virement</span>
                         <x-payment.virement />
+                    @break
+
+                    @case('cash')
+                        <span>Paiement à la livraison</span>
                     @break
 
                     @default
                 @endswitch
 
             </div>
+            @if (session('payment_method') == 'transfer')
+                <p class="px-4 py-1 mt-4 bg-white rounded-md text-primary-500">
+                    Veuillez indiquer votre nom et prénom + n° de commande en communication. Votre commande ne sera pas
+                    traitée tant que les fonds ne seront pas perçus.
+                </p>
+            @endif
             <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
                 Adresse <a href="{{ route('checkout-address') }}">crayon</a>
             </h3>
