@@ -10,11 +10,11 @@
                 </figure>
                 <div>
                     <h2>{{ $cart_item->product->name }}</h2>
-                    <span>Prix unitaire: {{ $cart_item->product->price }}</span>
+                    <span>Prix unitaire: {{ $cart_item->product->getEuroPrice() }}</span>
                     <div class="flex">
                         <livewire:input-number wire:key="{{ $loop->index }}" :quantity="$cart_item->quantity" :cartItem="$cart_item->id" />
                         <span>
-                            {{ $cart_item->quantity * $cart_item->product->price }}€
+                            {{ $cart_item->quantity * $cart_item->product->getEuroPrice() }}€
                         </span>
                     </div>
                     <button wire:click="deleteItem({{ $cart_item->id }})">

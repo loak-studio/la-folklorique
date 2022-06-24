@@ -14,10 +14,6 @@ class Coupon extends Model
         if ($this->free_shipping) {
             return 'Livraison offerte';
         }
-        if ($this->is_in_euros) {
-            return '-' . $this->value . ' €';
-        } else {
-            return '-' . $this->value . ' %';
-        }
+        return '-' . $this->value  . ' €';
     }
 }

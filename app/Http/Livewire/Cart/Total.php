@@ -38,12 +38,12 @@ class Total extends Component
 
     public function updateCoupon()
     {
-        $this->coupon = Coupon::where('code', session('coupon_code'))->first();
+        $this->coupon = Cart::getCart()->coupon;
     }
 
     public function mount()
     {
-        $this->coupon = Coupon::where('code', session('coupon_code'))->first();
+        $this->coupon = Cart::getCart()->coupon;
     }
 
     public function render()

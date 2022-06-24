@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Cart;
 
+use App\Models\Cart;
 use App\Models\Coupon as ModelsCoupon;
 use Livewire\Component;
 
@@ -13,10 +14,12 @@ class Coupon extends Component
 
     public function deleteCoupon()
     {
-        session()->forget('coupon_code');
         $this->coupon = null;
         $this->code = null;
         $this->displayInput = false;
+        $cart =  Cart::getCart();
+        $cart->coupon_id = null;
+        $cart->save();
         $this->emit('updateCoupon');
     }
 
@@ -25,7 +28,9 @@ class Coupon extends Component
         $this->coupon = ModelsCoupon::where('code', $this->code)->first();
         if ($this->coupon) {
             $this->resetErrorBag('coupon');
-            session()->put('coupon_code', $this->coupon->code);
+            $cart = Cart::getCart();
+            $cart->coupon_id = $this->coupon->id;
+            $cart->save();
             $this->emit('updateCoupon');
         } else {
             $this->addError('coupon', 'Ce code est invalide');
@@ -39,7 +44,7 @@ class Coupon extends Component
 
     public function render()
     {
-        if (session('coupon_code')) {
+        if (Cart::getCart()->coupon) {
             $this->coupon = ModelsCoupon::where('code', session('coupon_code'))->first();
             $this->code = $this->coupon->code;
             $this->displayInput = true;

@@ -6,13 +6,13 @@ $notPicked = 'text-gray-400 border-gray-400';
     <div class="flex flex-col justify-center gap-16 text-white lg:flex-row">
         <button
             class="flex items-center gap-4 p-5 border-4 rounded-md @if ($shippingPlace == 'home') {{ $picked }} @else {{ $notPicked }} @endif "
-            wire:click="setShippingPlace('home')">
+            wire:click.prevent="setShippingPlace('home')">
             <x-l-icon name="home" />
             Livraison à domicile
         </button>
         <button
             class="flex items-center gap-4 p-5  border-4 @if ($shippingPlace == 'brewery') {{ $picked }} @else {{ $notPicked }} @endif  rounded-md"
-            wire:click="setShippingPlace('brewery')">
+            wire:click.prevent="setShippingPlace('brewery')">
 
             <x-l-icon name="beer" /> Retrait à la brasserie
         </button>
@@ -24,4 +24,5 @@ $notPicked = 'text-gray-400 border-gray-400';
             7134 Leval-Trahergnies
         </p>
     @endif
+    <input type="hidden" name="shipping_place" value="{{ $shippingPlace }}">
 </div>

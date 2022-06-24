@@ -10,4 +10,9 @@ class CheckoutController extends Controller
     {
         return view("pages.checkout.address-form");
     }
+    public function getAddressForm(Request $request)
+    {
+        session()->put('order_informations', $request->all());
+        return view('pages.checkout.payment-method-form');
+    }
 }

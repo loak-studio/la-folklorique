@@ -6,6 +6,16 @@ use Livewire\Component;
 
 class Address extends Component
 {
+    public $shippingPlace = "home";
+    public $showBillingForm = false;
+    public $billing_address;
+    protected $listeners = ['shippingPlaceChanged'];
+
+    public function shippingPlaceChanged($value)
+    {
+        $this->shippingPlace = $value;
+    }
+
     public function render()
     {
         return view('livewire.address');

@@ -4945,6 +4945,23 @@ html {
   display: inline-block;
 }
 
+.after\:h-\[2px\]::after{
+  content: var(--tw-content);
+  height: 2px;
+}
+
+.after\:bg-primary-500::after{
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 80 17 / var(--tw-bg-opacity));
+}
+
+.after\:bg-gray-600::after{
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
 .after\:text-gray-400::after{
   content: var(--tw-content);
   --tw-text-opacity: 1;
@@ -6763,6 +6780,11 @@ html {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+  }
+
+  .lg\:after\:w-28::after{
+    content: var(--tw-content);
+    width: 7rem;
   }
 
   [dir="rtl"] .rtl\:lg\:mr-0{
@@ -10146,6 +10168,23 @@ input[type="radio"]:checked:focus{
   display: inline-block;
 }
 
+.after\:h-\[2px\]::after{
+  content: var(--tw-content);
+  height: 2px;
+}
+
+.after\:bg-primary-500::after{
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 80 17 / var(--tw-bg-opacity));
+}
+
+.after\:bg-gray-600::after{
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
 .after\:text-gray-400::after{
   content: var(--tw-content);
   --tw-text-opacity: 1;
@@ -11784,6 +11823,10 @@ input[type="radio"]:checked:focus{
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+  }
+  .lg\:after\:w-28::after{
+    content: var(--tw-content);
+    width: 7rem;
   }
   [dir="rtl"] .rtl\:lg\:mr-0{
     margin-right: 0px;

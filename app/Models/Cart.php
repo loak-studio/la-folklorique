@@ -14,13 +14,23 @@ class Cart extends Model
     {
         return $this->hasMany(CartItem::class);
     }
-    public function getTotal()
+    public function getProductsSum()
     {
         $total = 0;
         foreach ($this->items as $item) {
             $total += $item->product->price * $item->quantity;
         }
         return $total;
+    }
+
+    public function getTotal()
+    {
+        $total = 0;
+        $total += $this->getProductsSum();
+        if ($this->coupon) {
+            $total -= $this->coupon->value;
+        }
+        return $total > 0 ? $total : 0;
     }
 
     public function coupon()
@@ -37,7 +47,7 @@ class Cart extends Model
     {
         parent::boot();
 
-        self::saving(function ($model) {
+        self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
     }

@@ -39,13 +39,13 @@ class DatabaseSeeder extends Seeder
 
         $coupon = new Coupon();
         $coupon->code = "ABC123";
-        $coupon->value = "100";
+        $coupon->value = 100;
         $coupon->quantity = "10";
         $coupon->save();
 
         $product = new Product();
         $product->name = "Product ABC123";
-        $product->price = "10";
+        $product->price = 1000;
         $product->description = "Lorem";
         $product->pictures = ['#'];
         $product->available = true;
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
 
         $product = new Product();
         $product->name = "Product 2ABC123";
-        $product->price = "10";
+        $product->price = 1000;
         $product->description = "Lorem";
         $product->pictures = ['#'];
         $product->available = true;

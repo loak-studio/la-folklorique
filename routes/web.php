@@ -38,4 +38,5 @@ Route::middleware(HandleCart::class)->group(function () {
     Route::get('/produit/{slug}', ShowProduct::class)->name('product');
     Route::get('/panier', ShowCart::class)->name('panier');
     Route::get('/paiement', [CheckoutController::class, 'showAddressForm'])->name('paiement');
+    Route::post('/paiement', [CheckoutController::class, 'getAddressForm'])->name('checkout-address');
 });

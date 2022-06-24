@@ -5,7 +5,7 @@
             Sous-total
         </span>
         <span>
-            {{ $cart->getTotal() }}€
+            {{ $cart->getProductsSum() }}€
         </span>
     </div>
     @unless($shipping_cost)
@@ -26,7 +26,7 @@
             Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
         </p>
         <span>
-            {{ $cart->getTotal() - ($coupon && !$coupon->free_shipping ? $coupon->value : 0) }}€
+            {{ $cart->getTotal() }}€
         </span>
     </div>
 
@@ -45,7 +45,7 @@
             </div>
         </div>
     @endif
-    @if ($cart->getTotal() > 12)
+    @if ($cart->getProductsSum() > 12)
         @if ($type == 'cart')
             <x-button wire:click="handleButton">{{ $buttonLabel }}</x-button>
         @endif

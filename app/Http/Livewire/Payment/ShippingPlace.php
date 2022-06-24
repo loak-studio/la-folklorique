@@ -7,7 +7,6 @@ use Livewire\Component;
 class ShippingPlace extends Component
 {
     public $shippingPlace = "home";
-
     public function setShippingPlace($value)
     {
         $this->shippingPlace = $value;
