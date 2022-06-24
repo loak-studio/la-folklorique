@@ -7,7 +7,7 @@
             <h1 class="mb-10 text-4xl font-bold text-white mt-marker:12 lg:col-span-10">Moyen de paiement</h1>
             <ul class="space-y-10 text-white lg:col-span-6">
                 <li class="flex items-center">
-                    <input required @checked(empty(session('payment_method')) || session('payment_method') === 'creditCard') value="creditCard" type="radio" class="mr-5"
+                    <input required @checked(empty(session('payment_method')) || session('payment_method') === 'stripe') value="stripe" type="radio" class="mr-5"
                         name="payment_method" value="creditCard" id="creditCard">
                     <label for="creditCard" class="w-full">Carte de crédit</label>
                     <div class="flex gap-5">
@@ -28,7 +28,7 @@
                 </li>
 
                 <li class="flex">
-                    <input @checked(session('payment_method') === 'bankTransfer') value="bankTransfer" type="radio" class="mr-5"
+                    <input @checked(session('payment_method') === 'bankTransfer') value="cash" type="radio" class="mr-5"
                         name="payment_method" value="bankTransfer" id="bankTransfer">
                     <label for="bankTransfer" class="w-full">Virement bancaire</label>
                     <x-payment.virement />
@@ -56,7 +56,7 @@
                     <span> {{ $cart->getProductsSum() }}€</span>
                 </div>
                 @if (session('shipping_place') == 'home')
-                    <p>Frais de livraison calculés à l'étape suivante</p>
+                    <p>Frais de livraison {{ $cart->getShippingCost() }}€</p>
                 @endif
                 @if ($cart->coupon)
                     <div class="flex justify-between">
@@ -71,6 +71,7 @@
                 <div class="flex justify-between border-t-2 border-green-700 pt-7">
                     <p class="text-lg">
                         Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
+                        {{ $cart->getTotalWithShippingCost() }}€
                     </p>
                 </div>
                 <x-button>paiement etc</x-button>

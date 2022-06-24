@@ -24,7 +24,7 @@
                 @endif
                 <div class="flex justify-between border-t-2 border-green-700 pt-7">
                     <p class="text-lg">
-                        Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
+                        Total <span class="text-sm text-gray-400 ">(TVA incluse)</span> {{ $cart->getTotal() }}€
                     </p>
                 </div>
                 @if ($cart->getTotal() > 12)

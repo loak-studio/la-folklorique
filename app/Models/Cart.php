@@ -33,6 +33,22 @@ class Cart extends Model
         return $total > 0 ? $total : 0;
     }
 
+    public function getTotalWithShippingCost()
+    {
+        $total = $this->getTotal();
+        $total += $this->getShippingCost();
+        return $total;
+    }
+
+    public function getShippingCost()
+    {
+        if (session('shipping_place') == 'home') {
+            return 500;
+        } else {
+            return 0;
+        }
+    }
+
     public function coupon()
     {
         return $this->belongsTo(Coupon::class);

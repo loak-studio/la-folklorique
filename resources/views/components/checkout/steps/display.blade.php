@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center w-full text-white">
+<div class="flex items-center justify-center w-full my-12 text-white">
     <x-checkout.steps.items label="Adresse" step="1" :current="$current" total="4" />
     <x-checkout.steps.items label="Paiement" step="2" :current="$current" total="4" />
     <x-checkout.steps.items label="Récapitulatif" step="3" :current="$current" total="4" />

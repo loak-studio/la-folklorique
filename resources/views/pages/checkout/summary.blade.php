@@ -1,6 +1,6 @@
 <x-main-layout title="Mode de paiement">
     <x-checkout.steps.display current="3" total="4" />
-    <form method="POST" action="{{ route('checkout-payment-method') }}"
+    <form method="POST" action="{{ route('checkout-summary-send') }}"
         class="grid w-full max-w-5xl gap-5 p-5 mx-auto mb-24 lg:grid-cols-10 bg-zinc-900">
         @csrf
         <div class="p-5 lg:col-span-6 bg-zinc-800">
@@ -21,7 +21,7 @@
             </h3>
             <div class="flex justify-between text-white">
                 @switch(session('payment_method'))
-                    @case('creditCard')
+                    @case('stripe')
                         <span>Carte de crédit</span>
                         <div class="flex gap-5">
                             <x-payment.mastercard />
@@ -36,7 +36,7 @@
                         <x-payment.paypal />
                     @break
 
-                    @case('bankTransfer')
+                    @case('cash')
                         <span>Virement</span>
                         <x-payment.virement />
                     @break
@@ -95,7 +95,7 @@
                     <span> {{ $cart->getProductsSum() }}€</span>
                 </div>
                 @if (session('shipping_place') == 'home')
-                    <p>Frais de livraison calculés à l'étape suivante</p>
+                    <p>Frais de livraison {{ $cart->getShippingCost() }}€</p>
                 @endif
                 @if ($cart->coupon)
                     <div class="flex justify-between">
@@ -110,9 +110,28 @@
                 <div class="flex justify-between border-t-2 border-green-700 pt-7">
                     <p class="text-lg">
                         Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
+                        {{ $cart->getTotalWithShippingCost() }}€
                     </p>
                 </div>
-                <x-button href="{{ $checkout_link }}">Payer</x-button>
+                <p>Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner
+                    au cours de votre visite du site web, et pour d’autres raisons décrites dans notre
+                    <a class="text-primary-500 hover:underline" href="{{ route('politique-de-confidentialite') }}"
+                        target="_blank">politique de
+                        confidentialité</a>
+                    .
+                </p>
+                <div>
+                    <input type="checkbox" name="cgv" required id="cgv">
+                    <span>
+                        <label for="cgv">
+                            J’ai lu et j’accepte
+                        </label>
+                        <a class="text-primary-500 hover:underline" target="_blank" href="{{ route('cgv') }}">
+                            les conditions générales
+                        </a>
+                    </span>
+                </div>
+                <x-button>Payer</x-button>
                 <livewire:cart.coupon />
             </div>
         </div>

@@ -25,7 +25,6 @@ require __DIR__ . '/redirects.php';
 Route::middleware(HandleCart::class)->group(function () {
     Route::view('/', 'pages.homepage')->name('home');
     Route::get('/points-de-ventes', [PagesController::class, 'pointsOfSell'])->name('points-de-vente');
-    Route::get('/paiement/valide/{id}', [PagesController::class, 'paymentAccepted'])->name('paiement-valide')->middleware('signed');
     Route::get('/mentions-legales', [PagesController::class, 'mentionsLegales'])->name('mentions-legales');
     Route::get('/conditions-generales-de-ventes', [PagesController::class, 'cgv'])->name('cgv');
     Route::get('/politique-de-confidentialite', [PagesController::class, 'poliqueDeConfidentialite'])->name('politique-de-confidentialite');
@@ -44,5 +43,8 @@ Route::middleware(HandleCart::class)->group(function () {
         Route::get('/method', [CheckoutController::class, 'showPaymentMethodForm'])->name('checkout-payment-method-form');
         Route::post('/method', [CheckoutController::class, 'getPaymentMethod'])->name('checkout-payment-method');
         Route::get('/summary', [CheckoutController::class, 'showSummary'])->name('checkout-summary');
+        Route::post('/summary', [CheckoutController::class, 'getSummary'])->name('checkout-summary-send');
+
+        Route::get('/valide/{id}', [PagesController::class, 'paymentAccepted'])->name('paiement-valide')->middleware('signed');
     });
 });

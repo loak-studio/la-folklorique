@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
@@ -78,11 +79,54 @@ class CheckoutController extends Controller
 
     public function showSummary()
     {
-        $link = $this->getStripeLink();
-        return view('pages.checkout.summary', ['checkout_link' => $link]);
+
+        return view('pages.checkout.summary');
     }
 
-    private function getPaypalLink()
+    public function getSummary()
+    {
+        $cart = Cart::getCart();
+        $order = new Order();
+        $order->shipping_first_name = session('shipping_address_first_name');
+        $order->shipping_last_name = session('shipping_address_last_name');
+        $order->shipping_street = session('shipping_address_street');
+        $order->shipping_city = session('shipping_address_city');
+        $order->shipping_zip = session('shipping_address_zip');
+        $order->shipping_country = session('shipping_address_country');
+        $order->shipping_number = session('shipping_address_number');
+        $order->billing_first_name = session('billing_address_first_name');
+        $order->billing_last_name = session('billing_address_last_name');
+        $order->billing_street = session('billing_address_street');
+        $order->billing_city = session('billing_address_city');
+        $order->billing_zip = session('billing_address_zip');
+        $order->billing_country = session('billing_address_country');
+        $order->billing_number = session('billing_address_number');
+        $order->billing_phone = session('billing_address_phone');
+        $order->billing_email = session('billing_address_email');
+        $order->payment = session('payment_method');
+        $order->notes = session('notes');
+        $order->coupon_id = $cart->coupon ? $cart->coupon->id : null;
+        if (session('shipping_place') == 'home') {
+            $order->shipping_cost = 500;
+            $order->shipping = "shipping";
+        } else {
+            $order->shipping_cost = 0;
+            $order->shipping = "collect";
+        }
+        $order->price = $cart->getTotal();
+        $order->save();
+        switch (session('payment_method')) {
+            case 'stripe':
+                $link = $this->getStripeLink($order->id);
+                break;
+            case 'paypal':
+                $link = $this->getPaypalLink($order->id);
+                break;
+        }
+        return redirect($link);
+    }
+
+    private function getPaypalLink($order_id)
     {
         $total = Cart::getCart()->getTotal();
         $gateway = Omnipay::create('PayPal_rest');
@@ -92,15 +136,15 @@ class CheckoutController extends Controller
         $response = $gateway->purchase(array(
             'amount' => $total,
             'currency' => 'USD',
-            'returnUrl' => URL::signedRoute('paiement-valide', "1"),
+            'returnUrl' => URL::signedRoute('paiement-valide', $order_id),
             'cancelUrl' => route('panier')
         ))->send();
         return $response->getRedirectUrl();
     }
 
-    private function getStripeLink()
+    private function getStripeLink($order_id)
     {
-        $price =  Cart::getCart()->getProductsSum();
+        $price =  Cart::getCart()->getTotal();
         $cart = [[
             'price_data' => [
                 'currency' => 'eur',
@@ -117,7 +161,7 @@ class CheckoutController extends Controller
             'payment_method_types' => ['card', 'bancontact'],
             'line_items' => $cart,
             'mode' => 'payment',
-            'success_url' => URL::signedRoute('paiement-valide', 1),
+            'success_url' => URL::signedRoute('paiement-valide', $order_id),
             'cancel_url' => route('panier'),
 
         ])['url'];
