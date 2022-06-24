@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
@@ -115,6 +116,17 @@ class CheckoutController extends Controller
         }
         $order->price = $cart->getTotal();
         $order->save();
+
+
+        foreach ($cart->items as $cart_item) {
+            $order_item = new OrderItem();
+            $order_item->order_id = $order->id;
+            $order_item->product_id = $cart_item->product->id;
+            $order_item->quantity = $cart_item->quantity;
+            $order_item->price = $cart_item->product->price;
+            $order_item->save();
+        }
+
         switch (session('payment_method')) {
             case 'stripe':
                 $link = $this->getStripeLink($order->id);
@@ -123,10 +135,10 @@ class CheckoutController extends Controller
                 $link = $this->getPaypalLink($order->id);
                 break;
             case 'cash':
-                $link = "https://geets.dev/cash";
+                $link = URL::signedRoute('paiement-valide', $order->id);
                 break;
             case 'transfer':
-                $link = "https://geets.dev/transfer";
+                $link = URL::signedRoute('transfer', $order->id);
                 break;
         }
         return redirect($link);
@@ -141,7 +153,7 @@ class CheckoutController extends Controller
         $gateway->setTestMode(true);
         $response = $gateway->purchase(array(
             'amount' => $total,
-            'currency' => 'USD',
+            'currency' => 'EUR',
             'returnUrl' => URL::signedRoute('paiement-valide', $order_id),
             'cancelUrl' => route('panier')
         ))->send();
