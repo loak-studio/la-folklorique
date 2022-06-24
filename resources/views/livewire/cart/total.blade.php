@@ -45,7 +45,7 @@
             </div>
         </div>
     @endif
-    @if ($cart->getProductsSum() > 12)
+    @if ($cart->getProductsSum() > 1200)
         @if ($type == 'cart')
             <x-button wire:click="handleButton">{{ $buttonLabel }}</x-button>
         @endif

@@ -16,6 +16,12 @@ class Address extends Component
         $this->shippingPlace = $value;
     }
 
+    public function mount()
+    {
+
+        $this->showBillingForm = !empty(session('different_address'));
+    }
+
     public function render()
     {
         return view('livewire.address');

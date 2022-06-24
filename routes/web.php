@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Livewire\Payment\Wizard;
 use App\Http\Livewire\ShowCart;
 use App\Http\Livewire\ShowProduct;
+use App\Http\Middleware\EnsureCartIsBigEnough;
 use App\Http\Middleware\HandleCart;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,11 @@ Route::middleware(HandleCart::class)->group(function () {
 
     Route::get('/produit/{slug}', ShowProduct::class)->name('product');
     Route::get('/panier', ShowCart::class)->name('panier');
-    Route::get('/paiement', [CheckoutController::class, 'showAddressForm'])->name('paiement');
-    Route::post('/paiement', [CheckoutController::class, 'getAddressForm'])->name('checkout-address');
+    Route::middleware(EnsureCartIsBigEnough::class)->prefix('/paiement')->group(function () {
+        Route::get('/', [CheckoutController::class, 'showAddressForm'])->name('paiement');
+        Route::post('/', [CheckoutController::class, 'getAddressForm'])->name('checkout-address');
+        Route::get('/method', [CheckoutController::class, 'showPaymentMethodForm'])->name('checkout-payment-method-form');
+        Route::post('/method', [CheckoutController::class, 'getPaymentMethod'])->name('checkout-payment-method');
+        Route::get('/summary', [CheckoutController::class, 'showSummary'])->name('checkout-summary');
+    });
 });

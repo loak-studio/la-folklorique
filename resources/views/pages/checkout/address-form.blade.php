@@ -15,10 +15,10 @@
                 @if ($cart->coupon)
                     <div class="flex justify-between">
                         <span>
-                            Code promo ({{ $coupon->code }})
+                            Code promo ({{ $cart->coupon->code }})
                         </span>
                         <span>
-                            {{ $coupon->effect() }}
+                            {{ $cart->coupon->effect() }}
                         </span>
                     </div>
                 @endif
