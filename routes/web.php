@@ -36,5 +36,4 @@ Route::middleware(HandleCart::class)->group(function () {
 
     Route::get('/produit/{slug}', ShowProduct::class)->name('product');
     Route::get('/panier', ShowCart::class)->name('panier');
-    Route::get('/paiement', Wizard::class)->name('paiement'); //Composant livewire
 });

@@ -20,7 +20,7 @@
                 {{ $product->name }}
             </h1>
             <div class="flex items-center gap-2 pt-4 pb-8 border-b-2 border-green-700">
-                <span class="text-lg font-semibold">{{ $product->price }}€</span>
+                <span class="text-lg font-semibold">{{ $product->getEuroPrice() }}€</span>
                 <span class="text-sm ">TVA incluse</span>
             </div>
             <article class="mt-8">

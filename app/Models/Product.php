@@ -13,6 +13,12 @@ class Product extends Model
     protected $casts = [
         'pictures' => 'array'
     ];
+
+    public function getEuroPrice()
+    {
+        return $this->price / 100;
+    }
+
     public function categories()
     {
         return $this->belongsToMany(Category::class);

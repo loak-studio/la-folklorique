@@ -29,21 +29,25 @@ class DatabaseSeeder extends Seeder
         $user->password = Hash::make('secret');
         $user->save();
 
+        $category = new Category();
+        $category->name = "Category ABC123";
+        $category->save();
+
+        $category_ = new Category();
+        $category_->name = "Category EFG456";
+        $category_->save();
+
         $coupon = new Coupon();
         $coupon->code = "ABC123";
-        $coupon->name = "Coupon ABC123";
-        $coupon->value = "10";
+        $coupon->value = "100";
         $coupon->quantity = "10";
-        $coupon->is_unlimited = true;
-        $coupon->expiration_date = "2022-06-10";
-        $coupon->is_in_euros = true;
         $coupon->save();
 
         $product = new Product();
         $product->name = "Product ABC123";
         $product->price = "10";
         $product->description = "Lorem";
-        $product->pictures = "['#']";
+        $product->pictures = ['#'];
         $product->available = true;
         $product->visible = true;
         $product->save();
@@ -53,7 +57,7 @@ class DatabaseSeeder extends Seeder
         $product->name = "Product 2ABC123";
         $product->price = "10";
         $product->description = "Lorem";
-        $product->pictures = "['#']";
+        $product->pictures = ['#'];
         $product->available = true;
         $product->visible = true;
         $product->save();
@@ -94,14 +98,6 @@ class DatabaseSeeder extends Seeder
 
         $order->price = $orderItem->price;
         $order->save();
-
-        $category = new Category();
-        $category->name = "Category ABC123";
-        $category->save();
-
-        $category_ = new Category();
-        $category_->name = "Category EFG456";
-        $category_->save();
 
         $cgv = new Content();
         $cgv->key = "cgv";

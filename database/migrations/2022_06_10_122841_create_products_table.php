@@ -19,10 +19,9 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('description');
             $table->json('pictures');
-            $table->boolean('visible');
             $table->boolean('available');
-            $table->decimal('old_price', 10, 2)->nullable();
-            $table->decimal('price', 10, 2);
+            $table->integer('old_price')->nullable();
+            $table->integer('price');
             $table->timestamps();
         });
     }

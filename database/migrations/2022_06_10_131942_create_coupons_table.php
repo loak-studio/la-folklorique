@@ -16,13 +16,9 @@ return new class extends Migration
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
             $table->string('code');
-            $table->string('name');
-            $table->string('value')->nullable();
-            $table->float('quantity')->default(0)->nullable();
-            $table->boolean('is_unlimited')->default(false);
+            $table->integer('value')->default(0);
+            $table->integer('quantity')->default(0)->nullable();
             $table->boolean('free_shipping')->default(false);
-            $table->date('expiration_date');
-            $table->boolean('is_in_euros')->default(false);
             $table->timestamps();
         });
     }

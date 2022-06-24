@@ -23,6 +23,11 @@ class Cart extends Model
         return $total;
     }
 
+    public function coupon()
+    {
+        return $this->belongsTo(Coupon::class);
+    }
+
     public static function getCart()
     {
         return Cart::where('uuid', session('cart_uuid'))->first();

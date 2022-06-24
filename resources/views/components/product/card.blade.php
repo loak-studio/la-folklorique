@@ -5,7 +5,7 @@
     </figure>
     <h2 class="text-lg font-semibold ">{{ $product->name }}</h2>
     <span>
-        {{ $product->price }} €
+        {{ $product->getEuroPrice() }} €
     </span>
     <a class="before:inset-0 before:absolute" href="{{ route('product', $product->slug) }}">
         <span class="sr-only">Voir {{ $product->name }}</span>
