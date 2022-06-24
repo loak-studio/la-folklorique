@@ -44,9 +44,10 @@ class Coupon extends Component
 
     public function render()
     {
-        if (Cart::getCart()->coupon) {
-            $this->coupon = ModelsCoupon::where('code', session('coupon_code'))->first();
-            $this->code = $this->coupon->code;
+        $cart = Cart::getCart();
+        if ($cart->coupon) {
+            $this->code = $cart->coupon->code;
+            $this->coupon = $cart->coupon;
             $this->displayInput = true;
         }
         return view('livewire.cart.coupon');

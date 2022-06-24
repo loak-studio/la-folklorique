@@ -13,8 +13,16 @@ class ShippingPlace extends Component
         $this->emit('shippingPlaceChanged', $value);
     }
 
+    public function mount()
+    {
+        if (!empty(session('shipping_place'))) {
+            $this->shippingPlace = session('shipping_place');
+        }
+    }
+
     public function render()
     {
+
         return view('livewire.payment.shipping-place');
     }
 }

@@ -17,7 +17,7 @@
                 @endforeach
             </ul>
             <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
-                Paiement <span wire:click="setStep(2)">crayon</span>
+                Paiement <a href="{{ route('checkout-payment-method-form') }}">crayon</a>
             </h3>
             <div class="flex justify-between text-white">
                 @switch(session('payment_method'))
@@ -46,7 +46,7 @@
 
             </div>
             <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
-                Adresse <span wire:click="setStep(1)">crayon</span>
+                Adresse <a href="{{ route('checkout-address') }}">crayon</a>
             </h3>
             @if (session('shipping_place') == 'home')
                 <h4 class="my-5 text-xl font-semibold text-white">
@@ -59,11 +59,17 @@
                     </span>
                     {{ session('shipping_address_number') }}
                     {{ session('shipping_address_street') }},
-                    {{ session('shipping_address_zip_code') }}
+                    {{ session('shipping_address_zip') }}
                     {{ session('shipping_address_city') }}
                     ({{ session('shipping_address_country') }})
                 </p>
+            @else
+                <p class="text-white">Retrait à la brasserie:
+                    Rue Albert 1er, 42 -
+                    7134 Leval-Trahergnies
+                </p>
             @endif
+
 
             <h4 class="my-5 text-xl font-semibold text-white">
                 Adresse de facturation
@@ -75,7 +81,7 @@
                 </span>
                 {{ session('billing_address_number') }}
                 {{ session('billing_address_street') }},
-                {{ session('billing_address_zip_code') }}
+                {{ session('billing_address_zip') }}
                 {{ session('billing_address_city') }}
                 ({{ session('billing_address_country') }})
 
@@ -106,7 +112,7 @@
                         Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
                     </p>
                 </div>
-                <x-button>paiement etc</x-button>
+                <x-button href="{{ $checkout_link }}">Payer</x-button>
                 <livewire:cart.coupon />
             </div>
         </div>

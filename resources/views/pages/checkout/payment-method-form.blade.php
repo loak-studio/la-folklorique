@@ -7,8 +7,8 @@
             <h1 class="mb-10 text-4xl font-bold text-white mt-marker:12 lg:col-span-10">Moyen de paiement</h1>
             <ul class="space-y-10 text-white lg:col-span-6">
                 <li class="flex items-center">
-                    <input value="creditCard" checked type="radio" class="mr-5" name="payment_method"
-                        value="creditCard" id="creditCard">
+                    <input required @checked(empty(session('payment_method')) || session('payment_method') === 'creditCard') value="creditCard" type="radio" class="mr-5"
+                        name="payment_method" value="creditCard" id="creditCard">
                     <label for="creditCard" class="w-full">Carte de crédit</label>
                     <div class="flex gap-5">
                         <x-payment.mastercard />
@@ -19,8 +19,8 @@
                     </div>
                 </li>
                 <li class="flex items-center">
-                    <input value="paypal" type="radio" class="mr-5" name="payment_method" value="paypal"
-                        id="paypal">
+                    <input @checked(session('payment_method') === 'paypal') value="paypal" type="radio" class="mr-5"
+                        name="payment_method" value="paypal" id="paypal">
                     <label for="paypal" class="w-full">
                         Paypal
                     </label>
@@ -28,16 +28,16 @@
                 </li>
 
                 <li class="flex">
-                    <input value="bankTransfer" type="radio" class="mr-5" name="payment_method" value="bankTransfer"
-                        id="bankTransfer">
+                    <input @checked(session('payment_method') === 'bankTransfer') value="bankTransfer" type="radio" class="mr-5"
+                        name="payment_method" value="bankTransfer" id="bankTransfer">
                     <label for="bankTransfer" class="w-full">Virement bancaire</label>
                     <x-payment.virement />
                 </li>
 
                 @if (session('shipping_place') == 'home')
                     <li class="flex items-center">
-                        <input value="afterShipping" type="radio" class="mr-5" name="payment_method"
-                            value="afterShipping" id="afterShipping">
+                        <input @checked(session('payment_method') === 'afterShipping') value="afterShipping" type="radio" class="mr-5"
+                            name="payment_method" value="afterShipping" id="afterShipping">
                         <label for="afterShipping" class="flex flex-col">
                             <span>Paiement à la livraison <br><small class="text-sm">Moyen de paiement disponible
                                     lors

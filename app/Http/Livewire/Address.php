@@ -20,6 +20,7 @@ class Address extends Component
     {
 
         $this->showBillingForm = !empty(session('different_address'));
+        $this->shippingPlace = !empty(session('shipping_place')) ? session('shipping_place') : 'home';
     }
 
     public function render()

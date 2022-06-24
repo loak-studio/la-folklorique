@@ -1,5 +1,9 @@
 <div class="p-5 lg:col-span-6 bg-zinc-800">
     <livewire:payment.shipping-place />
+    @if (Session::has('cant_deliver'))
+        <span
+            class="block px-4 py-1 my-10 bg-white border-2 border-red-500 rounded-md text-primary-500">{{ Session::get('cant_deliver') }}</span>
+    @endif
     <h2 class="my-5 text-3xl font-semibold text-white">Adresse de facturation
     </h2>
     <div action="" class="grid gap-5 lg:grid-cols-2">
