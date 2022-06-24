@@ -71,9 +71,7 @@ class PagesController extends Controller
     public function waitingForTransfer($id)
     {
         $order = Order::find($id);
-        $order->paid = true;
-        $order->save();
         session()->forget('cart_uuid');
-        return view('pages.payment-accepted', ["transfer" => true]);
+        return view('pages.payment-accepted', ["transfer" => true, "order" => $order]);
     }
 }

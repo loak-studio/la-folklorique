@@ -1,12 +1,17 @@
-<x-main-layout :breadcrumb="[['name' => 'Paiement accepté', 'route' => 'paiement-valide']]">
-    <section class="w-full max-w-5xl mx-auto mb-24">
-
-
+<x-main-layout title="Commande enregistrée">
+    <x-checkout.steps.display current="4" total="4" />
+    <section class="w-full max-w-2xl px-4 mx-auto mb-24 lg:px-0">
         <span class="text-7xl">🎉</span>
         <h1 class="text-4xl font-bold text-white">Merci ! Votre commande a bien été enregistrée ! </h1>
         @if ($transfer)
             <p class="text-white">
-                SKRT
+                Il ne vous reste plus qu’à effectuer le paiement. <br />
+                IBAN : BE94 9738 1940 <br />
+                Montant : {{ $order->price }}€ <br />
+                Communication : <span class="p-1 font-bold bg-zinc-700">
+                    {{ $order->shipping_first_name }}, {{ $order->shipping_last_name }},
+                    {{ $order->id }}</span> <br />
+                Votre commande ne sera pas traitée tant que les fonds ne seront pas perçus.
             </p>
         @endif
         <span class="block text-white">Vous allez recevoir un email de confirmation</span>

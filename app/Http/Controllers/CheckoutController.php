@@ -114,7 +114,7 @@ class CheckoutController extends Controller
             $order->shipping_cost = 0;
             $order->shipping = "collect";
         }
-        $order->price = $cart->getTotal();
+        $order->price = $cart->getTotalWithShippingCost();
         $order->save();
 
 
