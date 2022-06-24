@@ -4,6 +4,11 @@
 
         <span class="text-7xl">🎉</span>
         <h1 class="text-4xl font-bold text-white">Merci ! Votre commande a bien été enregistrée ! </h1>
+        @if ($transfer)
+            <p class="text-white">
+                SKRT
+            </p>
+        @endif
         <span class="block text-white">Vous allez recevoir un email de confirmation</span>
         <x-button href="{{ route('home') }}">
             Retour à la boutique

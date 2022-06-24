@@ -44,7 +44,7 @@ Route::middleware(HandleCart::class)->group(function () {
         Route::post('/method', [CheckoutController::class, 'getPaymentMethod'])->name('checkout-payment-method');
         Route::get('/summary', [CheckoutController::class, 'showSummary'])->name('checkout-summary');
         Route::post('/summary', [CheckoutController::class, 'getSummary'])->name('checkout-summary-send');
-
         Route::get('/valide/{id}', [PagesController::class, 'paymentAccepted'])->name('paiement-valide')->middleware('signed');
+        Route::get('/virement/{id}', [PagesController::class, 'waitingForTransfer'])->name('transfer')->middleware('signed');
     });
 });
