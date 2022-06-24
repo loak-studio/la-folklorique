@@ -49,7 +49,6 @@ class DatabaseSeeder extends Seeder
         $product->description = "Lorem";
         $product->pictures = ['#'];
         $product->available = true;
-        $product->visible = true;
         $product->save();
         $product->categories()->attach(Category::find(1));
 
@@ -59,7 +58,6 @@ class DatabaseSeeder extends Seeder
         $product->description = "Lorem";
         $product->pictures = ['#'];
         $product->available = true;
-        $product->visible = true;
         $product->save();
         $product->categories()->attach(Category::find(1));
 

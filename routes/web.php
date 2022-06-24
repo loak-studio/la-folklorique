@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PagesController;
 use App\Http\Livewire\Payment\Wizard;
 use App\Http\Livewire\ShowCart;
@@ -36,4 +37,5 @@ Route::middleware(HandleCart::class)->group(function () {
 
     Route::get('/produit/{slug}', ShowProduct::class)->name('product');
     Route::get('/panier', ShowCart::class)->name('panier');
+    Route::get('/paiement', [CheckoutController::class, 'showAddressForm'])->name('paiement');
 });
