@@ -19,17 +19,7 @@ class CheckoutController extends Controller
     }
     public function getAddressForm(Request $request)
     {
-        if ($request->shipping_place == "home") {
-            if ($request->different_address && $request->shipping_address_zip != '7500') {
-                FacadesSession::flash('cant_deliver', 'Les livraisons sont restreintes à 50km autour de Leval-Trahegnies. Nous ne pouvons pas livrer à cette adresse. Vous pouvez toujours retirer votre commande à la brasserie.');
-                return redirect()->back()->withInput();
-            } else {
-                if ($request->billing_address_zip != "7500") {
-                    FacadesSession::flash('cant_deliver', 'Les livraisons sont restreintes à 50km autour de Leval-Trahegnies. Nous ne pouvons pas livrer à cette adresse. Vous pouvez toujours retirer votre commande à la brasserie.');
-                    return redirect()->back()->withInput();
-                }
-            }
-        }
+
 
 
 
@@ -67,6 +57,10 @@ class CheckoutController extends Controller
         }
         foreach ($request->all() as $key => $value) {
             session()->put($key, $value);
+        }
+        if ($request->shipping_place == "home" && session('shipping_address_zip') != '7500') {
+            FacadesSession::flash('cant_deliver', 'ici Les livraisons sont restreintes à 50km autour de Leval-Trahegnies. Nous ne pouvons pas livrer à cette adresse. Vous pouvez toujours retirer votre commande à la brasserie.');
+            return redirect()->back()->withInput();
         }
         return to_route('checkout-payment-method-form');
     }

@@ -10,6 +10,7 @@ class ShippingPlace extends Component
     public function setShippingPlace($value)
     {
         $this->shippingPlace = $value;
+        session()->put('shipping_place', $value);
         $this->emit('shippingPlaceChanged', $value);
     }
 
