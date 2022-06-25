@@ -7,7 +7,10 @@ const binche = {
     lon:"4.1701677159951"
 }
 
-window.addEventListener('load',()=>{
+
+
+
+document.addEventListener("turbolinks:load", function() {
     const map = document.querySelector('#map')
     if(map){
         const map = L.map('map', {
@@ -36,4 +39,4 @@ window.addEventListener('load',()=>{
 
         })
     }
-})
+  })
