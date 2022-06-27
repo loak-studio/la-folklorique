@@ -20,7 +20,7 @@ class NotShippedOrders extends BaseWidget
 
     protected function getTableRecordUrlUsing(): ?Closure
     {
-        return fn (Order $record): string => OrderResource::getUrl('edit', ['record' => $record]);
+        return fn (Order $record): string => OrderResource::getUrl('show', ['record' => $record]);
     }
 
     protected function getTableColumns(): array
