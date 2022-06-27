@@ -56,7 +56,10 @@
                     <span> {{ $cart->getProductsSumInEuros() }}€</span>
                 </div>
                 @if (session('shipping_place') == 'home')
-                    <p>Frais de livraison {{ $cart->getShippingCost() }}€</p>
+                    <div class="flex justify-between">
+                        <p>Frais de livraison </p>
+                        <span>{{ $cart->getShippingCostInEuros() }}€</span>
+                    </div>
                 @endif
                 @if ($cart->coupon)
                     <div class="flex justify-between">

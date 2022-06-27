@@ -58,10 +58,18 @@ class Cart extends Model
     public function getShippingCost()
     {
         if (session('shipping_place') == 'home') {
+            if ($this->getTotal() >= 5000) {
+                return 0;
+            }
             return 500;
         } else {
             return 0;
         }
+    }
+
+    public function getShippingCostInEuros()
+    {
+        return $this->getShippingCost() / 100;
     }
 
     public function coupon()
