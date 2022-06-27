@@ -30,9 +30,6 @@ class CouponResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    TextInput::make('name')
-                        ->label('Nom du code promo :')
-                        ->required(),
                     TextInput::make('code')
                         ->label('Code promo :')
                         ->required(),
@@ -40,30 +37,17 @@ class CouponResource extends Resource
                         ->label('Livraison gratuite')
                         ->default(false)
                         ->reactive(),
-                    Toggle::make('is_in_euros')
-                        ->label('La valeur de ce code est en euros')
-                        ->default(false)
-                        ->hidden(fn (Closure $get) => $get('free_shipping'))
-                        ->reactive(),
                     TextInput::make('value')
-                        ->label(fn (Closure $get) => $get('is_in_euros') ? 'Valeur en € :' : 'Valeur en % :')
-                        ->suffix(fn (Closure $get) => $get('is_in_euros') ? '€' : '%')
+                        ->label('Valeur en € :')
+                        ->suffix('€')
                         ->mask(
                             fn (Mask $mask) => $mask
                                 ->numeric()
-                                ->decimalPlaces(2)
-                                ->decimalSeparator(',')
+                                ->integer()
                                 ->minValue(0)
-                                ->padFractionalZeros()
                         )
                         ->hidden(fn (Closure $get) => $get('free_shipping'))
                         ->required(fn (Closure $get) => !$get('free_shipping')),
-                ])->columnSpan(2),
-                Card::make()->schema([
-                    Toggle::make('is_unlimited')
-                        ->label('Nombre d\'utilisations illimitée')
-                        ->default(false)
-                        ->reactive(),
                     TextInput::make('quantity')
                         ->label('Nombre d\'utilisations :')
                         ->mask(
@@ -72,12 +56,8 @@ class CouponResource extends Resource
                                 ->integer()
                                 ->minValue(0)
                         )
-                        ->hidden(fn (Closure $get) => $get('is_unlimited')),
-                    DateTimePicker::make('expiration_date')
-                        ->label('Date d\'expiration :')
-                        ->default(now())
-                        ->required()
-                ])->columnSpan(1)
+                        ->required(),
+                ])->columnSpan(1),
             ])->columns(3);
     }
 
