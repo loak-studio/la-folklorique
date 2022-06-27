@@ -3455,6 +3455,9 @@ html {
 .-mt-32{
   margin-top: -8rem;
 }
+.-mt-6{
+  margin-top: -1.5rem;
+}
 .block{
   display: block;
 }
@@ -4400,6 +4403,16 @@ html {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
+.bg-red-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+.bg-opacity-50{
+  --tw-bg-opacity: 0.5;
+}
+.bg-opacity-80{
+  --tw-bg-opacity: 0.8;
+}
 .bg-cover{
   background-size: cover;
 }
@@ -4446,6 +4459,9 @@ html {
 }
 .p-0{
   padding: 0px;
+}
+.p-12{
+  padding: 3rem;
 }
 .px-5{
   padding-left: 1.25rem;
@@ -6917,6 +6933,10 @@ html {
     padding: 1.25rem;
   }
 
+  .lg\:p-12{
+    padding: 3rem;
+  }
+
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
@@ -6925,6 +6945,16 @@ html {
   .lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .lg\:py-2{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .lg\:pl-20{
@@ -8833,6 +8863,9 @@ select{
 .-mt-32{
   margin-top: -8rem;
 }
+.-mt-6{
+  margin-top: -1.5rem;
+}
 .block{
   display: block;
 }
@@ -9774,6 +9807,16 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
+.bg-red-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+.bg-opacity-50{
+  --tw-bg-opacity: 0.5;
+}
+.bg-opacity-80{
+  --tw-bg-opacity: 0.8;
+}
 .bg-cover{
   background-size: cover;
 }
@@ -9820,6 +9863,9 @@ select{
 }
 .p-0{
   padding: 0px;
+}
+.p-12{
+  padding: 3rem;
 }
 .px-5{
   padding-left: 1.25rem;
@@ -12130,6 +12176,9 @@ input[type="radio"]:checked:focus{
   .lg\:p-5{
     padding: 1.25rem;
   }
+  .lg\:p-12{
+    padding: 3rem;
+  }
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
@@ -12137,6 +12186,14 @@ input[type="radio"]:checked:focus{
   .lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+  .lg\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .lg\:py-2{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
   .lg\:pl-20{
     padding-left: 5rem;

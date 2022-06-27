@@ -17,7 +17,7 @@
             </ul>
 
         </div>
-        <div class="col-span-4 px-4 lg:px-0">
+        <div class="col-span-4 px-4 mt-8 lg:px-0 lg:mt-0">
             <h1 class="text-4xl font-bold ">
                 {{ $product->name }}
             </h1>
@@ -30,7 +30,9 @@
             </article>
             <div data-add-to-cart class="flex items-center gap-10 mt-8">
                 <livewire:input-number :quantity="$quantity" />
-                <x-button wire:click="addToCart">Ajouter au panier</x-button>
+                <div class="-mt-6">
+                    <x-button wire:click="addToCart">Ajouter au panier</x-button>
+                </div>
             </div>
             <ul>
                 <li>

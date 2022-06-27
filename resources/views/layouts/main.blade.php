@@ -35,11 +35,14 @@
     @livewireStyles
 </head>
 
-<body>
+<body class="font-outfit">
     @if (!empty($banner))
         <x-banner />
     @endif
-    <div class="relative z-10 flex flex-col h-full min-h-screen overflow-x-hidden font-outfit bg-dark">
+    @unless(session('is_ok'))
+        <livewire:age-verification />
+    @endunless
+    <div class="relative z-10 flex flex-col h-full min-h-screen overflow-x-hidden bg-dark">
         @include('layouts.header')
         @if (count($breadcrumb) > 0)
             <x-layout.breadcrumb :hideTitle="$hideTitle" :title="$title" :items="$breadcrumb" />
