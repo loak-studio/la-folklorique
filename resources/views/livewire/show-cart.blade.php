@@ -10,14 +10,14 @@
                 </figure>
                 <div>
                     <h2>{{ $cart_item->product->name }}</h2>
-                    <span>Prix unitaire: {{ $cart_item->product->getEuroPrice() }}</span>
-                    <div class="flex">
+                    <span class="block my-5">Prix unitaire: {{ $cart_item->product->getEuroPrice() }}€</span>
+                    <div class="flex gap-12">
                         <livewire:input-number wire:key="{{ $loop->index }}" :quantity="$cart_item->quantity" :cartItem="$cart_item->id" />
                         <span>
                             {{ $cart_item->quantity * $cart_item->product->getEuroPrice() }}€
                         </span>
                     </div>
-                    <button wire:click="deleteItem({{ $cart_item->id }})">
+                    <button class="mt-5 text-gray-500 hover:underline" wire:click="deleteItem({{ $cart_item->id }})">
                         Supprimer
                     </button>
                 </div>

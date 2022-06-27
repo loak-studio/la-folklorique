@@ -10,7 +10,7 @@
                     <input required @checked(empty(session('payment_method')) || session('payment_method') === 'stripe') value="stripe" type="radio" class="mr-5"
                         name="payment_method" value="creditCard" id="creditCard">
                     <label for="creditCard" class="w-full">Carte de crédit</label>
-                    <div class="flex gap-5">
+                    <div class="hidden gap-5 lg:flex">
                         <x-payment.mastercard />
                         <x-payment.maestro />
                         <x-payment.visa />
@@ -24,14 +24,14 @@
                     <label for="paypal" class="w-full">
                         Paypal
                     </label>
-                    <x-payment.paypal />
+                    <x-payment.paypal class="hidden lg:block" />
                 </li>
 
                 <li class="flex">
                     <input @checked(session('payment_method') === 'transfer') value="transfer" type="radio" class="mr-5"
                         name="payment_method" value="bankTransfer" id="bankTransfer">
                     <label for="bankTransfer" class="w-full">Virement bancaire</label>
-                    <x-payment.virement />
+                    <x-payment.virement class="hidden lg:block" />
                 </li>
 
                 @if (session('shipping_place') == 'home')
@@ -53,7 +53,7 @@
                 <h2 class="text-3xl font-semibold border-b-2 border-gray-700 pb-7">Total</h2>
                 <div class="flex justify-between">
                     <span>Sous-total</span>
-                    <span> {{ $cart->getProductsSum() }}€</span>
+                    <span> {{ $cart->getProductsSumInEuros() }}€</span>
                 </div>
                 @if (session('shipping_place') == 'home')
                     <p>Frais de livraison {{ $cart->getShippingCost() }}€</p>
@@ -71,10 +71,13 @@
                 <div class="flex justify-between border-t-2 border-green-700 pt-7">
                     <p class="text-lg">
                         Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
-                        {{ $cart->getTotalWithShippingCost() }}€
                     </p>
+                    <span>
+
+                        {{ $cart->getTotalWithShippingCostInEuros() }}€
+                    </span>
                 </div>
-                <x-button>paiement etc</x-button>
+                <x-button>Continuer</x-button>
                 <livewire:cart.coupon />
             </div>
         </div>

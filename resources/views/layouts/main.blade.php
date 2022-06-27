@@ -40,6 +40,7 @@
     @if (count($breadcrumb) > 0)
         <x-layout.breadcrumb :hideTitle="$hideTitle" :title="$title" :items="$breadcrumb" />
     @endif
+    <livewire:banner />
     <main class="flex-1">
         {{ $slot }}
     </main>

@@ -23,6 +23,11 @@ class Cart extends Model
         return $total;
     }
 
+    public function getProductsSumInEuros()
+    {
+        return $this->getProductsSum() / 100;
+    }
+
     public function getTotal()
     {
         $total = 0;
@@ -38,6 +43,16 @@ class Cart extends Model
         $total = $this->getTotal();
         $total += $this->getShippingCost();
         return $total;
+    }
+
+    public function getTotalWithShippingCostInEuros()
+    {
+        return $this->getTotalWithShippingCost() / 100;
+    }
+
+    public function getTotalInEuros()
+    {
+        return $this->getTotal() / 100;
     }
 
     public function getShippingCost()

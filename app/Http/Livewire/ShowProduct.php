@@ -14,6 +14,7 @@ class ShowProduct extends Component
     public $featured_products;
     public $quantity = 1;
     public $hasBeenAdded = false;
+    public $displayedImage;
     protected $listeners = ['quantityChanged'];
 
 
@@ -45,9 +46,15 @@ class ShowProduct extends Component
         $this->emit('updateCartDisplayedQuantity');
     }
 
+    public function setDisplayedImage($url)
+    {
+        $this->displayedImage = $url;
+    }
+
     public function mount($slug)
     {
         $this->product = Product::where('slug', $slug)->first();
+        $this->displayedImage = $this->product->pictures[0];
         $this->featured_products = Product::where('id', '!=', $this->product->id)->limit(4)->inRandomOrder()->get();
     }
 

@@ -9,7 +9,7 @@
                 <h2 class="text-3xl font-semibold border-b-2 border-gray-700 pb-7">Total</h2>
                 <div class="flex justify-between">
                     <span>Sous-total</span>
-                    <span> {{ $cart->getProductsSum() }}€</span>
+                    <span> {{ $cart->getProductsSumInEuros() }}€</span>
                 </div>
                 <p>Frais de livraison calculés à l'étape suivante</p>
                 @if ($cart->coupon)
@@ -24,11 +24,15 @@
                 @endif
                 <div class="flex justify-between border-t-2 border-green-700 pt-7">
                     <p class="text-lg">
-                        Total <span class="text-sm text-gray-400 ">(TVA incluse)</span> {{ $cart->getTotal() }}€
+                        Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
+
                     </p>
+                    <span>
+                        {{ $cart->getTotalInEuros() }}€
+                    </span>
                 </div>
-                @if ($cart->getTotal() > 12)
-                    <x-button>paiement etc</x-button>
+                @if ($cart->getTotal() > 1200)
+                    <x-button>Choisir le mode de paiement</x-button>
                 @else
                     <p>Le minimum d’achat est de 12€ afin de pouvoir passer commande</p>
                 @endif

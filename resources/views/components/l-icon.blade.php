@@ -4,8 +4,9 @@
     'size' => 20,
 ])
 
-<svg xmlns="http://www.w3.org/2000/svg" width="{{ $size }}" height="{{ $size }}" viewBox="0 0 24 24"
-    stroke-width="1.5" stroke="{{ $color }}" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<svg {{ $attributes->merge() }} xmlns="http://www.w3.org/2000/svg" width="{{ $size }}"
+    height="{{ $size }}" viewBox="0 0 24 24" stroke-width="1.5" stroke="{{ $color }}" fill="none"
+    stroke-linecap="round" stroke-linejoin="round">
     @switch($name)
         @case('phone')
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -77,6 +78,13 @@
             <polyline points="5 12 3 12 12 3 21 12 19 12" />
             <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
             <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+        @break
+
+        @case('edit')
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+            <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+            <line x1="16" y1="5" x2="19" y2="8" />
         @break
 
         @default

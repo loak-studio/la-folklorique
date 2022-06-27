@@ -183,6 +183,11 @@ class DatabaseSeeder extends Seeder
         $cgv->value = "dsq";
         $cgv->save();
 
+        $banner = new Content();
+        $banner->key = "banner";
+        $banner->value = "Super promo tout gratuit etc";
+        $banner->save();
+
         $ml = new Content();
         $ml->key = "mentions-legales";
         $ml->value = "dsq";

@@ -8,7 +8,7 @@
             <h3 class="my-5 text-2xl font-semibold text-white">
                 Commande
             </h3>
-            <ul>
+            <ul class="pl-4 ">
                 @foreach ($cart->items as $cart_item)
                     <li class="text-white">
                         {{ $cart_item->product->name }} ({{ $cart_item->quantity }}) -
@@ -17,13 +17,15 @@
                 @endforeach
             </ul>
             <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
-                Paiement <a href="{{ route('checkout-payment-method-form') }}">crayon</a>
+                Paiement <a href="{{ route('checkout-payment-method-form') }}">
+                    <x-l-icon name="edit" size="25" />
+                </a>
             </h3>
-            <div class="flex justify-between text-white">
+            <div class="flex justify-between pl-4 text-white">
                 @switch(session('payment_method'))
                     @case('stripe')
                         <span>Carte de crédit</span>
-                        <div class="flex gap-5">
+                        <div class="hidden gap-5 lg:flex">
                             <x-payment.mastercard />
                             <x-payment.maestro />
                             <x-payment.visa />
@@ -33,12 +35,12 @@
 
                     @case('paypal')
                         <span>Paypal</span>
-                        <x-payment.paypal />
+                        <x-payment.paypal class="hidden lg:block" />
                     @break
 
                     @case('transfer')
                         <span>Virement</span>
-                        <x-payment.virement />
+                        <x-payment.virement class="hidden lg:block" />
                     @break
 
                     @case('cash')
@@ -56,13 +58,15 @@
                 </p>
             @endif
             <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
-                Adresse <a href="{{ route('checkout-address') }}">crayon</a>
+                Adresse <a href="{{ route('checkout-address') }}">
+                    <x-l-icon name="edit" size="25" />
+                </a>
             </h3>
             @if (session('shipping_place') == 'home')
                 <h4 class="my-5 text-xl font-semibold text-white">
                     Adresse de livraison
                 </h4>
-                <p class="text-white">
+                <p class="pl-4 text-white ">
                     <span class="block">
                         {{ session('shipping_address_first_name') }}
                         {{ session('shipping_address_last_name') }}
@@ -74,7 +78,7 @@
                     ({{ session('shipping_address_country') }})
                 </p>
             @else
-                <p class="text-white">Retrait à la brasserie:
+                <p class="pl-4 text-white ">Retrait à la brasserie:
                     Rue Albert 1er, 42 -
                     7134 Leval-Trahergnies
                 </p>
@@ -84,7 +88,7 @@
             <h4 class="my-5 text-xl font-semibold text-white">
                 Adresse de facturation
             </h4>
-            <ul class="text-white">
+            <ul class="pl-4 text-white ">
                 <span class="block">
                     {{ session('billing_address_first_name') }}
                     {{ session('billing_address_last_name') }}
@@ -102,7 +106,7 @@
                 <h2 class="text-3xl font-semibold border-b-2 border-gray-700 pb-7">Total</h2>
                 <div class="flex justify-between">
                     <span>Sous-total</span>
-                    <span> {{ $cart->getProductsSum() }}€</span>
+                    <span> {{ $cart->getProductsSumInEuros() }}€</span>
                 </div>
                 @if (session('shipping_place') == 'home')
                     <p>Frais de livraison {{ $cart->getShippingCost() }}€</p>
@@ -120,8 +124,11 @@
                 <div class="flex justify-between border-t-2 border-green-700 pt-7">
                     <p class="text-lg">
                         Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
-                        {{ $cart->getTotalWithShippingCost() }}€
                     </p>
+                    <span>
+
+                        {{ $cart->getTotalWithShippingCostInEuros() }}€
+                    </span>
                 </div>
                 <p>Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner
                     au cours de votre visite du site web, et pour d’autres raisons décrites dans notre

@@ -2,14 +2,14 @@
     <section class="w-full max-w-5xl mx-auto text-white lg:grid lg:grid-cols-9 lg:gap-24">
         <div class="col-span-5">
             <figure class=" aspect-[5/6] sm:w-8/12 mx-auto lg:w-full ">
-                <img class="object-cover w-full h-full" src="/{{ $product->pictures[0] }}" alt="">
+                <img class="object-cover w-full h-full" src="/storage/{{ $displayedImage }}" alt="">
             </figure>
             <ul class="flex justify-center gap-2 mt-2">
                 @foreach ($product->pictures as $picture)
                     <li>
-                        <figure
-                            class="cursor-pointer aspect-[5/6] w-20 rounded-md overflow-hidden border-transparent border-2">
-                            <img data-image class="object-cover w-full h-full" src="/{{ $picture }}" alt="">
+                        <figure wire:click="setDisplayedImage('{{ $picture }}')"
+                            class="cursor-pointer aspect-[5/6] w-20 rounded-md overflow-hidden border-transparent border-2 @if ($displayedImage == $picture) border-primary-500 @endif">
+                            <img class="object-cover w-full h-full" src="/storage/{{ $picture }}" alt="">
                         </figure>
                     </li>
                 @endforeach

@@ -1,7 +1,7 @@
 @props(['items' => [], 'title' => null, 'hideTitle' => false])
 
 @unless($hideTitle)
-    <h1 class="mb-5 text-4xl font-bold text-center text-white">{{ $title }}</h1>
+    <h1 class="mb-5 text-4xl font-bold text-center text-white mt-7">{{ $title }}</h1>
 @endunless
 <nav class="hidden w-full max-w-5xl mx-auto mb-12 text-sm md:block">
     <ul class="flex">

@@ -5,7 +5,7 @@
             Sous-total
         </span>
         <span>
-            {{ $cart->getProductsSum() }}€
+            {{ $cart->getProductsSumInEuros() }}€
         </span>
     </div>
     @unless($shipping_cost)
@@ -26,7 +26,7 @@
             Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
         </p>
         <span>
-            {{ $cart->getTotal() }}€
+            {{ $cart->getTotalInEuros() }}€
         </span>
     </div>
 

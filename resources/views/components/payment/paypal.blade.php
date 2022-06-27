@@ -1,4 +1,5 @@
-<svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg {{ $attributes->merge() }} width="48" height="32" viewBox="0 0 48 32" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
     <path
         d="M3.667 1H43.667C45.134 1 46.334 2.2 46.334 3.667V27.667C46.334 29.134 45.134 30.334 43.667 30.334H3.667C2.96032 30.3319 2.28318 30.0502 1.78348 29.5505C1.28377 29.0508 1.00211 28.3737 1 27.667V3.667C1 2.2 2.2 1 3.667 1Z"
         fill="#374151" />

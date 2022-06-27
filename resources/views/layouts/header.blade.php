@@ -32,7 +32,7 @@ $navLinks = collect([
         <a class="before:absolute before:inset-0" href="{{ route('home') }}" title="Retour à l'accueil"></a>
     </div>
     <div data-mobile-navigation
-        class="absolute flex z-[80] h-screen w-screen top-0  lg:top-auto lg:w-auto lg:h-auto self-center mx-auto transition -translate-x-[1000px] lg:block lg:translate-x-0 justify-self-center">
+        class="fixed lg:absolute flex z-[80] h-screen w-screen top-0  lg:top-auto lg:w-auto lg:h-auto self-center mx-auto transition -translate-x-[1000px] lg:block lg:translate-x-0 justify-self-center">
         <div class="w-full pt-20 pl-10 bg-dark lg:p-0">
             <div class="inline-flex flex-col items-center p-4 lg:hidden">
                 <p class="text-3xl font-folklard text-primary-500">La Folklorique</p>
