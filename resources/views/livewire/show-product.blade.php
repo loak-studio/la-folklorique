@@ -32,10 +32,30 @@
                 <livewire:input-number :quantity="$quantity" />
                 <x-button wire:click="addToCart">Ajouter au panier</x-button>
             </div>
-            <span class="flex items-center gap-2 mt-8">
-                <x-l-icon name="shield" />
-                Paiement 100% sécurisé
-            </span>
+            <ul>
+                <li>
+                    <span class="flex items-center gap-2 mt-8">
+                        <x-l-icon class="shrink-0" name="shield" />
+                        Paiement 100% sécurisé
+                    </span>
+                </li>
+                <li>
+                    <span class="flex items-center gap-2 mt-8">
+                        <x-l-icon class="shrink-0" name="truck" />
+                        Livraison gratuite à partir de 50€
+                    </span>
+                </li>
+                <li>
+                    <span class="flex items-center gap-2 mt-8">
+                        <x-l-icon class="shrink-0" name="home" />
+                        <span>
+                            Pas de livraison < 50km de leval-Trahegnies , vous pouvez livrer à la <a
+                                class="text-primary-500 hover:underline" href="{{ route('faq') }}" target="_blank">
+                                brasserie</a>
+                        </span>
+                    </span>
+                </li>
+            </ul>
         </div>
     </section>
     <img class="absolute hidden rotate-90 xl:block -left-52 blur-sm" src="/assets/orange3.webp" alt="">
