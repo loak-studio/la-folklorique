@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Livewire\Payment\Wizard;
 use App\Http\Livewire\ShowCart;
 use App\Http\Livewire\ShowProduct;
@@ -48,3 +49,5 @@ Route::middleware(HandleCart::class)->group(function () {
         Route::get('/virement/{id}', [PagesController::class, 'waitingForTransfer'])->name('transfer')->middleware('signed');
     });
 });
+
+Route::get('/sitemap.xml', SitemapController::class);
