@@ -17,7 +17,7 @@ $navLinks = collect([
 
 @endphp
 <header
-    class="{{ Route::current()->getName() == 'home' ? 'absolute' : '' }}  flex items-center justify-center w-full px-4 pt-5 text-white lg:p-11 z-50">
+    class="{{ !empty(Route::current()) && Route::current()->getName() == 'home' ? 'absolute' : '' }}  flex items-center justify-center w-full px-4 pt-5 text-white lg:p-11 z-50">
     <button data-mobile-navigation-button
         class="absolute p-4 rounded-md left-4 lg:hidden hover:bg-white hover:bg-opacity-30">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

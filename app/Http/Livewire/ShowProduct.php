@@ -54,6 +54,9 @@ class ShowProduct extends Component
     public function mount($slug)
     {
         $this->product = Product::where('slug', $slug)->first();
+        if (empty($this->product)) {
+            abort(404);
+        }
         $this->displayedImage = $this->product->pictures[0];
         $this->featured_products = Product::where('id', '!=', $this->product->id)->limit(4)->inRandomOrder()->get();
     }
