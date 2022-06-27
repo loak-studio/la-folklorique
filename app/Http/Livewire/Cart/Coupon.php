@@ -25,15 +25,16 @@ class Coupon extends Component
 
     public function applyCoupon()
     {
-        $this->coupon = ModelsCoupon::where('code', $this->code)->first();
-        if ($this->coupon) {
+        $coupon = ModelsCoupon::where('code', $this->code)->first();
+        if ($coupon && $coupon->quantity > 0) {
+            $this->coupon = $coupon;
             $this->resetErrorBag('coupon');
             $cart = Cart::getCart();
             $cart->coupon_id = $this->coupon->id;
             $cart->save();
             $this->emit('updateCoupon');
         } else {
-            $this->addError('coupon', 'Ce code est invalide');
+            $this->addError('coupon', 'Ce code est invalide ou expiré');
         }
     }
 
@@ -45,7 +46,7 @@ class Coupon extends Component
     public function render()
     {
         $cart = Cart::getCart();
-        if ($cart->coupon) {
+        if ($cart->coupon && $cart->coupon->quantity > 0) {
             $this->code = $cart->coupon->code;
             $this->coupon = $cart->coupon;
             $this->displayInput = true;

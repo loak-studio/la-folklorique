@@ -8,11 +8,23 @@
             <h3 class="my-5 text-2xl font-semibold text-white">
                 Commande
             </h3>
-            <ul class="pl-4 ">
+            <ul class="">
                 @foreach ($cart->items as $cart_item)
-                    <li class="text-white">
-                        {{ $cart_item->product->name }} ({{ $cart_item->quantity }}) -
-                        {{ $cart_item->quantity * $cart_item->product->price }}
+                    <li
+                        class="flex text-white gap-9 @unless($loop->last) border-b-2 border-gray-500 pb-2 mb-2 @endunless">
+                        <figure class=" aspect-[3/4] w-24">
+                            <img class="object-cover w-full h-full"
+                                src="/storage/{{ $cart_item->product->pictures[0] }}" alt="">
+                        </figure>
+                        <div>
+                            <h2 class="mb-2 text-semibold">{{ $cart_item->product->name }}</h2>
+                            <div class="flex flex-col lg:gap-12 lg:flex-row">
+                                <span class="mb-2">Quantité: {{ $cart_item->quantity }}</span>
+                                <span>
+                                    {{ $cart_item->quantity * $cart_item->product->getEuroPrice() }}€
+                                </span>
+                            </div>
+                        </div>
                     </li>
                 @endforeach
             </ul>

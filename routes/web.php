@@ -6,6 +6,7 @@ use App\Http\Controllers\SitemapController;
 use App\Http\Livewire\Payment\Wizard;
 use App\Http\Livewire\ShowCart;
 use App\Http\Livewire\ShowProduct;
+use App\Http\Middleware\BannerMiddleware;
 use App\Http\Middleware\EnsureCartIsBigEnough;
 use App\Http\Middleware\HandleCart;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/redirects.php';
 
-Route::middleware(HandleCart::class)->group(function () {
+Route::middleware([HandleCart::class, BannerMiddleware::class])->group(function () {
     Route::view('/', 'pages.homepage')->name('home');
     Route::get('/points-de-ventes', [PagesController::class, 'pointsOfSell'])->name('points-de-vente');
     Route::get('/mentions-legales', [PagesController::class, 'mentionsLegales'])->name('mentions-legales');

@@ -39,7 +39,7 @@ $navLinks = collect([
                 <x-logo />
             </div>
             <nav>
-                <ul class="flex flex-col gap-5 mt-10 text-lg lg:flex-row lg:w-auto lg:gap-14">
+                <ul class="flex flex-col gap-5 mt-10 text-lg lg:mt-0 lg:flex-row lg:w-auto lg:gap-14">
                     @foreach ($navLinks as $link)
                         <li>
                             <a class="p-4 transition rounded-md hover:bg-white hover:bg-opacity-30"

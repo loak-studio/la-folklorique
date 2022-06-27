@@ -18,10 +18,14 @@ $notPicked = 'text-gray-400 border-gray-400';
         </button>
     </div>
     @if ($shippingPlace == 'brewery')
-        <p class="text-white">
-            La brasserie se trouve au : <br />
-            Rue Albert 1er, 42<br />
-            7134 Leval-Trahergnies
+        <p class="font-normal text-white">
+            La brasserie se trouve au :
+            <span class="block font-semibold">
+                Rue Albert 1er, 42
+            </span>
+            <span class="block font-semibold">
+                7134 Leval-Trahergnies
+            </span>
         </p>
     @endif
     <input type="hidden" name="shipping_place" value="{{ $shippingPlace }}">

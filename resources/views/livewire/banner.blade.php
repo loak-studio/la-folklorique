@@ -1,3 +1,0 @@
-<div>
-    LA BANNER
-</div>

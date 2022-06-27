@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+
 use App\Models\Content;
 use Filament\Forms\Components\Card;
 use Filament\Pages\Page;
@@ -23,8 +24,7 @@ class Banner extends Page
         return [
             Card::make()->schema([
                 MarkdownEditor::make('content')
-                    ->label('Conditions générales de vente :')
-                    ->required(),
+                    ->label('Texte'),
             ])
         ];
     }

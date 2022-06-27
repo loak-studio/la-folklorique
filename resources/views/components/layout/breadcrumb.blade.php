@@ -3,7 +3,7 @@
 @unless($hideTitle)
     <h1 class="mb-5 text-4xl font-bold text-center text-white mt-7">{{ $title }}</h1>
 @endunless
-<nav class="hidden w-full max-w-5xl mx-auto mb-12 text-sm md:block">
+<nav class="hidden w-full max-w-5xl mx-auto mb-12 text-sm md:block @unless(!$hideTitle) mt-7 @endunless">
     <ul class="flex">
         <li class="text-gray-400">
             <a class="hover:underline after:inline-block after:mx-2 after:content-['/'] after:text-gray-400"

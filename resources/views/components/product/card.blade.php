@@ -1,8 +1,13 @@
-<div class="relative text-white">
-    <figure class=" h-44 w-36 lg:h-64 lg:w-52">
-        <img class="object-cover object-center w-full h-full" src="/storage/{{ $product->pictures[0] }}" alt="">
-
-    </figure>
+<div class="relative text-white group">
+    <div class="relative overflow-hidden aspect-[3/4]">
+        <img src="/assets/confetti-hover.svg"
+            class="absolute object-cover w-full h-full transition scale-150 opacity-0 group-hover:rotate-12 group-hover:opacity-100"
+            alt="">
+        <figure class="w-full h-full">
+            <img class="object-cover object-center w-full h-full" src="/storage/{{ $product->pictures[0] }}"
+                alt="">
+        </figure>
+    </div>
     <h2 class="text-lg font-semibold ">{{ $product->name }}</h2>
     <span>
         {{ $product->getEuroPrice() }} €

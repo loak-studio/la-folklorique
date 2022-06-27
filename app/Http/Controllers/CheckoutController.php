@@ -106,7 +106,14 @@ class CheckoutController extends Controller
         $order->billing_email = session('billing_address_email');
         $order->payment = session('payment_method');
         $order->notes = session('notes');
-        $order->coupon_id = $cart->coupon ? $cart->coupon->id : null;
+
+        if ($cart->coupon) {
+            $order->coupon_id = $cart->coupon->id;
+            $coupon = $cart->coupon;
+            $coupon->quantity = $coupon->quantity - 1;
+            $coupon->save();
+        }
+
         if (session('shipping_place') == 'home') {
             $order->shipping_cost = 500;
             $order->shipping = "shipping";
