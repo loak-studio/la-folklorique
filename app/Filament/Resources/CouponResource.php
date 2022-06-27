@@ -6,13 +6,13 @@ use App\Filament\Resources\CouponResource\Pages;
 use App\Models\Coupon;
 use Closure;
 use Filament\Forms\Components\Card;
-use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TextInput\Mask;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
+use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Columns\TextColumn;
 
 class CouponResource extends Resource
@@ -41,10 +41,10 @@ class CouponResource extends Resource
                         ->label('Valeur en € :')
                         ->suffix('€')
                         ->mask(
-                            fn (Mask $mask) => $mask
+                            fn (TextInput\Mask $mask) => $mask
                                 ->numeric()
-                                ->integer()
-                                ->minValue(0)
+                                ->thousandsSeparator('.')
+                                ->decimalSeparator(','),
                         )
                         ->hidden(fn (Closure $get) => $get('free_shipping'))
                         ->required(fn (Closure $get) => !$get('free_shipping')),
@@ -65,17 +65,18 @@ class CouponResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->label('Nom du code promo')
-                    ->sortable(),
                 TextColumn::make('code')
                     ->label('Code promo')
                     ->sortable(),
                 TextColumn::make('quantity')
                     ->label('Nombre d\'utilisations restantes')
                     ->sortable(),
-                TextColumn::make('expiration_date')
-                    ->label('Date d\'expiration')
+                TextColumn::make('value')
+                    ->label('Valeur en €')
+                    ->money('eur')
+                    ->sortable(),
+                BooleanColumn::make('free_shipping')
+                    ->label('Livraison gratuite')
                     ->sortable(),
             ])
             ->filters([]);

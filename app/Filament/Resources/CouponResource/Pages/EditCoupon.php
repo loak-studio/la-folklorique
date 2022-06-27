@@ -10,6 +10,23 @@ class EditCoupon extends EditRecord
 {
     protected static string $resource = CouponResource::class;
 
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $data['value'] = (int) round(($data['value'] * 100));
+        return $data;
+    }
+
+    protected function mutateFormDataBeforeFill(array $data): array
+    {
+        $data['value'] = number_format($data['value'] / 100, 2, ',', '.');
+        return $data;
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
     protected function getActions(): array
     {
         return [
