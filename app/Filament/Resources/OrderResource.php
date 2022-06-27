@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Product;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\HasManyRepeater;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -79,8 +80,7 @@ class OrderResource extends Resource
                         ])
                 ])->columnSpan(1),
                 Card::make()->schema([
-                    HasManyRepeater::make('items')
-                        ->relationship('items')
+                    Repeater::make('items')
                         ->schema([
                             Select::make('product_id')
                                 ->label('Produit :')
@@ -91,11 +91,8 @@ class OrderResource extends Resource
                                 ->mask(
                                     fn (Mask $mask) => $mask
                                         ->numeric()
-                                        ->decimalPlaces(2)
-                                        ->decimalSeparator(',')
-                                        ->minValue(0)
-                                        ->padFractionalZeros()
-                                        ->thousandsSeparator('.'),
+                                        ->thousandsSeparator('.')
+                                        ->decimalSeparator(','),
                                 )
                                 ->suffix('€'),
                             TextInput::make('quantity')
@@ -103,10 +100,11 @@ class OrderResource extends Resource
                                 ->mask(
                                     fn (Mask $mask) => $mask
                                         ->numeric()
+                                        ->integer()
                                         ->minValue(0)
                                 )
                         ])->columns(3)
-                        ->label('Panier')
+                        ->label('Panier'),
                 ])->columnSpan(2)
             ])->columns(3);
     }

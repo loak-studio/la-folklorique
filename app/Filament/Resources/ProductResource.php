@@ -9,6 +9,7 @@ use Filament\Forms\Components\BelongsToManyMultiSelect;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\MultiSelect;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TextInput\Mask;
 use Filament\Forms\Components\Toggle;
@@ -46,7 +47,7 @@ class ProductResource extends Resource
                         ->required(),
                 ])->columnSpan(2),
                 Card::make()->schema([
-                    BelongsToManyMultiSelect::make('category_id')->relationship('categories', 'name')
+                    MultiSelect::make('category_id')->relationship('categories', 'name')
                         ->label('Catégories du produit :')
                         ->required()
                         ->options(Category::all()->mapWithKeys(function (Category $category) {
