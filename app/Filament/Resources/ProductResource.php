@@ -52,32 +52,27 @@ class ProductResource extends Resource
                         ->options(Category::all()->mapWithKeys(function (Category $category) {
                             return [$category->id => $category->name];
                         })),
-                    Toggle::make('visible')->default(true),
-                    Toggle::make('available')->default(true)->label('Disponible'),
+                    Toggle::make('available')
+                        ->default(true)
+                        ->label('Disponible'),
                     TextInput::make('price')
                         ->label('Prix du produit :')
                         ->suffix('€')
                         ->mask(
-                            fn (Mask $mask) => $mask
+                            fn (TextInput\Mask $mask) => $mask
                                 ->numeric()
-                                ->decimalPlaces(2)
-                                ->decimalSeparator(',')
-                                ->minValue(0)
-                                ->padFractionalZeros()
-                                ->thousandsSeparator('.'),
+                                ->thousandsSeparator('.')
+                                ->decimalSeparator(','),
                         )
                         ->required(),
                     TextInput::make('old_price')
                         ->label('Ancien prix du produit (prix barré) :')
                         ->suffix('€')
                         ->mask(
-                            fn (Mask $mask) => $mask
+                            fn (TextInput\Mask $mask) => $mask
                                 ->numeric()
-                                ->decimalPlaces(2)
-                                ->decimalSeparator(',')
-                                ->minValue(0)
-                                ->padFractionalZeros()
-                                ->thousandsSeparator('.'),
+                                ->thousandsSeparator('.')
+                                ->decimalSeparator(','),
                         )
                 ])->columnSpan(1)
             ])->columns(3);
@@ -92,7 +87,7 @@ class ProductResource extends Resource
                     ->sortable(),
                 TextColumn::make('price')
                     ->label('Prix')
-                    ->suffix('€')
+                    ->money('eur')
                     ->sortable(),
                 BooleanColumn::make('visible')
                     ->label('Visible')

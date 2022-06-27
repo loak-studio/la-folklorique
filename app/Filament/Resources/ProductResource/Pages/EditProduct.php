@@ -10,6 +10,20 @@ class EditProduct extends EditRecord
 {
     protected static string $resource = ProductResource::class;
 
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $data['price'] = (int) round(($data['price'] * 100));
+        $data['old_price'] = (int) round(($data['old_price'] * 100));
+        return $data;
+    }
+
+    protected function mutateFormDataBeforeFill(array $data): array
+    {
+        $data['price'] = number_format($data['price'] / 100, 2, ',', '.');
+        $data['old_price'] = number_format($data['old_price'] / 100, 2, ',', '.');
+        return $data;
+    }
+
     protected function getActions(): array
     {
         return [
