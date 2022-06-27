@@ -1,6 +1,7 @@
 <div>
     <section class="w-full max-w-5xl mx-auto text-white lg:grid lg:grid-cols-9 lg:gap-24">
-        <div class="col-span-5">
+
+        <div class="col-span-5 ">
             <figure class=" aspect-[5/6] sm:w-8/12 mx-auto lg:w-full ">
                 <img class="object-cover w-full h-full" src="/storage/{{ $displayedImage }}" alt="">
             </figure>
@@ -14,6 +15,7 @@
                     </li>
                 @endforeach
             </ul>
+
         </div>
         <div class="col-span-4 px-4 lg:px-0">
             <h1 class="text-4xl font-bold ">
@@ -36,5 +38,7 @@
             </span>
         </div>
     </section>
+    <img class="absolute hidden rotate-90 xl:block -left-52 blur-sm" src="/assets/orange3.webp" alt="">
+    <img class="absolute hidden -mt-32 md:block -right-72 " src="/assets/confetti.svg" alt="">
     <x-product.featured :products="$featured_products" />
 </div>
