@@ -6,7 +6,7 @@
             Merci pour leur confiance. <br>
         </p>
     </div>
-    <div id="map" class="h-[600px]">
+    <div id="map" class="h-[600px] z-0">
 
     </div>
     <div class="w-full max-w-6xl mx-auto mb-24">
