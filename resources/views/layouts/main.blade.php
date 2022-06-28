@@ -3,7 +3,13 @@
     'breadcrumb' => [],
     'hideTitle' => false,
     'enableLivewire' => false,
+    'description' => 'La Folklorique est une bière artisanale au parfum d\'orange. Elle a été brassée pour rendre hommage aux carnavals de la région du Centre.',
 ])
+
+@php
+$title = $title != 'La Folklorique' ? $title . ' | La Folklorique' : $title;
+@endphp
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,11 +18,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        {{ $title != 'La Folklorique' ? $title . ' | La Folklorique' : $title }}
+        {{ $title }}
     </title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <meta name="description" content="Je suis UX/UI designer free-lance dans la région de Tournai !">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ env('APP_URL') }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image" content="{{ env('APP_URL') }}share.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ env('APP_URL') }}">
+    <meta property="twitter:title" content="{{ $title }}">
+    <meta property="twitter:description" content="Je suis UX/UI designer free-lance dans la région de Tournai !">
+    <meta property="twitter:image" content="{{ env('APP_URL') }}/share.png">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-185687064-1"></script>
     @livewireStyles
 </head>

@@ -1,6 +1,5 @@
 <div>
     <section class="w-full max-w-5xl mx-auto text-white lg:grid lg:grid-cols-9 lg:gap-24">
-
         <div class="col-span-5 ">
             <figure class=" aspect-[5/6] sm:w-8/12 mx-auto lg:w-full ">
                 <img class="object-cover w-full h-full" src="/storage/{{ $displayedImage }}" alt="">

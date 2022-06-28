@@ -66,6 +66,7 @@ class ShowProduct extends Component
         return view('livewire.show-product')->layout('layouts.main', [
             'title' => $this->product->name,
             'hideTitle' => true,
+            'description' => $this->product->description,
             'breadcrumb' => [
                 ['name' => 'Boutique', 'route' => route('boutique')],
                 ['name' => $this->product->categories[0]->name, 'route' => route('category', $this->product->categories[0]->slug)],
