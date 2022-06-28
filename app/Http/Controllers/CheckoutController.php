@@ -174,7 +174,7 @@ class CheckoutController extends Controller
             'price_data' => [
                 'currency' => 'eur',
                 'product_data' => [
-                    'name' => "Commande La Folklorique",
+                    'name' => "Commande La Folklorique " . $order_id,
                 ],
                 'unit_amount' => $price,
             ],
