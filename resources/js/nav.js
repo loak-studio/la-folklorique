@@ -3,9 +3,9 @@ document.addEventListener("turbolinks:load", function() {
     const close = document.querySelector('[data-mobile-navigation-close]')
     const nav = document.querySelector('[data-mobile-navigation]')
     button.addEventListener('click',()=>{
-        nav.classList.remove('-translate-x-[1000px]')
+        nav.classList.remove('-translate-x-[2000px]')
     })
     close.addEventListener('click',()=>{
-        nav.classList.add('-translate-x-[1000px]')
+        nav.classList.add('-translate-x-[2000px]')
     })
 })

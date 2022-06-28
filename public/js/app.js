@@ -4402,10 +4402,10 @@ document.addEventListener("turbolinks:load", function () {
   var close = document.querySelector('[data-mobile-navigation-close]');
   var nav = document.querySelector('[data-mobile-navigation]');
   button.addEventListener('click', function () {
-    nav.classList.remove('-translate-x-[1000px]');
+    nav.classList.remove('-translate-x-[2000px]');
   });
   close.addEventListener('click', function () {
-    nav.classList.add('-translate-x-[1000px]');
+    nav.classList.add('-translate-x-[2000px]');
   });
 });
 
