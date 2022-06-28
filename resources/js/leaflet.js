@@ -7,6 +7,13 @@ const binche = {
     lon:"4.1701677159951"
 }
 
+const Icon = L.icon({
+    iconUrl: '/pin.svg',
+    iconSize: [40, 47],
+    popupAnchor: [20, -47],
+    iconAnchor: [0, 47],
+});
+
 
 
 
@@ -27,7 +34,7 @@ document.addEventListener("turbolinks:load", function() {
             const city = shop.dataset.city
             const latitude = shop.dataset.latitude
             const longitude = shop.dataset.longitude
-            let m = L.marker([latitude,longitude]).addTo(map)
+            let m = L.marker([latitude,longitude], {icon:Icon}).addTo(map)
             m.bindPopup(`
             <p>${name}</p>
             <p>${street}, ${city}</p>

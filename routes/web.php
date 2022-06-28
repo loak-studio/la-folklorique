@@ -36,6 +36,8 @@ Route::middleware([HandleCart::class, BannerMiddleware::class])->group(function 
     Route::post('/contact', [PagesController::class, 'getContactFrom'])->name('send-contact');
     Route::get('/boutique', [PagesController::class, 'shop'])->name('boutique');
     Route::get('/categorie/{slug}',  [PagesController::class, 'category'])->name('category');
+    Route::get('/event', [PagesController::class, 'event'])->name('event');
+
 
     Route::get('/produit/{slug}', ShowProduct::class)->name('product');
     Route::get('/panier', ShowCart::class)->name('panier');

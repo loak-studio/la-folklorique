@@ -2291,6 +2291,12 @@ var binche = {
   lat: "50.412824846085",
   lon: "4.1701677159951"
 };
+var Icon = L.icon({
+  iconUrl: '/pin.svg',
+  iconSize: [40, 47],
+  popupAnchor: [20, -47],
+  iconAnchor: [0, 47]
+});
 document.addEventListener("turbolinks:load", function () {
   var map = document.querySelector('#map');
 
@@ -2311,7 +2317,9 @@ document.addEventListener("turbolinks:load", function () {
       var city = shop.dataset.city;
       var latitude = shop.dataset.latitude;
       var longitude = shop.dataset.longitude;
-      var m = L.marker([latitude, longitude]).addTo(_map);
+      var m = L.marker([latitude, longitude], {
+        icon: Icon
+      }).addTo(_map);
       m.bindPopup("\n            <p>".concat(name, "</p>\n            <p>").concat(street, ", ").concat(city, "</p>\n            <a target=\"_blank\" href=\"").concat('https://www.google.be/maps?hl=fr&q=' + street + " " + city, "\">\n            Itin\xE9raire\n            </a>\n            \n            "));
     });
   }

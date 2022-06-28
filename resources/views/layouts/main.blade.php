@@ -7,6 +7,7 @@
 ])
 
 @php
+$cleanTitle = $title;
 $title = $title != 'La Folklorique' ? $title . ' | La Folklorique' : $title;
 @endphp
 
@@ -54,13 +55,14 @@ $title = $title != 'La Folklorique' ? $title . ' | La Folklorique' : $title;
     <div class="relative z-10 flex flex-col h-full min-h-screen overflow-x-hidden bg-dark">
         @include('layouts.header')
         @if (count($breadcrumb) > 0)
-            <x-layout.breadcrumb :hideTitle="$hideTitle" :title="$title" :items="$breadcrumb" />
+            <x-layout.breadcrumb :hideTitle="$hideTitle" :title="$cleanTitle" :items="$breadcrumb" />
         @endif
         <main class="flex-1">
             {{ $slot }}
         </main>
         @include('layouts.footer')
     </div>
+
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
         data-turbolinks-eval="false" data-turbo-eval="false"></script>

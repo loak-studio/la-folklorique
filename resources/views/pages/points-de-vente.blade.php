@@ -6,6 +6,8 @@
             Merci pour leur confiance. <br>
         </p>
     </div>
+
+    <img class="absolute hidden -mt-32 md:block -right-44 " src="/assets/confetti.svg" alt="">
     <div id="map" class="h-[600px] z-0">
 
     </div>

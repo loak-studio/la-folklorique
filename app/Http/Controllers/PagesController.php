@@ -74,4 +74,9 @@ class PagesController extends Controller
         session()->forget('cart_uuid');
         return view('pages.payment-accepted', ["transfer" => true, "order" => $order]);
     }
+
+    public function event()
+    {
+        return view('pages.event');
+    }
 }
