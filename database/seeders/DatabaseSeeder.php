@@ -111,6 +111,7 @@ class DatabaseSeeder extends Seeder
         $order2->notes = "none";
         $order2->payment = 'stripe';
         $order2->price = 0;
+        $order2->status = 'processing';
         $order2->setCreatedAt(now()->subMonths(1));
         $order2->save();
 
@@ -133,11 +134,12 @@ class DatabaseSeeder extends Seeder
         $order3->billing_country = "Country";
         $order3->billing_phone = "123456789";
         $order3->billing_email = "john@doe.com";
-        $order3->shipping = "shipping";
+        $order3->shipping = "collect";
         $order3->shipping_cost = "10";
         $order3->notes = "none";
         $order3->payment = 'stripe';
         $order3->price = 0;
+        $order3->status = 'cancelled';
         $order3->setCreatedAt(now()->subMonths(1));
         $order3->save();
 
@@ -165,6 +167,7 @@ class DatabaseSeeder extends Seeder
         $order4->notes = "none";
         $order4->payment = 'stripe';
         $order4->price = 0;
+        $order4->status = 'finished';
         $order4->setCreatedAt(now()->subMonths(3));
         $order4->save();
 

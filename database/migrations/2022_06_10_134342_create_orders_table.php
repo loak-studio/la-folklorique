@@ -36,10 +36,10 @@ return new class extends Migration
             $table->decimal('shipping_cost', 10, 2);
             $table->enum('payment', ['stripe', 'paypal', 'cash', 'transfer']);
             $table->enum('shipping', ['shipping', 'collect']);
+            $table->enum('status', ['pending', 'processing', 'cancelled', 'finished'])->default('pending');
             $table->boolean('paid')->default(false);
             $table->text('notes')->nullable();
             $table->string('price');
-            $table->boolean('has_been_send')->default(false);
             $table->foreignId('coupon_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
