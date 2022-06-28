@@ -2170,7 +2170,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _faq__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_faq__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nav */ "./resources/js/nav.js");
 /* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nav__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! turbolinks-prefetch */ "./node_modules/turbolinks-prefetch/index.js");
+/* harmony import */ var _confetti_parallax__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./confetti-parallax */ "./resources/js/confetti-parallax.js");
+/* harmony import */ var _confetti_parallax__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_confetti_parallax__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _specification_reveal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./specification-reveal */ "./resources/js/specification-reveal.js");
+/* harmony import */ var _specification_reveal__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_specification_reveal__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! turbolinks-prefetch */ "./node_modules/turbolinks-prefetch/index.js");
+
+
 
 
 
@@ -2180,7 +2186,7 @@ var Turbolinks = __webpack_require__(/*! turbolinks */ "./node_modules/turbolink
 
 Turbolinks.start();
 
-turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_4__["default"].start();
+turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_6__["default"].start();
 
 /***/ }),
 
@@ -2221,6 +2227,23 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/confetti-parallax.js":
+/*!*******************************************!*\
+  !*** ./resources/js/confetti-parallax.js ***!
+  \*******************************************/
+/***/ (() => {
+
+document.addEventListener("turbolinks:load", function () {
+  var img = document.querySelectorAll('img[src="/assets/confetti.svg"]');
+  window.addEventListener('scroll', function (e) {
+    img.forEach(function (i) {
+      i.style.transform = "translateY(".concat(-window.scrollY / window.innerHeight * 100, "px)");
+    });
+  });
+});
 
 /***/ }),
 
@@ -2342,6 +2365,53 @@ document.addEventListener("turbolinks:load", function () {
   });
   close.addEventListener('click', function () {
     nav.classList.add('-translate-x-[1000px]');
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/specification-reveal.js":
+/*!**********************************************!*\
+  !*** ./resources/js/specification-reveal.js ***!
+  \**********************************************/
+/***/ (() => {
+
+document.addEventListener("turbolinks:load", function () {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      entry.target.classList.toggle('opacity-0', !entry.isIntersecting);
+    });
+  });
+  var item = document.querySelectorAll('[data-appear]');
+  item.forEach(function (t) {
+    t.classList.add('opacity-0');
+    t.classList.add('transition');
+    t.classList.add('duration-1000');
+    observer.observe(t);
+  });
+  var observerValues = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      entry.target.classList.toggle('translate-y-64', !entry.isIntersecting);
+      entry.target.classList.toggle('opacity-0', !entry.isIntersecting);
+    });
+  });
+  var values = document.querySelector('[data-appear-values]');
+  var valuesItems = values.querySelectorAll('[data-appear-values-item]');
+  valuesItems.forEach(function (m, i) {
+    m.classList.add('opacity-0');
+    m.classList.add('translate-y-64');
+    m.classList.add('transition');
+    m.classList.add('duration-1000');
+
+    if (i == 1) {
+      m.classList.add('delay-100');
+    }
+
+    if (i == 2) {
+      m.classList.add('delay-200');
+    }
+
+    observerValues.observe(m);
   });
 });
 

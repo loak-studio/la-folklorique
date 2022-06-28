@@ -1,6 +1,8 @@
-<section class="static flex flex-col w-screen h-screen text-white lg:relative lg:flex-row">
+<section class="static flex flex-col w-screen min-h-[900px] h-screen text-white lg:relative lg:flex-row">
+    <img class="orange transition  duration-200 absolute top-20 -rotate-[30deg] hidden lg:block blur-sm left-72 w-60"
+        src="/assets/orange1.png" alt="">
     <div class="flex flex-col justify-center w-full h-full lg:w-9/12">
-        <div class="max-w-xl p-5 pt-32 mx-auto">
+        <div class="p-5 pt-32 mx-auto ">
             <p class="pb-6 text-3xl font-semibold">
                 Celui qui vit folklore boit La Folklorique
             </p>
@@ -11,13 +13,13 @@
             <p class="pt-6 font-medium">
                 Découvrez la bière carnavalèsque au doux parfum d’orange
             </p>
-            <x-button class="max-w-fit">
-                Découvrir
+            <x-button href="{{ route('boutique') }}" class="max-w-fit">
+                Commander
             </x-button>
         </div>
     </div>
     <div class="relative w-full h-full select-none lg:w-3/12 lg:bg-primary-500 -z-50">
-        <div class="absolute bottom-[15%] left-20 lg:-left-2/4 w-full h-px">
+        <div class="absolute bottom-[15%] left-20 lg:-left-2/4 w-full">
             <div class="relative flex justify-center w-full">
                 <img data-leafs="1l"
                     class="absolute bottom-0 mb-12 -ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[10deg]"
@@ -48,4 +50,5 @@
             </div>
         </div>
     </div>
+    <img class="absolute hidden origin-center -bottom-20 -left-72 lg:block" src="/assets/confetti.svg" alt="">
 </section>

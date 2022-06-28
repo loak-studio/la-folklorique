@@ -17,11 +17,11 @@ $values = [
     ],
 ];
 @endphp
-<div class="flex flex-col items-center w-full max-w-5xl mx-auto mt-24 text-white sm:mt-0">
+<div data-appear-values class="flex flex-col items-center w-full max-w-5xl mx-auto mt-24 text-white sm:mt-0">
     <h2 class="w-full pb-5 mb-5 text-4xl font-semibold border-b-2 border-green-700 max-w-fit">Nos valeurs</h2>
     <div class="flex flex-col justify-between w-full px-4 md:my-16 md:flex-row gap-y-5 md:gap-y-0 md:px-0">
         @foreach ($values as $value)
-            <div
+            <div data-appear-values-item
                 class="w-full md:max-w-xs p-5 h-fit mx-auto space-y-5 rounded-md bg-stone-700 md:mx-5 {{ $loop->first ? 'md:-mt-12' : '' }} {{ $loop->last ? 'md:mt-12' : '' }}">
                 @switch($value['icon'])
                     @case('pin')
@@ -41,5 +41,10 @@ $values = [
             </div>
         @endforeach
 
+    </div>
+    <div class="leaf-group -z-10 absolute -rotate-[75deg] right-32 w-44 blur-sm">
+        <img class="absolute -rotate-12" src="/assets/leaf_left.png" alt="">
+        <img class="absolute origin-bottom rotate-[35deg]" src="/assets/leaf_left.png" alt="">
+        <img class="absolute origin-bottom-right rotate-[70deg]" src="/assets/leaf_left.png" alt="">
     </div>
 </div>

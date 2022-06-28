@@ -15,6 +15,11 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
+    public function getTotalInEuros()
+    {
+        return $this->price / 100;
+    }
+
     public function coupon()
     {
         return $this->belongsTo(Coupon::class);

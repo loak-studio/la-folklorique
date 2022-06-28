@@ -22,3 +22,6 @@
     font-family: 'Folklard';
     src: url("/fonts/Folklard.ttf");
 }
+.font-folklard{
+    margin-bottom: -0.5ch;
+}

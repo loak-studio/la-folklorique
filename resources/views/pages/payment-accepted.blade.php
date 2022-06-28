@@ -7,7 +7,7 @@
             <p class="text-white">
                 Il ne vous reste plus qu’à effectuer le paiement. <br />
                 IBAN : BE94 9738 1940 <br />
-                Montant : {{ $order->price }}€ <br />
+                Montant : {{ $order->getTotalInEuros() }}€ <br />
                 Communication : <span class="p-1 font-bold bg-zinc-700">
                     {{ $order->shipping_first_name }}, {{ $order->shipping_last_name }},
                     {{ $order->id }}</span> <br />
