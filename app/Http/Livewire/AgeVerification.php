@@ -13,6 +13,7 @@ class AgeVerification extends Component
         $this->isOk = $value;
         if ($value) {
             session()->put('is_ok', true);
+            $this->dispatchBrowserEvent('launch-hero-animation');
         }
         $this->render();
     }

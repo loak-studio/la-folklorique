@@ -6835,6 +6835,10 @@ html {
     width: 25%;
   }
 
+  .lg\:w-0{
+    width: 0px;
+  }
+
   .lg\:min-w-\[140px\]{
     min-width: 140px;
   }
@@ -7500,131 +7504,210 @@ html {
 
 
 @-webkit-keyframes leafOneLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(10deg);
-    }
+    0% {transform: rotate(50deg);}
+    100% {transform: rotate(10deg);}
 }
 @keyframes leafOneLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(10deg);
-    }
+    0% {transform: rotate(50deg);}
+    100% {transform: rotate(10deg);}
 }
 @-webkit-keyframes leafOneRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(-10deg);
-    }
+    0% {   transform: rotate(-50deg); }
+    100% { transform: rotate(-10deg); }
 }
 @keyframes leafOneRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(-10deg);
-    }
+    0% {   transform: rotate(-50deg); }
+    100% { transform: rotate(-10deg); }
+}
+@-webkit-keyframes leafTwoLeft {
+    0% {transform: rotate(50deg);}
+    100% {transform: rotate(-25deg);}
+}
+@keyframes leafTwoLeft {
+    0% {transform: rotate(50deg);}
+    100% {transform: rotate(-25deg);}
+}
+@-webkit-keyframes leafTwoRight {
+    0% { transform: rotate(-50deg);}
+    100% { transform: rotate(25deg);}
+}
+@keyframes leafTwoRight {
+    0% { transform: rotate(-50deg);}
+    100% { transform: rotate(25deg);}
+}
+@-webkit-keyframes leafThreeLeft {
+    0% {transform: rotate(50deg); }
+    100% { transform: rotate(-45deg); }
+}
+@keyframes leafThreeLeft {
+    0% {transform: rotate(50deg); }
+    100% { transform: rotate(-45deg); }
+}
+@-webkit-keyframes leafThreeRight {
+    0% {   transform: rotate(-50deg);  }
+    100% {   transform: rotate(45deg); }
+}
+@keyframes leafThreeRight {
+    0% {   transform: rotate(-50deg);  }
+    100% {   transform: rotate(45deg); }
+}
+
+@-webkit-keyframes windOneLeft {
+    0% { transform: rotate(10deg); }
+    50% { transform: rotate(7deg); }
+    100% {  transform: rotate(11deg);  }
+}
+
+@keyframes windOneLeft {
+    0% { transform: rotate(10deg); }
+    50% { transform: rotate(7deg); }
+    100% {  transform: rotate(11deg);  }
+}
+
+@-webkit-keyframes windOneRight {
+    0% {   transform: rotate(-10deg); }
+    50% { transform: rotate(-16deg); }
+    100% { transform: rotate(-9deg); }
+}
+
+@keyframes windOneRight {
+    0% {   transform: rotate(-10deg); }
+    50% { transform: rotate(-16deg); }
+    100% { transform: rotate(-9deg); }
+}
+
+@-webkit-keyframes windTwoLeft {
+    0% {   transform: rotate(-25deg);   }
+    50% { transform: rotate(-28deg); }
+    100% {   transform: rotate(-24deg); }
+}
+
+@keyframes windTwoLeft {
+    0% {   transform: rotate(-25deg);   }
+    50% { transform: rotate(-28deg); }
+    100% {   transform: rotate(-24deg); }
+}
+
+@-webkit-keyframes windTwoRight {
+    0% {   transform: rotate(25deg);  }
+    50% { transform: rotate(19deg); }
+    100% {  transform: rotate(26deg); }
+}
+
+@keyframes windTwoRight {
+    0% {   transform: rotate(25deg);  }
+    50% { transform: rotate(19deg); }
+    100% {  transform: rotate(26deg); }
+}
+
+@-webkit-keyframes windThreeLeft {
+    0% {transform: rotate(-45deg);   }
+    50% { transform: rotate(-48deg); }
+    100% {transform: rotate(-44deg); }
+}
+
+@keyframes windThreeLeft {
+    0% {transform: rotate(-45deg);   }
+    50% { transform: rotate(-48deg); }
+    100% {transform: rotate(-44deg); }
+}
+
+@-webkit-keyframes windThreeRight {
+    0% {   transform: rotate(45deg);  }
+    50% { transform: rotate(39deg); }
+    100% {  transform: rotate(46deg); }
+}
+
+@keyframes windThreeRight {
+    0% {   transform: rotate(45deg);  }
+    50% { transform: rotate(39deg); }
+    100% {  transform: rotate(46deg); }
 }
 
 .leafOneLeft {
-    -webkit-animation: leafOneLeft 1s ease-out;
-            animation: leafOneLeft 1s ease-out;
+    -webkit-animation-name: leafOneLeft, windOneLeft;
+            animation-name: leafOneLeft, windOneLeft;
+    -webkit-animation-duration: 1s, 5s;
+            animation-duration: 1s, 5s;
+    -webkit-animation-delay: 0ms, 1s;
+            animation-delay: 0ms, 1s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+            animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+            animation-iteration-count: 1, infinite;
+    -webkit-animation-direction: normal, alternate;
+            animation-direction: normal, alternate;
 }
 .leafOneRight {
-    -webkit-animation: leafOneRight 1s ease-out;
-            animation: leafOneRight 1s ease-out;
-}
-
-@-webkit-keyframes leafTwoLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(-25deg);
-    }
-}
-
-@keyframes leafTwoLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(-25deg);
-    }
-}
-@-webkit-keyframes leafTwoRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(25deg);
-    }
-}
-@keyframes leafTwoRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(25deg);
-    }
+    -webkit-animation-name: leafOneRight, windOneRight;
+            animation-name: leafOneRight, windOneRight;
+    -webkit-animation-duration: 1s, 5s;
+            animation-duration: 1s, 5s;
+    -webkit-animation-delay: 0ms, 1s;
+            animation-delay: 0ms, 1s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+            animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+            animation-iteration-count: 1, infinite;
+    -webkit-animation-direction: normal, alternate;
+            animation-direction: normal, alternate;
 }
 
 .leafTwoLeft {
-    -webkit-animation: leafTwoLeft 1s ease-out;
-            animation: leafTwoLeft 1s ease-out;
+    -webkit-animation-name: leafTwoLeft, windTwoLeft;
+            animation-name: leafTwoLeft, windTwoLeft;
+    -webkit-animation-duration: 1s, 5s;
+            animation-duration: 1s, 5s;
+    -webkit-animation-delay: 0ms, 1s;
+            animation-delay: 0ms, 1s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+            animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+            animation-iteration-count: 1, infinite;
+    -webkit-animation-direction: normal, alternate;
+            animation-direction: normal, alternate;
 }
 .leafTwoRight {
-    -webkit-animation: leafTwoRight 1s ease-out;
-            animation: leafTwoRight 1s ease-out;
+    -webkit-animation-name: leafTwoRight, windTwoRight;
+            animation-name: leafTwoRight, windTwoRight;
+    -webkit-animation-duration: 1s, 5s;
+            animation-duration: 1s, 5s;
+    -webkit-animation-delay: 0ms, 1s;
+            animation-delay: 0ms, 1s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+            animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+            animation-iteration-count: 1, infinite;
+    -webkit-animation-direction: normal, alternate;
+            animation-direction: normal, alternate;
 }
-
-@-webkit-keyframes leafThreeLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(-45deg);
-    }
-}
-
-@keyframes leafThreeLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(-45deg);
-    }
-}
-@-webkit-keyframes leafThreeRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(45deg);
-    }
-}
-@keyframes leafThreeRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(45deg);
-    }
-}
-
 .leafThreeLeft {
-    -webkit-animation: leafThreeLeft 1s ease-out;
-            animation: leafThreeLeft 1s ease-out;
+    -webkit-animation-name: leafThreeLeft, windThreeLeft;
+            animation-name: leafThreeLeft, windThreeLeft;
+    -webkit-animation-duration: 1s, 5s;
+            animation-duration: 1s, 5s;
+    -webkit-animation-delay: 0ms, 1s;
+            animation-delay: 0ms, 1s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+            animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+            animation-iteration-count: 1, infinite;
+    -webkit-animation-direction: normal, alternate;
+            animation-direction: normal, alternate;
 }
 .leafThreeRight {
-    -webkit-animation: leafThreeRight 1s ease-out;
-            animation: leafThreeRight 1s ease-out;
+    -webkit-animation-name: leafThreeRight, windThreeRight;
+            animation-name: leafThreeRight, windThreeRight;
+    -webkit-animation-duration: 1s, 5s;
+            animation-duration: 1s, 5s;
+    -webkit-animation-delay: 0ms, 1s;
+            animation-delay: 0ms, 1s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+            animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+            animation-iteration-count: 1, infinite;
+    -webkit-animation-direction: normal, alternate;
+            animation-direction: normal, alternate;
 }
 @-webkit-keyframes confetti {
     0% {
@@ -12293,6 +12376,9 @@ input[type="radio"]:checked:focus{
   }
   .lg\:w-3\/12{
     width: 25%;
+  }
+  .lg\:w-0{
+    width: 0px;
   }
   .lg\:min-w-\[140px\]{
     min-width: 140px;

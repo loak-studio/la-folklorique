@@ -18,7 +18,7 @@ $notPicked = 'text-gray-400 border-gray-400';
         </button>
     </div>
     @if ($shippingPlace == 'brewery')
-        <p class="font-normal text-white">
+        <p class="mt-4 font-normal text-white">
             La brasserie se trouve au :
             <span class="block font-semibold">
                 Rue Albert 1er, 42

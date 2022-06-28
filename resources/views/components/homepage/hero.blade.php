@@ -22,22 +22,22 @@
         <div class="absolute bottom-[15%] left-20 lg:-left-2/4 w-full">
             <div class="relative flex justify-center w-full">
                 <img data-leafs="1l"
-                    class="absolute bottom-0 mb-12 -ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[10deg]"
+                    class="absolute bottom-0 {{ session('is_ok') ? 'leafOneLeft' : '' }} mb-12 -ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[10deg]"
                     src="/assets/leaf_left.png" alt="">
                 <img data-leafs="1r"
-                    class="absolute bottom-0 mb-12 ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-10deg]"
+                    class="absolute bottom-0 {{ session('is_ok') ? 'leafOneRight' : '' }} mb-12 ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-10deg]"
                     src="/assets/leaf_right.png" alt="">
                 <img data-leafs="2l"
-                    class="absolute bottom-0 mb-8 -ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-25deg]"
+                    class="absolute bottom-0 {{ session('is_ok') ? 'leafTwoLeft' : '' }} mb-8 -ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-25deg]"
                     src="/assets/leaf_left.png" alt="">
                 <img data-leafs="2r"
-                    class="absolute bottom-0 mb-8 ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[25deg]"
+                    class="absolute bottom-0 {{ session('is_ok') ? 'leafTwoRight' : '' }} mb-8 ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[25deg]"
                     src="/assets/leaf_right.png" alt="">
                 <img data-leafs="3l"
-                    class="absolute -ml-48 mb-4 bottom-0 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-45deg]"
+                    class="absolute -ml-48 mb-4 {{ session('is_ok') ? 'leafThreeLeft' : '' }} bottom-0 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-45deg]"
                     src="/assets/leaf_left.png" alt="">
                 <img data-leafs="3r"
-                    class="absolute ml-48 mb-4 bottom-0 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[45deg]"
+                    class="absolute ml-48 mb-4 {{ session('is_ok') ? 'leafThreeRight' : '' }} bottom-0 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[45deg]"
                     src="/assets/leaf_right.png" alt="">
                 <img class="absolute -mb-4 bottom-0 flex 2xl:max-w-[230px] 2xl:min-w-[230px] xl:max-w-[210px] xl:min-w-[210px] lg:max-w-[190px] lg:min-w-[190px] max-w-[165px] min-w-[165px] -ml-56"
                     src="/assets/orange3.webp" alt="">

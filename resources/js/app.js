@@ -6,6 +6,7 @@ import './animations/confetti-parallax'
 import './animations/values'
 import './animations/specification'
 import './animations/opacity'
+import './animations/hero'
 var Turbolinks = require("turbolinks")
 Turbolinks.start()
 import TurbolinksPrefetch from "turbolinks-prefetch";

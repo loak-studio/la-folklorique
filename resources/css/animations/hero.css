@@ -1,71 +1,110 @@
 @keyframes leafOneLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(10deg);
-    }
+    0% {transform: rotate(50deg);}
+    100% {transform: rotate(10deg);}
 }
 @keyframes leafOneRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(-10deg);
-    }
+    0% {   transform: rotate(-50deg); }
+    100% { transform: rotate(-10deg); }
+}
+@keyframes leafTwoLeft {
+    0% {transform: rotate(50deg);}
+    100% {transform: rotate(-25deg);}
+}
+@keyframes leafTwoRight {
+    0% { transform: rotate(-50deg);}
+    100% { transform: rotate(25deg);}
+}
+@keyframes leafThreeLeft {
+    0% {transform: rotate(50deg); }
+    100% { transform: rotate(-45deg); }
+}
+@keyframes leafThreeRight {
+    0% {   transform: rotate(-50deg);  }
+    100% {   transform: rotate(45deg); }
+}
+
+@keyframes windOneLeft {
+    0% { transform: rotate(10deg); }
+    50% { transform: rotate(7deg); }
+    100% {  transform: rotate(11deg);  }
+}
+
+@keyframes windOneRight {
+    0% {   transform: rotate(-10deg); }
+    50% { transform: rotate(-16deg); }
+    100% { transform: rotate(-9deg); }
+}
+
+@keyframes windTwoLeft {
+    0% {   transform: rotate(-25deg);   }
+    50% { transform: rotate(-28deg); }
+    100% {   transform: rotate(-24deg); }
+}
+
+@keyframes windTwoRight {
+    0% {   transform: rotate(25deg);  }
+    50% { transform: rotate(19deg); }
+    100% {  transform: rotate(26deg); }
+}
+
+@keyframes windThreeLeft {
+    0% {transform: rotate(-45deg);   }
+    50% { transform: rotate(-48deg); }
+    100% {transform: rotate(-44deg); }
+}
+
+@keyframes windThreeRight {
+    0% {   transform: rotate(45deg);  }
+    50% { transform: rotate(39deg); }
+    100% {  transform: rotate(46deg); }
 }
 
 .leafOneLeft {
-    animation: leafOneLeft 1s ease-out;
+    animation-name: leafOneLeft, windOneLeft;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
 }
 .leafOneRight {
-    animation: leafOneRight 1s ease-out;
-}
-
-@keyframes leafTwoLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(-25deg);
-    }
-}
-@keyframes leafTwoRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(25deg);
-    }
+    animation-name: leafOneRight, windOneRight;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
 }
 
 .leafTwoLeft {
-    animation: leafTwoLeft 1s ease-out;
+    animation-name: leafTwoLeft, windTwoLeft;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
 }
 .leafTwoRight {
-    animation: leafTwoRight 1s ease-out;
+    animation-name: leafTwoRight, windTwoRight;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
 }
-
-@keyframes leafThreeLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(-45deg);
-    }
-}
-@keyframes leafThreeRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(45deg);
-    }
-}
-
 .leafThreeLeft {
-    animation: leafThreeLeft 1s ease-out;
+    animation-name: leafThreeLeft, windThreeLeft;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
 }
 .leafThreeRight {
-    animation: leafThreeRight 1s ease-out;
+    animation-name: leafThreeRight, windThreeRight;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
 }

@@ -4058,6 +4058,50 @@ document.addEventListener("turbolinks:load", function () {
 
 /***/ }),
 
+/***/ "./resources/js/animations/hero.js":
+/*!*****************************************!*\
+  !*** ./resources/js/animations/hero.js ***!
+  \*****************************************/
+/***/ (() => {
+
+window.addEventListener('launch-hero-animation', function (event) {
+  var leafs = document.querySelectorAll('[data-leafs]');
+  leafs.forEach(function (leaf) {
+    console.log(leaf.dataset.leafs);
+
+    switch (leaf.dataset.leafs) {
+      case '1l':
+        leaf.classList.add('leafOneLeft');
+        break;
+
+      case '2l':
+        leaf.classList.add('leafTwoLeft');
+        break;
+
+      case '3l':
+        leaf.classList.add('leafThreeLeft');
+        break;
+
+      case '1r':
+        leaf.classList.add('leafOneRight');
+        break;
+
+      case '2r':
+        leaf.classList.add('leafTwoRight');
+        break;
+
+      case '3r':
+        leaf.classList.add('leafThreeRight');
+        break;
+
+      default:
+        break;
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/animations/opacity.js":
 /*!********************************************!*\
   !*** ./resources/js/animations/opacity.js ***!
@@ -4183,7 +4227,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animations_values__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/values */ "./resources/js/animations/values.js");
 /* harmony import */ var _animations_specification__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations/specification */ "./resources/js/animations/specification.js");
 /* harmony import */ var _animations_opacity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./animations/opacity */ "./resources/js/animations/opacity.js");
-/* harmony import */ var turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! turbolinks-prefetch */ "./node_modules/turbolinks-prefetch/index.js");
+/* harmony import */ var _animations_hero__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animations/hero */ "./resources/js/animations/hero.js");
+/* harmony import */ var _animations_hero__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_animations_hero__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! turbolinks-prefetch */ "./node_modules/turbolinks-prefetch/index.js");
+
 
 
 
@@ -4197,7 +4244,7 @@ var Turbolinks = __webpack_require__(/*! turbolinks */ "./node_modules/turbolink
 
 Turbolinks.start();
 
-turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_8__["default"].start();
+turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_9__["default"].start();
 
 /***/ }),
 
