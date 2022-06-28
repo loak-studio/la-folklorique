@@ -54,19 +54,19 @@ $navLinks = collect([
             @php
                 $socialLinks = [
                     [
-                        'href' => 'https://instagram.com',
+                        'href' => 'https://www.instagram.com/lafolklorique',
                         'icon' => 'instagram',
                     ],
                     [
-                        'href' => 'https://instagram.com',
+                        'href' => 'https://www.facebook.com/BelgianDream',
                         'icon' => 'facebook',
                     ],
                     [
-                        'href' => 'https://instagram.com',
+                        'href' => 'https://www.linkedin.com/company/la-folklorique/',
                         'icon' => 'linkedin',
                     ],
                     [
-                        'href' => 'https://untapped.com',
+                        'href' => 'https://untappd.com/b/brasserie-de-la-couronne-la-folklorique/3880318',
                         'icon' => 'untappd',
                     ],
                 ];
@@ -74,7 +74,7 @@ $navLinks = collect([
             <ul class="flex gap-5 p-4 mt-16 lg:hidden">
                 @foreach ($socialLinks as $link)
                     <li class="block">
-                        <a href="{{ $link['href'] }}"
+                        <a target="_blank" href="{{ $link['href'] }}"
                             class="block p-2 transition rounded-md hover:bg-white hover:bg-opacity-30">
                             <x-l-icon size="24" name="{{ $link['icon'] }}" />
                         </a>

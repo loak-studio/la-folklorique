@@ -9,7 +9,7 @@ document.addEventListener("turbolinks:load", function() {
             {
                 opacity:[0,1],
             },
-            {duration:.1 }
+            {duration:1 }
           )
         animate(
             bottle,
@@ -17,7 +17,7 @@ document.addEventListener("turbolinks:load", function() {
                 opacity:[0,1],
                 y:[50,0],
             },
-            {duration:1, easing: spring(),delay: 1 }
+            {duration:1, easing: spring(),delay: 0.6 }
           )
           animate(
             image,

@@ -5,8 +5,7 @@
             mieux possible.
             Santé ! 🍻🎉</p>
         <video controls class="w-full max-w-2xl mx-auto ">
-            <source src="https://www.lafolklorique.be/wp-content/uploads/2021/01/ServiceLaFolklorique.mp4"
-                type="video/mp4">
+            <source src="/ServiceLaFolklorique.mp4" type="video/mp4">
         </video>
     </div>
 </x-main-layout>

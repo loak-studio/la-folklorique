@@ -4150,7 +4150,7 @@ document.addEventListener("turbolinks:load", function () {
     (0,motion__WEBPACK_IMPORTED_MODULE_1__.animate)(target, {
       opacity: [0, 1]
     }, {
-      duration: .1
+      duration: 1
     });
     (0,motion__WEBPACK_IMPORTED_MODULE_1__.animate)(bottle, {
       opacity: [0, 1],
@@ -4158,7 +4158,7 @@ document.addEventListener("turbolinks:load", function () {
     }, {
       duration: 1,
       easing: (0,motion__WEBPACK_IMPORTED_MODULE_2__.spring)(),
-      delay: 1
+      delay: 0.6
     });
     (0,motion__WEBPACK_IMPORTED_MODULE_1__.animate)(image, {
       opacity: [0, 1],
