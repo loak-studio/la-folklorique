@@ -1,4 +1,4 @@
-<div data-appear class="flex flex-row items-center w-full max-w-5xl mx-auto text-white">
+<div data-animation-opacity class="flex flex-row items-center w-full max-w-5xl mx-auto text-white opacity-0">
     <img class="hidden w-full max-w-lg rounded-md lg:flex" src="assets/ourbeer.webp"
         alt='Photo de la bière "La Folklorique"'>
     <div class="flex flex-col px-4 lg:w-full md:w-5/6 md:mx-auto gap-y-5 lg:p-9">

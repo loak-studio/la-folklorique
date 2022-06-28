@@ -10,7 +10,7 @@
 }
 @keyframes orange-1 {
     0% {transform: rotate(0deg);}
-    100% {transform: rotate(90deg) translateX(50px);}
+    100% {transform: rotate(45deg) translateX(10px);}
 }
 
 @keyframes orange-2{

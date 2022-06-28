@@ -7,7 +7,7 @@
         <path d="M17 17h-11v-14h-2" />
         <path d="M6 5l14 1l-1 7h-13" />
     </svg>
-    <span data-cart-count
+    <span
         class="absolute top-0 right-0 flex items-center justify-center w-5 h-5 text-sm text-white rounded-full bg-primary-500">
         {{ $quantity }}
     </span>

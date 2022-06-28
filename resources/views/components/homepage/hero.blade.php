@@ -1,5 +1,5 @@
 <section class="static flex flex-col w-screen min-h-[900px] h-screen text-white lg:relative lg:flex-row">
-    <img class="orange transition  duration-200 absolute top-20 -rotate-[30deg] hidden lg:block blur-sm left-72 w-60"
+    <img class="orange origin-center transition  duration-200 absolute top-20 -rotate-[30deg] hidden lg:block blur-sm left-72 w-60"
         src="/assets/orange1.png" alt="">
     <div class="flex flex-col justify-center w-full h-full lg:w-9/12">
         <div class="p-5 pt-32 mx-auto ">

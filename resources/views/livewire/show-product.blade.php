@@ -27,7 +27,7 @@
             <article class="mt-8">
                 {!! Str::of($product->description)->markdown() !!}
             </article>
-            <div data-add-to-cart class="flex items-center gap-10 mt-8">
+            <div class="flex items-center gap-10 mt-8">
                 <livewire:input-number :quantity="$quantity" />
                 <div class="-mt-6">
                     <x-button wire:click="addToCart">Ajouter au panier</x-button>
