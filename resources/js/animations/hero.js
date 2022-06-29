@@ -1,7 +1,6 @@
-window.addEventListener('launch-hero-animation', event => {
+document.addEventListener('launch-hero-animation', event => {
     const leafs = document.querySelectorAll('[data-leafs]')
     leafs.forEach(leaf=>{
-        console.log(leaf.dataset.leafs)
         switch (leaf.dataset.leafs) {
             case '1l':
                 leaf.classList.add('leafOneLeft')

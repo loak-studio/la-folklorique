@@ -23,7 +23,7 @@ $title = $title != 'La Folklorique | La bière du folklore carnavalesque' ? $tit
     </title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}" async></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <meta name="description" content="Je suis UX/UI designer free-lance dans la région de Tournai !">
 
