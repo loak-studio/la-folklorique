@@ -23,7 +23,8 @@ document.addEventListener("turbolinks:load", function() {
         const map = L.map('map', {
             zoomControl: true,
         scrollWheelZoom:false,
-        }).setView([binche.lat, binche.lon], 10);
+        }).setView([binche.lat, binche.lon], window.innerWidth < 1000 ? 8:10);
+        console.log()
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
         map.attributionControl.setPrefix('')
 
