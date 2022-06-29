@@ -12,8 +12,8 @@ class EditProduct extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        $data['price'] = (int) round(($data['price'] * 100));
-        $data['old_price'] = (int) round(($data['old_price'] * 100));
+        $data['price'] = (int) round(str_replace(',', '.', $data['price']) * 100);
+        $data['old_price'] = (int) round(str_replace(',', '.', $data['old_price']) * 100);
         return $data;
     }
 

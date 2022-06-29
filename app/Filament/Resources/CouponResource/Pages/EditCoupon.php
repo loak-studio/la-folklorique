@@ -12,7 +12,7 @@ class EditCoupon extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        $data['value'] = (int) round(($data['value'] * 100));
+        $data['value'] = (int) round(str_replace(',', '.', $data['value']) * 100);
         return $data;
     }
 
