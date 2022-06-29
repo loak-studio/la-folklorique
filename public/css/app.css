@@ -4051,6 +4051,9 @@ html {
 .gap-0{
   gap: 0px;
 }
+.gap-3\.5{
+  gap: 0.875rem;
+}
 .gap-y-24{
   row-gap: 6rem;
 }
@@ -9690,6 +9693,9 @@ select{
 }
 .gap-0{
   gap: 0px;
+}
+.gap-3\.5{
+  gap: 0.875rem;
 }
 .gap-y-24{
   row-gap: 6rem;

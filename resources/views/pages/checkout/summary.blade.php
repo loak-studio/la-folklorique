@@ -64,10 +64,14 @@
 
             </div>
             @if (session('payment_method') == 'transfer')
-                <p class="px-4 py-1 mt-4 bg-white rounded-md text-primary-500">
-                    Veuillez indiquer votre nom et prénom + n° de commande en communication. Votre commande ne sera pas
-                    traitée tant que les fonds ne seront pas perçus.
-                </p>
+                <div class="flex gap-3.5 p-4 mt-4 text-white bg-gray-700 rounded-md">
+                    <x-l-icon color="#E85011" size="24" class="shrink-0" name="receipt" />
+                    <p>
+                        Veuillez indiquer votre nom et prénom + n° de commande en communication. Votre commande ne sera
+                        pas
+                        traitée tant que les fonds ne seront pas perçus.
+                    </p>
+                </div>
             @endif
             <h3 class="flex justify-between my-5 text-2xl font-semibold text-white">
                 Adresse <a href="{{ route('checkout-address') }}">
