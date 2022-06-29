@@ -37,7 +37,22 @@ class Product extends Model
         parent::boot();
 
         self::saving(function ($model) {
-            $model->slug = Str::slug($model->name);
+            $new_slug = Str::slug($model->name);
+            $already_exist = Product::where('slug', $new_slug)->get();
+            if ($already_exist->count() > 0) {
+                $no_ok = true;
+                $index = 0;
+                while ($no_ok) {
+                    $index++;
+                    $slug = $new_slug . '-' . $index;
+                    if (!Product::where('slug', $slug)->get()->count() > 0) {
+                        $no_ok = false;
+                        $model->slug = $slug;
+                    }
+                }
+            } else {
+                $model->slug = $new_slug;
+            }
         });
     }
 }
