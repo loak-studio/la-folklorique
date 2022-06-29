@@ -24,7 +24,7 @@ $navLinks = collect([
             <path d="M3 19H21M3 5H21H3ZM3 12H21H3Z" stroke="white" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
         </svg>
-
+        <span class="sr-only">Menu</span>
     </button>
     <div class="relative flex items-center gap-5 lg:absolute lg:left-11 lg:gap-7">
         <x-logo />
@@ -42,7 +42,8 @@ $navLinks = collect([
                 <ul class="flex flex-col gap-5 mt-10 text-lg lg:mt-0 lg:flex-row lg:w-auto lg:gap-14">
                     @foreach ($navLinks as $link)
                         <li>
-                            <a class="p-4 transition rounded-md hover:bg-white hover:bg-opacity-30"
+                            <a title="{{ $link->get('label') }}"
+                                class="p-4 transition rounded-md hover:bg-white hover:bg-opacity-30"
                                 href="{{ route($link->get('route')) }}">
                                 {{ $link->get('label') }}
                             </a>
@@ -74,7 +75,7 @@ $navLinks = collect([
             <ul class="flex gap-5 p-4 mt-16 lg:hidden">
                 @foreach ($socialLinks as $link)
                     <li class="block">
-                        <a target="_blank" href="{{ $link['href'] }}"
+                        <a title="{{ $link['icon'] }}" target="_blank" href="{{ $link['href'] }}"
                             class="block p-2 transition rounded-md hover:bg-white hover:bg-opacity-30">
                             <x-l-icon size="24" name="{{ $link['icon'] }}" />
                         </a>

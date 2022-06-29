@@ -1,5 +1,5 @@
 @props([
-    'title' => 'La Folklorique',
+    'title' => 'La Folklorique | La bière du folklore carnavalesque',
     'breadcrumb' => [],
     'hideTitle' => false,
     'enableLivewire' => false,
@@ -8,7 +8,7 @@
 
 @php
 $cleanTitle = $title;
-$title = $title != 'La Folklorique' ? $title . ' | La Folklorique' : $title;
+$title = $title != 'La Folklorique | La bière du folklore carnavalesque' ? $title . ' | La Folklorique' : $title;
 @endphp
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $title = $title != 'La Folklorique' ? $title . ' | La Folklorique' : $title;
     </title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}" async></script>
 
     <meta name="description" content="Je suis UX/UI designer free-lance dans la région de Tournai !">
 
@@ -64,7 +64,7 @@ $title = $title != 'La Folklorique' ? $title . ' | La Folklorique' : $title;
     </div>
 
     @livewireScripts
-    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
+    <script async src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
         data-turbolinks-eval="false" data-turbo-eval="false"></script>
     <script>
         window.addEventListener("load", function() {

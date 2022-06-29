@@ -1,4 +1,4 @@
-<a href="https://loak.studio" target="_blank">
+<a title="loak.studio" href="https://loak.studio" target="_blank">
     <svg width="150" height="50" viewBox="0 0 300 94" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="300" height="94" rx="5" fill="#FBFFFD" />
         <path

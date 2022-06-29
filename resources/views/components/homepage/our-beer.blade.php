@@ -4,7 +4,10 @@
     <div class="flex flex-col px-4 lg:w-full md:w-5/6 md:mx-auto gap-y-5 lg:p-9">
         <h2 class="w-full pb-5 text-4xl font-semibold border-b-2 border-green-700 max-w-fit">Notre bière
         </h2>
-        <img class="w-full rounded-md lg:hidden" src="assets/ourbeer.webp" alt='Photo de la bière "La Folklorique"'>
+        <picture class="w-full rounded-md lg:hidden">
+            <source width="750" height="500" srcset="/assets/ourbeer.webp" type="image/webp">
+            <img src="/assets/ourbeer.png" alt='Photo de la bière "La Folklorique"'>
+        </picture>
         <p class="font-medium">
             <strong class="font-bold">
                 La Folklorique est une bière artisanale de qualité, à la recette unique, dotée d’une délicieuse
@@ -23,8 +26,17 @@
         </p>
     </div>
     <div class="absolute rotate-90 leaf-group -z-10 left-16 w-44 blur-sm">
-        <img class="absolute -rotate-12" src="/assets/leaf_left.png" alt="">
-        <img class="absolute origin-bottom rotate-[35deg]" src="/assets/leaf_left.png" alt="">
-        <img class="absolute origin-bottom-right rotate-[70deg]" src="/assets/leaf_left.png" alt="">
+        <picture class="absolute -rotate-12">
+            <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+            <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+        </picture>
+        <picture class="absolute origin-bottom rotate-[35deg]">
+            <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+            <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+        </picture>
+        <picture class="absolute origin-bottom-right rotate-[70deg]">
+            <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+            <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+        </picture>
     </div>
 </div>

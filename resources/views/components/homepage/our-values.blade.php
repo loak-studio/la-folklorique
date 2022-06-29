@@ -43,8 +43,17 @@ $values = [
 
     </div>
     <div class="leaf-group -z-10 absolute -rotate-[75deg] right-32 w-44 blur-sm">
-        <img class="absolute -rotate-12" src="/assets/leaf_left.png" alt="">
-        <img class="absolute origin-bottom rotate-[35deg]" src="/assets/leaf_left.png" alt="">
-        <img class="absolute origin-bottom-right rotate-[70deg]" src="/assets/leaf_left.png" alt="">
+        <picture class="absolute -rotate-12">
+            <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+            <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+        </picture>
+        <picture class="absolute origin-bottom rotate-[35deg]">
+            <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+            <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+        </picture>
+        <picture class="absolute origin-bottom-right rotate-[70deg]">
+            <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+            <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+        </picture>
     </div>
 </div>

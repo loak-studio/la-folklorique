@@ -47,7 +47,7 @@
     <div class="grid w-full max-w-5xl gap-10 mx-auto my-12 lg:gap-0 lg:grid-cols-3">
         <div>
             <h3 class="text-4xl font-folklard text-primary-500">
-                <a href="{{ route('home') }}">
+                <a title="Accueil" href="{{ route('home') }}">
                     La Folklorique
                 </a>
             </h3>
@@ -74,7 +74,7 @@
             <ul class="flex gap-5 mt-5">
                 @foreach ($socialLinks as $link)
                     <li class="block">
-                        <a target="_blank" href="{{ $link['href'] }}"
+                        <a title="{{ $link['icon'] }}" target="_blank" href="{{ $link['href'] }}"
                             class="block p-2 transition rounded-md hover:bg-white hover:bg-opacity-30">
                             <x-l-icon size="24" name="{{ $link['icon'] }}" />
                         </a>
@@ -114,7 +114,8 @@
             <ul class="flex flex-col gap-2">
                 @foreach ($links as $link)
                     <li>
-                        <a class="hover:underline" href="{{ route($link['route']) }}">{{ $link['label'] }}</a>
+                        <a title="{{ $link['label'] }}" class="hover:underline"
+                            href="{{ route($link['route']) }}">{{ $link['label'] }}</a>
                     </li>
                 @endforeach
             </ul>
@@ -123,7 +124,8 @@
             <ul class="flex flex-col gap-2">
                 <li>BE 0751.787.909</li>
                 <li>
-                    <a target="_blank" class="hover:underline" href="https://goo.gl/maps/mqHh5SQmf7SomwRx6">
+                    <a title="Voir sur la carte" target="_blank" class="hover:underline"
+                        href="https://goo.gl/maps/mqHh5SQmf7SomwRx6">
                         Rue Albert 1er, 42 <br>
                         7134 Leval-Trahergnies
                     </a>
