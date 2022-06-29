@@ -3,6 +3,7 @@
     'breadcrumb' => [],
     'hideTitle' => false,
     'enableLivewire' => false,
+    'noVerification' => false,
     'description' => 'La Folklorique est une bière artisanale au parfum d\'orange. Elle a été brassée pour rendre hommage aux carnavals de la région du Centre.',
 ])
 
@@ -49,9 +50,11 @@ $title = $title != 'La Folklorique | La bière du folklore carnavalesque' ? $tit
     @if (!empty($banner))
         <x-banner />
     @endif
-    @unless(session('is_ok'))
-        <livewire:age-verification />
-    @endunless
+    @if (!$noVerification)
+        @unless(session('is_ok'))
+            <livewire:age-verification />
+        @endunless
+    @endif
     <div class="relative z-10 flex flex-col h-full min-h-screen overflow-x-hidden bg-dark">
         @include('layouts.header')
         @if (count($breadcrumb) > 0)

@@ -1,4 +1,4 @@
-<x-main-layout title="Page introuvable">
+<x-main-layout :noVerification="true" title="Page introuvable">
     <div class="flex flex-col items-center px-4 pb-24 text-center text-white gap-7 pt-7 lg:px-0">
         <h1 class="text-4xl ">La page n'existe pas</h1>
         <svg width="173" height="234" viewBox="0 0 173 234" fill="none" xmlns="http://www.w3.org/2000/svg">
