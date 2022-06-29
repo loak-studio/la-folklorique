@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
         $coupon->save();
 
         $product = new Product();
+        $product->visible = true;
         $product->name = "Product ABC123";
         $product->price = 1000;
         $product->description = "Lorem";
@@ -53,6 +54,7 @@ class DatabaseSeeder extends Seeder
         $product->categories()->attach(Category::find(1));
 
         $product = new Product();
+        $product->visible = true;
         $product->name = "Product 2ABC123";
         $product->price = 1000;
         $product->description = "Lorem";
