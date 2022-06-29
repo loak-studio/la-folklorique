@@ -13,7 +13,6 @@ class ShowProduct extends Component
     public $product;
     public $featured_products;
     public $quantity = 1;
-    public $hasBeenAdded = false;
     public $displayedImage;
     protected $listeners = ['quantityChanged'];
 
@@ -26,6 +25,7 @@ class ShowProduct extends Component
     public function addToCart()
     {
 
+        $this->dispatchBrowserEvent('fireProductAdded');
         $cart = Cart::getCart();
         if ($cart->items->pluck('product_id')->contains($this->product->id)) {
             $cart_item = CartItem::where([

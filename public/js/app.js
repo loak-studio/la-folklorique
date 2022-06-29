@@ -4177,6 +4177,21 @@ document.addEventListener("turbolinks:load", function () {
 
 /***/ }),
 
+/***/ "./resources/js/animations/success-message-product.js":
+/*!************************************************************!*\
+  !*** ./resources/js/animations/success-message-product.js ***!
+  \************************************************************/
+/***/ (() => {
+
+document.addEventListener('fireProductAdded', function (event) {
+  document.querySelector('#success').classList.remove('opacity-0');
+  setTimeout(function () {
+    document.querySelector('#success').classList.add('opacity-0');
+  }, 5000);
+});
+
+/***/ }),
+
 /***/ "./resources/js/animations/values.js":
 /*!*******************************************!*\
   !*** ./resources/js/animations/values.js ***!
@@ -4220,14 +4235,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _faq__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_faq__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nav */ "./resources/js/nav.js");
 /* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nav__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _animations_confetti_parallax__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/confetti-parallax */ "./resources/js/animations/confetti-parallax.js");
-/* harmony import */ var _animations_confetti_parallax__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_animations_confetti_parallax__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _animations_values__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/values */ "./resources/js/animations/values.js");
-/* harmony import */ var _animations_specification__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations/specification */ "./resources/js/animations/specification.js");
-/* harmony import */ var _animations_opacity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./animations/opacity */ "./resources/js/animations/opacity.js");
-/* harmony import */ var _animations_hero__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animations/hero */ "./resources/js/animations/hero.js");
-/* harmony import */ var _animations_hero__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_animations_hero__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! turbolinks-prefetch */ "./node_modules/turbolinks-prefetch/index.js");
+/* harmony import */ var _animations_success_message_product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/success-message-product */ "./resources/js/animations/success-message-product.js");
+/* harmony import */ var _animations_success_message_product__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_animations_success_message_product__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _animations_confetti_parallax__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/confetti-parallax */ "./resources/js/animations/confetti-parallax.js");
+/* harmony import */ var _animations_confetti_parallax__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_animations_confetti_parallax__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _animations_values__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations/values */ "./resources/js/animations/values.js");
+/* harmony import */ var _animations_specification__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./animations/specification */ "./resources/js/animations/specification.js");
+/* harmony import */ var _animations_opacity__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animations/opacity */ "./resources/js/animations/opacity.js");
+/* harmony import */ var _animations_hero__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./animations/hero */ "./resources/js/animations/hero.js");
+/* harmony import */ var _animations_hero__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_animations_hero__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! turbolinks-prefetch */ "./node_modules/turbolinks-prefetch/index.js");
+
 
 
 
@@ -4242,7 +4260,7 @@ var Turbolinks = __webpack_require__(/*! turbolinks */ "./node_modules/turbolink
 
 Turbolinks.start();
 
-turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_9__["default"].start();
+turbolinks_prefetch__WEBPACK_IMPORTED_MODULE_10__["default"].start();
 
 /***/ }),
 

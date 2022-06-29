@@ -33,6 +33,9 @@
                     <x-button wire:click="addToCart">Ajouter au panier</x-button>
                 </div>
             </div>
+
+            <p id="success" class="h-4 mt-4 transition opacity-0">🎉 Le produit a bien été ajouté à votre panier</p>
+
             <ul>
                 <li>
                     <span class="flex items-center gap-2 mt-8">
