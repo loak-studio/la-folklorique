@@ -16,4 +16,9 @@ class CreateProduct extends CreateRecord
         $data['old_price'] = (int) round(($data['old_price'] * 100));
         return $data;
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
