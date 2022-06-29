@@ -38,9 +38,10 @@ $specifications = [
     <div data-animation-specification="text"
         class="relative flex flex-col justify-center w-full h-full px-5 py-8 rounded-md lg:pl-20 md:max-w-lg bg-zinc-700">
         <picture data-animation-specification="bottle"
-            class="-bottom-3/4 lg:-bottom-[45%] absolute z-10 w-full lg:max-w-md max-w-[260px] rotate-[25deg] lg:rotate-0 -right-8 lg:-left-2/4">
+            class="-bottom-3/4 lg:-bottom-[45%] absolute z-10 w-full lg:max-w-md max-w-[260px]  -right-8 lg:-left-2/4">
             <source width="667" height="1000" srcset="/assets/bouteille.webp" type="image/webp">
-            <img width="667" height="1000" src="/assets/bouteille.png" alt="">
+            <img class="rotate-[25deg] lg:rotate-0" width="667" height="1000" src="/assets/bouteille.png"
+                alt="">
         </picture>
         <h2 id="scrollArea" class="w-full pb-5 text-4xl font-semibold border-b-2 border-green-700 headline max-w-fit">
             Caractéristiques
