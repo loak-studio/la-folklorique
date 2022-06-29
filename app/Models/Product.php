@@ -14,6 +14,11 @@ class Product extends Model
         'pictures' => 'array'
     ];
 
+    public static function getVisiblesProducts()
+    {
+        return static::query()->where('visible', 1)->get();
+    }
+
     public function getEuroPrice()
     {
         return $this->price / 100;

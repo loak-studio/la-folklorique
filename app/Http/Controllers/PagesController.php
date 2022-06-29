@@ -14,7 +14,7 @@ class PagesController extends Controller
 {
     public function shop()
     {
-        $products = Product::all();
+        $products = Product::getVisiblesProducts();
         return view('pages.shop', ['products' => $products]);
     }
 

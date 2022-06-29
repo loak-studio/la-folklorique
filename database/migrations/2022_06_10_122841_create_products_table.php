@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('description');
             $table->json('pictures');
             $table->boolean('available');
+            $table->boolean('visible');
             $table->integer('old_price')->nullable();
             $table->integer('price');
             $table->timestamps();
