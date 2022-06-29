@@ -56,6 +56,10 @@ class ProductResource extends Resource
                     Toggle::make('available')
                         ->default(true)
                         ->label('Disponible'),
+
+                    Toggle::make('visible')
+                        ->default(true)
+                        ->label('Visible'),
                     TextInput::make('price')
                         ->label('Prix du produit :')
                         ->suffix('€')
