@@ -6,11 +6,9 @@
         <div class="grid lg:grid-cols-2">
 
             <figure class="overflow-hidden rounded-md">
-                <picture>
-                    <source class="object-cover w-full h-full" width="750" height="500" srcset="/assets/ourbeer.webp"
-                        type="image/webp">
-                    <img class="object-cover w-full h-full" width="750" height="500" src="/assets/ourbeer.png"
-                        alt="">
+                <picture class="object-cover w-full h-full">
+                    <source width="750" height="500" srcset="/assets/ourbeer.webp" type="image/webp">
+                    <img width="750" height="500" src="/assets/ourbeer.png" alt="">
                 </picture>
             </figure>
             <div class="px-6 py-7">

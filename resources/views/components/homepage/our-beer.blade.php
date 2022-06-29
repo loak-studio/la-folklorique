@@ -1,12 +1,15 @@
 <div data-animation-opacity class="flex flex-row items-center w-full max-w-5xl mx-auto text-white opacity-0">
-    <img class="hidden w-full max-w-lg rounded-md lg:flex" src="assets/ourbeer.webp"
-        alt='Photo de la bière "La Folklorique"'>
+
+    <picture class="hidden w-full max-w-lg rounded-md lg:flex">
+        <source width="750" height="500" srcset="/assets/ourbeer.webp" type="image/webp">
+        <img width="750" height="500" src="/assets/ourbeer.png" alt='Photo de la bière "La Folklorique"'>
+    </picture>
     <div class="flex flex-col px-4 lg:w-full md:w-5/6 md:mx-auto gap-y-5 lg:p-9">
         <h2 class="w-full pb-5 text-4xl font-semibold border-b-2 border-green-700 max-w-fit">Notre bière
         </h2>
         <picture class="w-full rounded-md lg:hidden">
             <source width="750" height="500" srcset="/assets/ourbeer.webp" type="image/webp">
-            <img src="/assets/ourbeer.png" alt='Photo de la bière "La Folklorique"'>
+            <img width="750" height="500" src="/assets/ourbeer.png" alt='Photo de la bière "La Folklorique"'>
         </picture>
         <p class="font-medium">
             <strong class="font-bold">

@@ -2,25 +2,30 @@
     font-family: 'Outfit';
     src: url("/fonts/Outfit-Regular.ttf");
     font-weight: 400;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Outfit';
     src: url("/fonts/Outfit-Medium.ttf");
     font-weight: 500;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Outfit';
     src: url("/fonts/Outfit-SemiBold.ttf");
     font-weight: 600;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Outfit';
     src: url("/fonts/Outfit-Bold.ttf");
     font-weight: 700;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Folklard';
     src: url("/fonts/Folklard.ttf");
+    font-display: swap;
 }
 .font-folklard{
     margin-bottom: -0.5ch;

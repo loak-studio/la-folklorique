@@ -1,4 +1,4 @@
-<div class="px-4 py-12 bg-zinc-700 lg:px-0">
+<div class="px-4 py-12 bg-black lg:px-0">
     <div class="grid w-full max-w-5xl gap-10 mx-auto text-white lg:gap-0 lg:grid-cols-3">
         <div class="flex flex-col items-start space-y-4">
             <h2 class="flex items-center gap-5 ">
