@@ -153,7 +153,7 @@
                     .
                 </p>
                 <div>
-                    <input type="checkbox" name="cgv" required id="cgv">
+                    <input class="text-primary-500" type="checkbox" name="cgv" required id="cgv">
                     <span>
                         <label for="cgv">
                             J’ai lu et j’accepte
