@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('shipping_first_name')->nullable();
-            $table->string('shipping_last_name')->nullable();
-            $table->string('shipping_street')->nullable();
-            $table->string('shipping_number')->nullable();
+            $table->string('shipping_first_name');
+            $table->string('shipping_last_name');
+            $table->string('shipping_street');
+            $table->string('shipping_number');
             $table->string('shipping_box')->nullable();
-            $table->string('shipping_city')->nullable();
-            $table->string('shipping_zip')->nullable();
-            $table->string('shipping_country')->nullable();
+            $table->string('shipping_city');
+            $table->string('shipping_zip');
+            $table->string('shipping_country');
             $table->string('billing_first_name');
             $table->string('billing_last_name');
             $table->string('billing_street');
@@ -33,13 +33,13 @@ return new class extends Migration
             $table->string('billing_country');
             $table->string('billing_phone');
             $table->string('billing_email');
-            $table->decimal('shipping_cost', 10, 2);
+            $table->integer('shipping_cost');
             $table->enum('payment', ['stripe', 'paypal', 'cash', 'transfer']);
             $table->enum('shipping', ['shipping', 'collect']);
             $table->enum('status', ['pending', 'processing', 'cancelled', 'finished'])->default('pending');
             $table->boolean('paid')->default(false);
             $table->text('notes')->nullable();
-            $table->string('price');
+            $table->integer('price');
             $table->foreignId('coupon_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
