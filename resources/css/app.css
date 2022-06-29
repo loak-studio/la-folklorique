@@ -16,3 +16,6 @@ input[type="radio"]:checked{
     @apply bg-primary-500 hover:bg-primary-500 focus:bg-primary-500;
 }
 
+.hr-green{
+    @apply after:content-[''] after:mt-4 after:mb-8 after:block after:h-[2px] after:w-[200px] after:bg-green-700;
+}

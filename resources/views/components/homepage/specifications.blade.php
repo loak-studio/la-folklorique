@@ -38,20 +38,20 @@ $specifications = [
     <div data-animation-specification="text"
         class="relative flex flex-col justify-center w-full h-full px-5 py-8 rounded-md lg:pl-20 md:max-w-lg bg-zinc-700">
         <picture data-animation-specification="bottle"
-            class="-bottom-3/4 lg:-bottom-[45%] absolute z-10 w-full lg:max-w-md max-w-[260px]  -right-8 lg:-left-2/4">
+            class="absolute z-10 w-32 -bottom-64 lg:bottom-auto lg:w-40 right-8 lg:-left-24">
             <source width="667" height="1000" srcset="/assets/bouteille.webp" type="image/webp">
             <img class="rotate-[25deg] lg:rotate-0" width="667" height="1000" src="/assets/bouteille.png"
                 alt="">
         </picture>
-        <h2 id="scrollArea" class="w-full pb-5 text-4xl font-semibold border-b-2 border-green-700 headline max-w-fit">
+        <h2 id="scrollArea" class="w-full text-4xl font-semibold hr-green max-w-fit">
             Caractéristiques
         </h2>
-        <p class="py-5 text-lg font-semibold">
+        <p class="pb-5 text-lg font-semibold">
             33cl - 6,5% ALC/VOL
         </p>
-        <ul>
+        <ul class="space-y-2">
             @foreach ($specifications as $specification)
-                <li class="grid grid-cols-2 font-medium">
+                <li class="grid grid-cols-2">
                     <span>{{ $specification['key'] }}</span>
                     <span>{{ $specification['value'] }}</span>
                 </li>

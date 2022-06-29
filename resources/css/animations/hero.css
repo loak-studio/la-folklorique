@@ -8,19 +8,19 @@
 }
 @keyframes leafTwoLeft {
     0% {transform: rotate(50deg);}
-    100% {transform: rotate(-25deg);}
+    100% {transform: rotate(-15deg);}
 }
 @keyframes leafTwoRight {
     0% { transform: rotate(-50deg);}
-    100% { transform: rotate(25deg);}
+    100% { transform: rotate(15deg);}
 }
 @keyframes leafThreeLeft {
     0% {transform: rotate(50deg); }
-    100% { transform: rotate(-45deg); }
+    100% { transform: rotate(-35deg); }
 }
 @keyframes leafThreeRight {
     0% {   transform: rotate(-50deg);  }
-    100% {   transform: rotate(45deg); }
+    100% {   transform: rotate(35deg); }
 }
 
 @keyframes windOneLeft {
@@ -36,27 +36,27 @@
 }
 
 @keyframes windTwoLeft {
-    0% {   transform: rotate(-25deg);   }
-    50% { transform: rotate(-28deg); }
-    100% {   transform: rotate(-24deg); }
+    0% {   transform: rotate(-15deg);   }
+    50% { transform: rotate(-18deg); }
+    100% {   transform: rotate(-14deg); }
 }
 
 @keyframes windTwoRight {
-    0% {   transform: rotate(25deg);  }
-    50% { transform: rotate(19deg); }
-    100% {  transform: rotate(26deg); }
+    0% {   transform: rotate(15deg);  }
+    50% { transform: rotate(9deg); }
+    100% {  transform: rotate(16deg); }
 }
 
 @keyframes windThreeLeft {
-    0% {transform: rotate(-45deg);   }
-    50% { transform: rotate(-48deg); }
-    100% {transform: rotate(-44deg); }
+    0% {transform: rotate(-35deg);   }
+    50% { transform: rotate(-38deg); }
+    100% {transform: rotate(-34deg); }
 }
 
 @keyframes windThreeRight {
-    0% {   transform: rotate(45deg);  }
-    50% { transform: rotate(39deg); }
-    100% {  transform: rotate(46deg); }
+    0% {   transform: rotate(35deg);  }
+    50% { transform: rotate(29deg); }
+    100% {  transform: rotate(36deg); }
 }
 
 .leafOneLeft {

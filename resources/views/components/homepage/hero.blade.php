@@ -22,60 +22,59 @@
         </div>
     </div>
     <div class="relative w-full h-full select-none lg:w-3/12 lg:bg-primary-500 -z-50">
-        <div class="absolute bottom-[15%] left-20 lg:-left-2/4 w-full">
+        <div class="absolute bottom-[15%] left-20 lg:-left-1/2 w-full">
             <div class="relative flex justify-center w-full">
                 <picture
-                    class="absolute bottom-0 {{ session('is_ok') ? 'leafOneLeft' : '' }} mb-12 -ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[10deg]"
-                    data-leafs="1l">
-                    <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
-                    <img width="339" height="498" src="/assets/leaf_left.png" alt="">
-                </picture>
-                <picture
-                    class="absolute bottom-0 {{ session('is_ok') ? 'leafOneRight' : '' }} mb-12 ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-10deg]"
+                    class="absolute bottom-16 {{ session('is_ok') ? 'leafOneRight' : '' }}  lg:w-[209px] w-[140px] inline-block -mr-48 origin-bottom-left "
                     data-leafs="1r">
                     <source width="339" height="498" srcset="/assets/leaf_right.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_right.png" alt="">
                 </picture>
+
                 <picture
-                    class="absolute bottom-0 {{ session('is_ok') ? 'leafTwoLeft' : '' }} mb-8 -ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-25deg]"
-                    data-leafs="2l">
-                    <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
-                    <img width="339" height="498" src="/assets/leaf_left.png" alt="">
-                </picture>
-                <picture
-                    class="absolute bottom-0 {{ session('is_ok') ? 'leafTwoRight' : '' }} mb-8 ml-48 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[25deg]"
+                    class="absolute bottom-16 {{ session('is_ok') ? 'leafTwoRight' : '' }}  lg:w-[209px] w-[140px] inline-block -mr-48 origin-bottom-left "
                     data-leafs="2r">
                     <source width="339" height="498" srcset="/assets/leaf_right.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_right.png" alt="">
                 </picture>
+
                 <picture
-                    class="absolute -ml-48 mb-4 {{ session('is_ok') ? 'leafThreeLeft' : '' }} bottom-0 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[-45deg]"
-                    data-leafs="3l">
-                    <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
-                    <img width="339" height="498" src="/assets/leaf_left.png" alt="">
-                </picture>
-                <picture
-                    class="absolute ml-48 mb-4 {{ session('is_ok') ? 'leafThreeRight' : '' }} bottom-0 2xl:min-w-[200px] 2xl:max-w-[200px] xl:max-w-[160px] xl:min-w-[160px] lg:min-w-[140px] lg:max-w-[140px] min-w-[152px] max-w-[152px] origin-bottom rotate-[45deg]"
+                    class="absolute inline-block  bottom-16  {{ session('is_ok') ? 'leafThreeRight' : '' }} lg:w-[209px] w-[140px] origin-bottom-left inline-block -mr-48 "
                     data-leafs="3r">
                     <source width="339" height="498" srcset="/assets/leaf_right.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_right.png" alt="">
                 </picture>
                 <picture
-                    class="absolute -mb-4 bottom-0 flex 2xl:max-w-[230px] 2xl:min-w-[230px] xl:max-w-[210px] xl:min-w-[210px] lg:max-w-[190px] lg:min-w-[190px] max-w-[165px] min-w-[165px] -ml-56">
+                    class="absolute bottom-16 {{ session('is_ok') ? 'leafOneLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px]  origin-bottom-right "
+                    data-leafs="1l">
+                    <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+                    <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+                </picture>
+                <picture
+                    class="absolute bottom-16 {{ session('is_ok') ? 'leafTwoLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px] origin-bottom-right"
+                    data-leafs="2l">
+                    <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+                    <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+                </picture>
+                <picture
+                    class="absolute bottom-16  {{ session('is_ok') ? 'leafThreeLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px] origin-bottom-right "
+                    data-leafs="3l">
+                    <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
+                    <img width="339" height="498" src="/assets/leaf_left.png" alt="">
+                </picture>
+                <picture class="absolute -mr-52 bottom-0 rotate-45 w-[130px]  lg:w-[200px]  -scale-x-100">
                     <source width="301" height="306" srcset="/assets/orange3.webp" type="image/webp">
                     <img width="301" height="306" src="/assets/orange3.png" alt="">
                 </picture>
-                <picture
-                    class="absolute -mb-14 bottom-0 -ml-80 flex 2xl:w-[240px]  xl:w-[220px] lg:w-[200px] w-[175px]">
-                    <source width="301" height="306" srcset="/assets/orange2.webp" type="image/webp">
-                    <img width="301" height="306" src="/assets/orange2.png" alt="">
+                <picture class="absolute -ml-52 bottom-10 w-[130px]  lg:w-[200px] 0">
+                    <source width="301" height="306" srcset="/assets/orange3.webp" type="image/webp">
+                    <img width="301" height="306" src="/assets/orange3.png" alt="">
                 </picture>
-                <picture
-                    class="absolute -mb-12 bottom-0 flex ml-64 2xl:min-w-[230px] 2xl:max-w-[230px] xl:min-w-[210px] xl:max-w-[210px] lg:min-w-[190px] lg:max-w-[190px] min-w-[165px] max-w-[165px] -scale-x-100">
+                <picture class="absolute -ml-52 lg:-ml-64 bottom-0 w-[130px]  lg:w-[230px] ">
                     <source width="205" height="211" srcset="/assets/orange2.webp" type="image/webp">
                     <img width="205" height="211" src="/assets/orange2.png" alt="">
                 </picture>
-                <picture class="absolute -mb-16 bottom-0 2xl:w-[450px]  xl:w-[430px] lg:w-[410px]  w-[330px]">
+                <picture class="absolute w-32 lg:w-40 -bottom-2">
                     <source width="667" height="1000" srcset="/assets/bouteille.webp" type="image/webp">
                     <img width="667" height="1000" src="/assets/bouteille.png" alt="">
                 </picture>
