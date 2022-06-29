@@ -32,9 +32,9 @@ class CheckoutController extends Controller
                 'shipping_address_last_name' => 'required',
                 'shipping_address_street' => 'required',
                 'shipping_address_city' => 'required',
-                'shipping_address_zip' => 'required',
+                'shipping_address_zip' => 'required|numeric',
                 'shipping_address_country' => 'required',
-                'shipping_address_number' => 'required',
+                'shipping_address_number' => 'required|numeric',
             ]);
         }
         $request->validate([
@@ -42,11 +42,11 @@ class CheckoutController extends Controller
             'billing_address_last_name' => 'required',
             'billing_address_street' => 'required',
             'billing_address_city' => 'required',
-            'billing_address_zip' => 'required',
+            'billing_address_zip' => 'required|integer',
             'billing_address_country' => 'required',
-            'billing_address_phone' => 'required',
+            'billing_address_phone' => 'required|numeric',
             'billing_address_email' => 'required|email',
-            'billing_address_number' => 'required',
+            'billing_address_number' => 'required|numeric',
         ]);
         if (!$request->different_address) {
             session()->put('shipping_address_first_name', $request->billing_address_first_name);
