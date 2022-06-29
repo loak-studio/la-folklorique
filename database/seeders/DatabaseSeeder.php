@@ -82,9 +82,11 @@ class DatabaseSeeder extends Seeder
         $order->billing_email = "john@doe.com";
         $order->shipping = "shipping";
         $order->shipping_cost = "10";
-        $order->notes = "none";
-        $order->payment = 'stripe';
-        $order->price = 0;
+        $order->notes = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quo consectetur vel minus incidunt, pariatur quibusdam maxime. Eum sapiente nisi praesentium similique odit, est repellat? Dicta voluptatibus deserunt consectetur ab.";
+        $order->payment = 'cash';
+        $order->price = 15000;
+        $order->paid = true;
+        $order->coupon_id = 1;
         $order->save();
 
         $order2 = new Order();
@@ -108,11 +110,11 @@ class DatabaseSeeder extends Seeder
         $order2->billing_email = "john@doe.com";
         $order2->shipping = "shipping";
         $order2->shipping_cost = "10";
-        $order2->notes = "none";
-        $order2->payment = 'stripe';
-        $order2->price = 0;
+        $order2->payment = 'transfer';
+        $order2->price = 10000;
+        $order2->paid = false;
+        $order2->coupon_id = 1;
         $order2->status = 'processing';
-        $order2->setCreatedAt(now()->subMonths(1));
         $order2->save();
 
         $order3 = new Order();
@@ -134,13 +136,14 @@ class DatabaseSeeder extends Seeder
         $order3->billing_country = "Country";
         $order3->billing_phone = "123456789";
         $order3->billing_email = "john@doe.com";
-        $order3->shipping = "collect";
+        $order3->shipping = "shipping";
         $order3->shipping_cost = "10";
         $order3->notes = "none";
         $order3->payment = 'stripe';
-        $order3->price = 0;
+        $order3->price = 5000;
+        $order3->paid = true;
+        $order3->coupon_id = 1;
         $order3->status = 'cancelled';
-        $order3->setCreatedAt(now()->subMonths(1));
         $order3->save();
 
         $order4 = new Order();
@@ -162,24 +165,43 @@ class DatabaseSeeder extends Seeder
         $order4->billing_country = "Country";
         $order4->billing_phone = "123456789";
         $order4->billing_email = "john@doe.com";
-        $order4->shipping = "shipping";
+        $order4->shipping = "collect";
         $order4->shipping_cost = "10";
         $order4->notes = "none";
-        $order4->payment = 'stripe';
-        $order4->price = 0;
+        $order4->payment = 'paypal';
+        $order4->price = 5000;
+        $order4->paid = true;
+        $order4->coupon_id = 1;
         $order4->status = 'finished';
-        $order4->setCreatedAt(now()->subMonths(3));
         $order4->save();
 
         $orderItem = new OrderItem();
-        $orderItem->order_id = $order->id;
-        $orderItem->product_id = $product->id;
-        $orderItem->price = $product->price;
-        $orderItem->quantity = 1;
+        $orderItem->order_id = 1;
+        $orderItem->product_id = 1;
+        $orderItem->price = Product::find(1)->price;
+        $orderItem->quantity = 15;
         $orderItem->save();
 
-        $order->price = $orderItem->price;
-        $order->save();
+        $orderItem2 = new OrderItem();
+        $orderItem2->order_id = 2;
+        $orderItem2->product_id = 1;
+        $orderItem2->price = Product::find(1)->price;
+        $orderItem2->quantity = 10;
+        $orderItem2->save();
+
+        $orderItem3 = new OrderItem();
+        $orderItem3->order_id = 3;
+        $orderItem3->product_id = 1;
+        $orderItem3->price = Product::find(1)->price;
+        $orderItem3->quantity = 5;
+        $orderItem3->save();
+
+        $orderItem4 = new OrderItem();
+        $orderItem4->order_id = 4;
+        $orderItem4->product_id = 1;
+        $orderItem4->price = Product::find(1)->price;
+        $orderItem4->quantity = 5;
+        $orderItem4->save();
 
         $cgv = new Content();
         $cgv->key = "cgv";
