@@ -4646,6 +4646,9 @@ html {
 .pl-24{
   padding-left: 6rem;
 }
+.pb-1{
+  padding-bottom: 0.25rem;
+}
 .text-left{
   text-align: left;
 }
@@ -10256,6 +10259,9 @@ select{
 }
 .pl-24{
   padding-left: 6rem;
+}
+.pb-1{
+  padding-bottom: 0.25rem;
 }
 .text-left{
   text-align: left;

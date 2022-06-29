@@ -4,13 +4,17 @@
             @if ($coupon)
                 <x-input disabled="" wire:model="code" class="text-gray-500" label="Code promo" name="coupon" />
 
-                <button wire:click.prevent="deleteCoupon"
-                    class="text-sm text-primary-500 hover:underline">Supprimer</button>
+                <div class="flex items-end justify-center">
+                    <button wire:click.prevent="deleteCoupon"
+                        class="pb-2 text-sm text-primary-500 hover:underline">Supprimer</button>
+                </div>
             @else
                 <x-input wire:model="code" label="Code promo" name="coupon" />
 
-                <button wire:click.prevent="applyCoupon"
-                    class="text-sm text-primary-500 hover:underline">Appliquer</button>
+                <div class="flex items-end justify-center">
+                    <button wire:click.prevent="applyCoupon"
+                        class="pb-2 text-sm text-primary-500 hover:underline">Appliquer</button>
+                </div>
             @endif
         </div>
     @else
