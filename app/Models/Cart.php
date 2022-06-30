@@ -61,6 +61,9 @@ class Cart extends Model
             if ($this->getTotal() >= 5000) {
                 return 0;
             }
+            if ($this->coupon && $this->coupon->free_shipping) {
+                return 0;
+            }
             return 500;
         } else {
             return 0;
