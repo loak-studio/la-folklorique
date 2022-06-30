@@ -64,6 +64,7 @@ class PagesController extends Controller
         $order = Order::find($id);
         $order->paid = true;
         $order->save();
+        $this->sendOrderReceivedEmail($order);
         session()->forget('cart_uuid');
         return view('pages.payment-accepted');
     }
@@ -88,7 +89,7 @@ class PagesController extends Controller
             new \GuzzleHttp\Client(),
             $config
         );
-        $to = ["email" => "benjamin@loak.studio"];
+        $to = ["email" => $order->billing_email];
         $products = "";
         foreach ($order->items as $item) {
             $products = $products . " " . $item->quantity . "x " . $item->product->name;
@@ -118,7 +119,7 @@ class PagesController extends Controller
             new \GuzzleHttp\Client(),
             $config
         );
-        $to = ["email" => "benjamin@loak.studio"];
+        $to = ["email" => env("CONTACT_FORM_TARGET")];
 
         $params = [
             "NAME" => $name,
