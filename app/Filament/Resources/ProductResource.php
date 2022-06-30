@@ -16,6 +16,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
+use Filament\Tables\Actions\ReplicateAction;
 use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Columns\TextColumn;
 
@@ -103,6 +104,10 @@ class ProductResource extends Resource
                 BooleanColumn::make('available')
                     ->label('Disponible')
                     ->sortable(),
+            ])
+            ->actions([
+                ReplicateAction::make()
+                    ->label('Dupliquer'),
             ])
             ->filters([]);
     }
