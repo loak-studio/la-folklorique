@@ -13,7 +13,8 @@ class EditPointOfSell extends EditRecord
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\DeleteAction::make()
+                ->label('Supprimer le point de vente'),
         ];
     }
 

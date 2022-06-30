@@ -10,10 +10,16 @@ class ListCategories extends ListRecords
 {
     protected static string $resource = CategoryResource::class;
 
+    protected function getTitle(): string
+    {
+        return '';
+    }
+
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->label('Créer une catégorie')
         ];
     }
 }
