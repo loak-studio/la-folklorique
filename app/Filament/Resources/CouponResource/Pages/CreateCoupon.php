@@ -16,7 +16,9 @@ class CreateCoupon extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['value'] = (int) round(($data['value'] * 100));
+        if (!empty($data['value'])) {
+            $data['value'] = (int) round(($data['value'] * 100));
+        }
         return $data;
     }
 
