@@ -44,6 +44,7 @@ class ProductResource extends Resource
                         ->label('Images du produit :')
                         ->multiple()
                         ->image()
+                        ->enableReordering()
                         ->required(),
                 ])->columnSpan(2),
                 Card::make()->schema([
