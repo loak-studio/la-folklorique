@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         $user->save();
 
         $category = new Category();
-        $category->name = "Category ABC123";
+        $category->name = "Bière";
         $category->save();
 
         $category_ = new Category();
@@ -45,9 +45,9 @@ class DatabaseSeeder extends Seeder
 
         $product = new Product();
         $product->visible = true;
-        $product->name = "Product ABC123";
-        $product->price = 1000;
-        $product->description = "Lorem";
+        $product->name = "Pack 6 bouteilles (33cl)";
+        $product->price = 1500;
+        $product->description = "Un pack en carton de 6 bouteilles. Idéal pour découvrir ou faire découvrir La Folklorique à tous les amateurs de bières artisanales et de nos carnavals.";
         $product->pictures = ['#'];
         $product->available = true;
         $product->save();
@@ -55,9 +55,9 @@ class DatabaseSeeder extends Seeder
 
         $product = new Product();
         $product->visible = true;
-        $product->name = "Product 2ABC123";
-        $product->price = 1000;
-        $product->description = "Lorem";
+        $product->name = "Bac 24 bouteilles ( 33cl )";
+        $product->price = 5000;
+        $product->description = "Un bac en carton de 24 bouteilles. Pour tous les amateurs de bières artisanales et de nos carnavals, ce bac vous permettra de partager La Folklorique avec un maximum de personnes.";
         $product->pictures = ['#'];
         $product->available = true;
         $product->save();
@@ -207,33 +207,33 @@ class DatabaseSeeder extends Seeder
 
         $cgv = new Content();
         $cgv->key = "cgv";
-        $cgv->value = "dsq";
+        $cgv->value = "";
         $cgv->save();
 
         $banner = new Content();
         $banner->key = "banner";
-        $banner->value = "Super promo tout gratuit etc";
+        $banner->value = "";
         $banner->save();
 
         $ml = new Content();
         $ml->key = "mentions-legales";
-        $ml->value = "dsq";
+        $ml->value = "";
         $ml->save();
 
         $pdc = new Content();
         $pdc->key = "politique-de-confidentialite";
-        $pdc->value = "dsq";
+        $pdc->value = "";
         $pdc->save();
 
         $question = new Question();
-        $question->question = "La folklorique ça se boit?";
-        $question->answer = "Oui";
+        $question->question = "La Folklorique, qu'est-ce que c'est ?";
+        $question->answer = "La Folklorique est une bière ambrée artisanale belge, parfumée à l’orange et refermentée en bouteille. Le procédé artisanal signifie que nous ne rajoutons aucun sucre supplémentaire ni de sirop. Le goût d’orange est obtenu en travaillant directement le fruit, de manière naturelle. Etant artisanale, il est possible qu’un dépôt de levure/orange soit présent dans le fond de la bouteille. Libre à vous de le servir ou non.";
         $question->save();
 
         $pos = new PointOfSell();
-        $pos->name = "Tristan Croket";
-        $pos->street = "24 rue du progrès";
-        $pos->city = "Froyennes";
+        $pos->name = "Le Petit Mousse";
+        $pos->street = "Avenue Charles Deliège 15";
+        $pos->city = "Binche";
         $pos->save();
     }
 }
