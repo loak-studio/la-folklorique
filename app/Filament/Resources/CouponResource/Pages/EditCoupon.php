@@ -20,6 +20,9 @@ class EditCoupon extends EditRecord
         if (!empty($data['value'])) {
             $data['value'] = (int) round(str_replace(',', '.', $data['value']) * 100);
         }
+        if ($data['free_shipping']) {
+            $data['value'] = 0;
+        }
         return $data;
     }
 
