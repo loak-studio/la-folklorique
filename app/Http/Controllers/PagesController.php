@@ -41,7 +41,7 @@ class PagesController extends Controller
     public function cgv()
     {
         $content = Content::where('key', 'cgv')->first();
-        return view('pages.markdown', ['content' => $content->value, 'title' => 'Conditions générales de ventes']);
+        return view('pages.markdown', ['content' => $content->value, 'title' => 'Conditions générales de ventes', 'displayDownloadButton' => true]);
     }
     public function mentionsLegales()
     {
