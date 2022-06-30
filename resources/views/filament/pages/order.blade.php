@@ -1,33 +1,37 @@
 <x-filament::page>
-    <div class="flex w-full gap-5">
-        <x-filament::card class="relative w-[40vw]">
-            <div class="flex items-center justify-between">
+    <div class="flex flex-col w-full gap-5 md:flex-row">
+        <x-filament::card class="relative w-full">
+            <div class="flex flex-col items-start justify-between xl:items-center xl:flex-row">
                 <h1 class="text-2xl font-semibold">Commande</h1>
-                @if ($record->status === 'cancelled')
-                    <p class="text-danger-700 h-fit bg-danger-500/10 w-fit rounded-xl min-h-6 px-2 py-0.5">Cette
-                        commande a
-                        été
-                        annulée.</p>
-                @elseif ($record->status === 'finished')
-                    <p class="text-success-700 h-fit bg-success-500/10 w-fit rounded-xl min-h-6 px-2 py-0.5">Cette
-                        commande
-                        est
-                        terminée.</p>
-                @elseif ($record->status === 'pending')
-                    <p class="text-gray-700 h-fit bg-gray-500/10 w-fit rounded-xl min-h-6 px-2 py-0.5">Cette
-                        commande
-                        est en
-                        attente.</p>
-                @elseif ($record->status === 'processing')
-                    <p class="text-warning-700 h-fit bg-warning-500/10 w-fit rounded-xl min-h-6 px-2 py-0.5">Cette
-                        commande
-                        est en
-                        cours.</p>
-                @endif
+                @switch($record->status)
+                    @case('cancelled')
+                        <p class="text-danger-700 h-fit bg-danger-500/10 w-fit rounded-xl min-h-6 px-2 py-0.5">
+                            Cette commande a été annulée.
+                        </p>
+                    @break
+
+                    @case('finished')
+                        <p class="text-success-700 h-fit bg-success-500/10 w-fit rounded-xl min-h-6 px-2 py-0.5">
+                            Cette commande est terminée.
+                        </p>
+                    @break
+
+                    @case('pending')
+                        <p class="text-gray-700 h-fit bg-gray-500/10 w-fit rounded-xl min-h-6 px-2 py-0.5">
+                            Cette commande est en attente.
+                        </p>
+                    @break
+
+                    @case('processing')
+                        <p class="text-warning-700 h-fit bg-warning-500/10 w-fit rounded-xl min-h-6 px-2 py-0.5">
+                            Cette commande est en cours de traitement.
+                        </p>
+                    @break
+                @endswitch
             </div>
             <hr>
             <div class="font-medium">
-                <div class="flex justify-between">
+                <div class="flex flex-col justify-between xl:flex-row gap-y-5 xl:gap-y-0">
                     <ul>
                         @foreach ($record->items as $item)
                             <li class="flex flex-col gap-y-4">
@@ -94,7 +98,7 @@
                 <h2 class="mb-2 text-lg font-semibold">
                     Information complémentaire
                 </h2>
-                <p class="mb-6 text-gray-600">
+                <p class="mb-16 text-gray-600">
                     @if ($record->notes)
                         {{ $record->notes }}
                     @else
@@ -123,7 +127,7 @@
             @endif
         </x-filament::card>
         <div class="flex flex-col gap-y-5">
-            <x-filament::card class="w-full">
+            <x-filament::card class="w-80">
                 <h1 class="mb-5 text-2xl font-semibold">Adresse de facturation </h1>
                 <hr class="my-5">
                 <ul class="flex flex-col w-fit gap-y-1">
@@ -141,7 +145,7 @@
                 </ul>
             </x-filament::card>
             @if ($record->shipping === 'collect')
-                <x-filament::card class="w-full">
+                <x-filament::card class="w-80">
                     <h1 class="mb-5 text-2xl font-semibold">Retrait en brasserie</h1>
                     <hr class="my-5">
                     <ul class="flex flex-col w-fit gap-y-1">
@@ -159,7 +163,7 @@
                     </ul>
                 </x-filament::card>
             @else
-                <x-filament::card class="w-full py-5">
+                <x-filament::card class="w-80">
                     <h1 class="mb-5 text-2xl font-semibold">Adresse de livraison</h1>
                     <hr class="my-5">
                     <ul class="w-fit">
