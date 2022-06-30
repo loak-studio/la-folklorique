@@ -23,6 +23,12 @@ class OrderResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-inbox-in';
     protected static ?int $navigationSort = 1;
 
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::where('status', 'pending')
+            ->orWhere('status', 'processing')->count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form
