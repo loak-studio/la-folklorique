@@ -1,5 +1,5 @@
 <x-main-layout title="Le service parfait" :breadcrumb="[['name' => 'Servir parfaitement', 'route' => 'servir']]">
-    <div class="w-full max-w-6xl mx-auto mb-24">
+    <div class="w-full max-w-6xl px-4 mx-auto mb-24 lg:px-0">
         <p class="mb-12 text-white">Dans cette courte vidéo, vous retrouverez nos petits conseils pour déguster La
             Folklorique le
             mieux possible.
