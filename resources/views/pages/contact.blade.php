@@ -1,7 +1,7 @@
 <x-main-layout title="Contact" :breadcrumb="[['name' => 'Contact', 'route' => 'contact']]">
     <section class="pt-32 pb-20 "
         style="background: url('/assets/contact.webp'); background-size:cover; background-position:center;">
-        <div class="w-full max-w-5xl mx-auto ">
+        <div class="w-full max-w-5xl px-4 mx-auto lg:px-0">
             @if (empty($sent))
                 <form method="POST" class="flex flex-col w-full max-w-md gap-4 rounded-md bg-zinc-900 p-7"
                     action="{{ route('send-contact') }}">

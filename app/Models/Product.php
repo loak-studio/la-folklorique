@@ -36,7 +36,7 @@ class Product extends Model
     {
         parent::boot();
 
-        self::saving(function ($model) {
+        self::creating(function ($model) {
             $new_slug = Str::slug($model->name);
             $already_exist = Product::where('slug', $new_slug)->get();
             if ($already_exist->count() > 0) {

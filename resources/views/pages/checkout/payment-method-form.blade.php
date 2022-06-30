@@ -1,7 +1,7 @@
 <x-main-layout title="Mode de paiement">
     <x-checkout.steps.display current="2" total="4" />
     <form method="POST" action="{{ route('checkout-payment-method') }}"
-        class="grid w-full max-w-5xl gap-5 p-5 mx-auto mb-24 lg:grid-cols-10 bg-zinc-900">
+        class="grid w-full max-w-5xl gap-5 mx-auto mb-24 lg:p-5 lg:grid-cols-10 bg-zinc-900">
         @csrf
         <div class="p-5 lg:col-span-6 bg-zinc-800">
             <h1 class="mb-10 text-4xl font-bold text-white mt-marker:12 lg:col-span-10">Moyen de paiement</h1>

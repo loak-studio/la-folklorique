@@ -10,10 +10,11 @@
     </div>
     <h2 class="text-lg font-semibold ">{{ $product->name }}</h2>
     <span>
+        {{ $product->getEuroPrice() }} €
+
         @if (!empty($product->old_price))
             <del class="text-sm">{{ $product->old_price }}€</del>
         @endif
-        {{ $product->getEuroPrice() }} €
     </span>
     <a class="before:inset-0 before:absolute" href="{{ route('product', $product->slug) }}">
         <span class="sr-only">Voir {{ $product->name }}</span>

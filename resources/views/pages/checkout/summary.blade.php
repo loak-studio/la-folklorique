@@ -1,7 +1,7 @@
 <x-main-layout title="Mode de paiement">
     <x-checkout.steps.display current="3" total="4" />
     <form method="POST" action="{{ route('checkout-summary-send') }}"
-        class="grid w-full max-w-5xl gap-5 p-5 mx-auto mb-24 lg:grid-cols-10 bg-zinc-900">
+        class="grid w-full max-w-5xl gap-5 mx-auto mb-24 lg:p-5 lg:grid-cols-10 bg-zinc-900">
         @csrf
         <div class="p-5 lg:col-span-6 bg-zinc-800">
             <h2 class="my-5 text-3xl font-semibold text-white">Récapitulatif</h2>

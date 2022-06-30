@@ -23,7 +23,7 @@
 
         </div>
         <div class="flex flex-col gap-5">
-            <x-input label="Adresse email" name="billing_address_email" />
+            <x-input type="email" label="Adresse email" name="billing_address_email" />
             <x-input label="Numéro de GSM" name="billing_address_phone" />
             <x-input label="Code postal" name="billing_address_zip" />
             <x-input label="Pays" name="billing_address_country" />
