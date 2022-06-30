@@ -13,7 +13,7 @@ class Banner extends Page
 {
     use InteractsWithForms;
     protected static string $view = 'filament.pages.cgv';
-    protected static ?string $title = "Bannière";
+    protected static ?string $title = "Modifier la bannière";
     protected static ?string $navigationGroup = 'Gestion site internet';
     protected static ?string $navigationLabel = 'Bannière';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';

@@ -12,7 +12,7 @@ class Cgv extends Page
 {
     use InteractsWithForms;
     protected static string $view = 'filament.pages.cgv';
-    protected static ?string $title = "Conditions générales de vente";
+    protected static ?string $title = "Modifier les conditions générales de vente";
     protected static ?string $navigationGroup = 'Gestion site internet';
     protected static ?string $navigationLabel = 'Conditions générales de vente';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';

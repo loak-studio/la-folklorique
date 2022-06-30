@@ -34,7 +34,7 @@ class PointOfSellResource extends Resource
                     TextInput::make('city')->label('Ville')->required(),
                 ])->columnSpan(2),
                 Section::make('Coordonnées GPS')
-                    ->description('A laisser vide à la création, les données sont récupérées automatiquement.')
+                    ->description('À laisser vide à la création, les données sont récupérées automatiquement.')
                     ->schema([
                         TextInput::make('latitude')->label('Latitude'),
                         TextInput::make('longitude')->label('Longitude'),

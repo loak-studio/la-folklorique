@@ -12,7 +12,7 @@ class PolitiqueDeConfidentialite extends Page
 {
     use InteractsWithForms;
     protected static string $view = 'filament.pages.politique-de-confidentialite';
-    protected static ?string $title = "Politique de confidentialité";
+    protected static ?string $title = "Modifier la politique de confidentialité";
     protected static ?string $navigationGroup = 'Gestion site internet';
     protected static ?string $navigationLabel = ' Politique de confidentialité';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';

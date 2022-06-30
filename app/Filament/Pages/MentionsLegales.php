@@ -12,7 +12,7 @@ class MentionsLegales extends Page
 {
     use InteractsWithForms;
     protected static string $view = 'filament.pages.mentions-legales';
-    protected static ?string $title = "Mentions légales";
+    protected static ?string $title = "Modifier les mentions légales";
     protected static ?string $navigationGroup = 'Gestion site internet';
     protected static ?string $navigationLabel = 'Mentions légales';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
