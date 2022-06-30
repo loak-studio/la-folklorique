@@ -14,3 +14,7 @@ Route::get('/accueil/mentions-legales/', function () {
 Route::get('/commander-2/', function () {
     return Redirect::to(route('boutique'), 301);
 });
+
+Route::get('/points-de-ventes/', function () {
+    return Redirect::to(route('points-de-vente'), 301);
+});

@@ -26,7 +26,7 @@ require __DIR__ . '/redirects.php';
 
 Route::middleware([HandleCart::class, BannerMiddleware::class])->group(function () {
     Route::view('/', 'pages.homepage')->name('home');
-    Route::get('/points-de-ventes', [PagesController::class, 'pointsOfSell'])->name('points-de-vente');
+    Route::get('/points-de-vente', [PagesController::class, 'pointsOfSell'])->name('points-de-vente');
     Route::get('/mentions-legales', [PagesController::class, 'mentionsLegales'])->name('mentions-legales');
     Route::get('/conditions-generales-de-ventes', [PagesController::class, 'cgv'])->name('cgv');
     Route::get('/politique-de-confidentialite', [PagesController::class, 'poliqueDeConfidentialite'])->name('politique-de-confidentialite');
