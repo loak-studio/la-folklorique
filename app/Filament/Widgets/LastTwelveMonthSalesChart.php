@@ -9,12 +9,16 @@ class LastTwelveMonthSalesChart extends LineChartWidget
 {
     protected function getHeading(): ?string
     {
-        return "Nombre de commande sur les 12 derniers mois";
+        return "Nombre de commande terminée sur les 12 derniers mois";
     }
 
     protected function getMonthSales(int $month, $year): int
     {
-        $monthSales = Order::query()->whereYear('created_at', $year)->whereMonth('created_at', $month)->count();
+        $monthSales = Order::query()
+            ->whereYear('created_at', $year)
+            ->whereMonth('created_at', $month)
+            ->where('status', 'finished')
+            ->count();
         return $monthSales;
     }
 

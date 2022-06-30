@@ -9,7 +9,7 @@ class YearSales extends LineChartWidget
 {
     protected function getHeading(): ?string
     {
-        return "Nombre de commande par mois sur l'année (" . date('Y') . ")";
+        return "Nombre de commande terminée par mois sur l'année (" . date('Y') . ")";
     }
 
     protected function getYearSalesData(): array
@@ -33,6 +33,7 @@ class YearSales extends LineChartWidget
         foreach ($months as $key => $value) {
             $data[$key] = Order::whereYear('created_at', $year)
                 ->whereMonth('created_at', $value)
+                ->where('status', 'finished')
                 ->count();
         }
         // dd($data);

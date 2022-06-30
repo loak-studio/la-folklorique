@@ -11,7 +11,7 @@ use Filament\Widgets\TableWidget as BaseWidget;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Columns\TextColumn;
 
-class NotShippedOrders extends BaseWidget
+class NotFinishedOrders extends BaseWidget
 {
     protected static ?string $heading = "Commandes non-terminées";
 
