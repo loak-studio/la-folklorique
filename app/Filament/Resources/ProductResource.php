@@ -28,6 +28,8 @@ class ProductResource extends Resource
     protected static ?string $pluralLabel = "Produits";
     protected static ?string $navigationLabel = 'Produits';
     protected static ?string $navigationIcon = 'heroicon-o-archive';
+    protected static ?int $navigationSort = 2;
+
     public static function form(Form $form): Form
     {
         return $form

@@ -21,6 +21,7 @@ class OrderResource extends Resource
     protected static ?string $pluralLabel = "Commandes";
     protected static ?string $navigationLabel = 'Commandes';
     protected static ?string $navigationIcon = 'heroicon-o-inbox-in';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
