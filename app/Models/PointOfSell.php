@@ -24,8 +24,14 @@ class PointOfSell extends Model
                     'format' => 'json'
                 ]);
 
-                $model->latitude = $response[0]['lat'];
-                $model->longitude = $response[0]['lon'];
+                if (empty($response[0])) {
+                    $model->latitude = 0;
+                    $model->longitude = 0;
+                } else {
+
+                    $model->latitude = $response[0]['lat'];
+                    $model->longitude = $response[0]['lon'];
+                }
             }
         });
     }

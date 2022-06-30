@@ -6,24 +6,36 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session as FacadesSession;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Validator;
 use Omnipay\Omnipay;
 
 class CheckoutController extends Controller
 {
     public function showAddressForm()
     {
+        // $config = \SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', ENV('SENDINBLUE'));
+        // $apiInstance = new \SendinBlue\Client\Api\TransactionalEmailsApi(
+        //     new \GuzzleHttp\Client(),
+        //     $config
+        // );
+        // $to = ["email" => "geets@tuta.io"];
+        // $params = (object) [
+        //     'NOM' => 'VALEUR1',
+        //     'MON_PARAMETRE2' => 'VALEUR2'
+        // ];
+        // $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail();
+        // $sendSmtpEmail["sender"] = new \SendinBlue\Client\Model\SendSmtpEmailSender(["name" => env("SENDINBLUE_NAME"), "email" => env("SENDINBLUE_EMAIL")]);
+        // $sendSmtpEmail["to"] = [new \SendinBlue\Client\Model\SendSmtpEmailTo($to)];
+        // $sendSmtpEmail["templateId"] = 3;
+        // $sendSmtpEmail["params"] = $params;
+        // $sendSmtpEmail["replyTo"] = new \SendinBlue\Client\Model\SendSmtpEmailReplyTo(["email" => env("SENDINBLUE_EMAIL")]);
+        // $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
+        // dd($result);
         return view("pages.checkout.address-form");
     }
     public function getAddressForm(Request $request)
     {
-
-
-
 
         if ($request->different_address) {
 
@@ -60,8 +72,8 @@ class CheckoutController extends Controller
         foreach ($request->all() as $key => $value) {
             session()->put($key, $value);
         }
-        if ($request->shipping_place == "home" && session('shipping_address_zip') != '7500') {
-            FacadesSession::flash('cant_deliver', 'ici Les livraisons sont restreintes à 50km autour de Leval-Trahegnies. Nous ne pouvons pas livrer à cette adresse. Vous pouvez toujours retirer votre commande à la brasserie.');
+        if ($request->shipping_place == "home" && (session('shipping_address_zip') < 6150 || session('shipping_address_zip') > 7370)) {
+            FacadesSession::flash('cant_deliver', 'Les livraisons sont restreintes à 50km autour de Leval-Trahegnies. Nous ne pouvons pas livrer à cette adresse. Vous pouvez toujours retirer votre commande à la brasserie.');
             return redirect()->back()->withInput();
         }
         return to_route('checkout-payment-method-form');
