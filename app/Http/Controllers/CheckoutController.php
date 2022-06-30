@@ -14,24 +14,6 @@ class CheckoutController extends Controller
 {
     public function showAddressForm()
     {
-        // $config = \SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', ENV('SENDINBLUE'));
-        // $apiInstance = new \SendinBlue\Client\Api\TransactionalEmailsApi(
-        //     new \GuzzleHttp\Client(),
-        //     $config
-        // );
-        // $to = ["email" => "geets@tuta.io"];
-        // $params = (object) [
-        //     'NOM' => 'VALEUR1',
-        //     'MON_PARAMETRE2' => 'VALEUR2'
-        // ];
-        // $sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail();
-        // $sendSmtpEmail["sender"] = new \SendinBlue\Client\Model\SendSmtpEmailSender(["name" => env("SENDINBLUE_NAME"), "email" => env("SENDINBLUE_EMAIL")]);
-        // $sendSmtpEmail["to"] = [new \SendinBlue\Client\Model\SendSmtpEmailTo($to)];
-        // $sendSmtpEmail["templateId"] = 3;
-        // $sendSmtpEmail["params"] = $params;
-        // $sendSmtpEmail["replyTo"] = new \SendinBlue\Client\Model\SendSmtpEmailReplyTo(["email" => env("SENDINBLUE_EMAIL")]);
-        // $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
-        // dd($result);
         return view("pages.checkout.address-form");
     }
     public function getAddressForm(Request $request)
