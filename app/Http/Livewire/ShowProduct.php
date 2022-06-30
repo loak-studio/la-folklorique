@@ -63,15 +63,23 @@ class ShowProduct extends Component
 
     public function render()
     {
+        if ($this->product->categories->count() > 0) {
+            $breadcrumb = [
+                ['name' => 'Boutique', 'route' => route('boutique')],
+                ['name' => $this->product->categories[0]->name, 'route' => route('category', $this->product->categories[0]->slug)],
+                ['name' => $this->product->name, 'route' => route('product', $this->product->slug)],
+            ];
+        } else {
+            $breadcrumb = [
+                ['name' => 'Boutique', 'route' => route('boutique')],
+                ['name' => $this->product->name, 'route' => route('product', $this->product->slug)],
+            ];
+        }
         return view('livewire.show-product')->layout('layouts.main', [
             'title' => $this->product->name,
             'hideTitle' => true,
             'description' => $this->product->description,
-            'breadcrumb' => [
-                ['name' => 'Boutique', 'route' => route('boutique')],
-                ['name' => $this->product->categories[0]->name, 'route' => route('category', $this->product->categories[0]->slug)],
-                ['name' => $this->product->name, 'route' => route('product', $this->product->slug)],
-            ]
+            'breadcrumb' => $breadcrumb
         ]);
     }
 }
