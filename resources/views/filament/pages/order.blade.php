@@ -1,6 +1,6 @@
 <x-filament::page>
     <div class="flex flex-col w-full gap-5 md:flex-row">
-        <x-filament::card class="relative w-full">
+        <x-filament::card class="w-full">
             <div class="flex flex-col items-start justify-between xl:items-center xl:flex-row">
                 <h1 class="text-2xl font-semibold">Commande</h1>
                 @switch($record->status)
@@ -86,7 +86,7 @@
                             </span>
                         @endif
                     </p>
-                    @if (!$record->paid)
+                    @if (!$record->paid && $record->status !== 'cancelled')
                         <form wire:submit.prevent="updatePaid">
                             <x-filament-support::button type="submit">
                                 Passer la commande en payée
@@ -96,9 +96,9 @@
                 </div>
                 <hr class="my-5">
                 <h2 class="mb-2 text-lg font-semibold">
-                    Information complémentaire
+                    Note du client
                 </h2>
-                <p class="mb-16 text-gray-600">
+                <p class="text-gray-600">
                     @if ($record->notes)
                         {{ $record->notes }}
                     @else
@@ -106,25 +106,6 @@
                     @endif
                 </p>
             </div>
-            @if ($record->status === 'pending' || $record->status === 'processing')
-                <form wire:submit.prevent="updateStatus" class="absolute bottom-0 left-0 flex items-center gap-x-4"
-                    style="margin: 16px">
-                    <select wire:model="status"
-                        class="block text-gray-900 transition duration-75 border-gray-300 rounded-lg shadow-sm w-fit focus:border-primary-600 focus:ring-1 focus:ring-inset focus:ring-primary-600 disabled:opacity-70">
-                        @if ($record->status === 'pending')
-                            <option value="processing">En cours</option>
-                            <option value="finished">Terminée</option>
-                            <option value="cancelled">Annulée</option>
-                        @elseif ($record->status === 'processing')
-                            <option value="finished">Terminée</option>
-                            <option value="cancelled">Annulée</option>
-                        @endif
-                    </select>
-                    <x-filament-support::button type="submit">
-                        Changer le statut
-                    </x-filament-support::button>
-                </form>
-            @endif
         </x-filament::card>
         <div class="flex flex-col gap-y-5">
             <x-filament::card class="w-80">

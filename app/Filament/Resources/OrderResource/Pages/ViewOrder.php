@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\OrderResource\Pages;
 
 use App\Filament\Resources\OrderResource;
+use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\ViewRecord;
 use Illuminate\Contracts\View\View;
 
@@ -10,8 +11,13 @@ class ViewOrder extends ViewRecord
 {
     protected static string $resource = OrderResource::class;
     protected static string $view = 'filament.pages.order';
-
     public $status;
+
+    protected function getTitle(): string
+    {
+        return 'Commande n°' . $this->record->id;
+    }
+
 
     public function mount($record): void
     {
@@ -21,34 +27,15 @@ class ViewOrder extends ViewRecord
 
         abort_unless(static::getResource()::canView($this->getRecord()), 403);
 
-        if ($this->getRecord()->status == 'pending') {
-            $this->status = 'processing';
-        } elseif ($this->getRecord()->status == 'processing') {
-            $this->status = 'finished';
-        }
+        $this->status = $this->record->status;
 
         $this->fillForm();
     }
-
     public function render(): View
     {
-        if ($this->getRecord()->status == 'pending') {
-            $this->status = 'processing';
-        } elseif ($this->getRecord()->status == 'processing') {
-            $this->status = 'finished';
-        }
+        $this->status = $this->record->status;
         return view(static::$view, $this->getViewData())
             ->layout(static::$layout, $this->getLayoutData());
-    }
-
-    protected function getTitle(): string
-    {
-        return 'Commande n°' . $this->record->id;
-    }
-
-    protected function getStatus(): string
-    {
-        return $this->record->status;
     }
 
     protected function getSubtotal(): string
@@ -74,35 +61,39 @@ class ViewOrder extends ViewRecord
         }
     }
 
-    protected function getTranslatedStatus($str): string
+    protected function getActions(): array
     {
-        switch ($str) {
-            case 'pending':
-                return '"En attente"';
-                break;
-            case 'processing':
-                return '"En cours"';
-                break;
-            case 'cancelled':
-                return '"Annulée"';
-                break;
-            case 'finished':
-                return '"Terminée"';
-                break;
-        }
+        return [
+            Action::make('Passer la commande au statut en cours')
+                ->action(fn () => $this->updateStatus('processing'))
+                ->hidden(fn () => $this->getRecord()->status === 'processing' || $this->getRecord()->status === 'finished' || $this->getRecord()->status === 'cancelled')
+                ->color('warning'),
+            Action::make('Passer la commande au statut terminée')
+                ->action(fn () => $this->updateStatus('finished'))
+                ->hidden(fn () => $this->getRecord()->status === 'pending' || $this->getRecord()->status === 'finished' || $this->getRecord()->status === 'cancelled')
+                ->color('success'),
+            Action::make('Annuler la commande')
+                ->action(fn () => $this->updateStatus('cancelled'))
+                ->requiresConfirmation()
+                ->modalHeading('Annuler la commande')
+                ->modalSubheading('Êtes-vous sûr de vouloir annuler cette commande ?')
+                ->modalButton('Confirmer')
+                ->color('danger')
+                ->hidden(fn () => $this->getRecord()->status === 'finished' || $this->getRecord()->status === 'cancelled'),
+        ];
     }
 
-    public function updateStatus(): void
+    public function updateStatus($case): void
     {
-        $this->record->status = $this->status;
-        $this->record->save();
-        $this->notify('success', 'Le statut de la commande a été modifié par' . ' ' . $this->getTranslatedStatus($this->status));
+        $this->getRecord()->status = $case;
+        $this->getRecord()->save();
+        $this->notify('success', 'Le statut de la commande a été modifié');
     }
 
     public function updatePaid(): void
     {
         $this->record->paid = 1;
         $this->record->save();
-        $this->notify('success', 'Le statut de paiment a été modifié par "Payée"');
+        $this->notify('success', 'Le statut de paiment a été modifié');
     }
 }
