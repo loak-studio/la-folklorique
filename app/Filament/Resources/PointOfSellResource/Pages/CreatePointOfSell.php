@@ -16,6 +16,11 @@ class CreatePointOfSell extends CreateRecord
 
     protected function getRedirectUrl(): string
     {
-        return $this->getResource()::getUrl('index');
+        if ($this->record->latitude == 0 && $this->record->longitude == 0) {
+            $this->notify('danger', 'Adresse non reconnue par le systeme');
+            return $this->getResource()::getUrl('edit', $this->record->id);
+        } else {
+            return $this->getResource()::getUrl('index');
+        }
     }
 }
