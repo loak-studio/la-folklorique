@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\ProductResource\Pages;
 
 use App\Filament\Resources\ProductResource;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateProduct extends CreateRecord
@@ -18,7 +17,11 @@ class CreateProduct extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['price'] = (int) round(($data['price'] * 100));
-        $data['old_price'] = (int) round(($data['old_price'] * 100));
+        if ($data['old_price'] === null) {
+            $data['old_price'] = null;
+        } else {
+            $data['old_price'] = (int) round(($data['old_price'] * 100));
+        }
         return $data;
     }
 

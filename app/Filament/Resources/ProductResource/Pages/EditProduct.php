@@ -18,14 +18,22 @@ class EditProduct extends EditRecord
     protected function mutateFormDataBeforeSave(array $data): array
     {
         $data['price'] = (int) round(str_replace(',', '.', $data['price']) * 100);
-        $data['old_price'] = (int) round(str_replace(',', '.', $data['old_price']) * 100);
+        if ($data['old_price'] === null) {
+            $data['old_price'] = null;
+        } else {
+            $data['old_price'] = (int) round(($data['old_price'] * 100));
+        }
         return $data;
     }
 
     protected function mutateFormDataBeforeFill(array $data): array
     {
         $data['price'] = number_format($data['price'] / 100, 2, ',', '.');
-        $data['old_price'] = number_format($data['old_price'] / 100, 2, ',', '.');
+        if ($data['old_price'] === null) {
+            $data['old_price'] = null;
+        } else {
+            $data['old_price'] = number_format($data['old_price'] / 100, 2, ',', '.');
+        }
         return $data;
     }
 
