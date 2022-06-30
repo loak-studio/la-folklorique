@@ -10,6 +10,11 @@ class EditPointOfSell extends EditRecord
 {
     protected static string $resource = PointOfSellResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Modifier le point de vente : ' . $this->record->name;
+    }
+
     protected function getActions(): array
     {
         return [

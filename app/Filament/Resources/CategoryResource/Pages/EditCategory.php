@@ -10,6 +10,11 @@ class EditCategory extends EditRecord
 {
     protected static string $resource = CategoryResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Modifier la catégorie : ' . $this->record->name;
+    }
+
     protected function getActions(): array
     {
         return [

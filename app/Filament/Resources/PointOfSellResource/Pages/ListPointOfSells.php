@@ -10,6 +10,11 @@ class ListPointOfSells extends ListRecords
 {
     protected static string $resource = PointOfSellResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Tous les points de vente';
+    }
+
     protected function getActions(): array
     {
         return [

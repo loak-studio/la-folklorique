@@ -10,6 +10,11 @@ class EditQuestion extends EditRecord
 {
     protected static string $resource = QuestionResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Modifier la question';
+    }
+
     protected function getActions(): array
     {
         return [

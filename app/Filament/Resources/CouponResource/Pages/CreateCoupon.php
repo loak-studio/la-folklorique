@@ -9,6 +9,11 @@ class CreateCoupon extends CreateRecord
 {
     protected static string $resource = CouponResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Créer un code promo';
+    }
+
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['value'] = (int) round(($data['value'] * 100));

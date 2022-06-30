@@ -12,7 +12,7 @@ class ListCategories extends ListRecords
 
     protected function getTitle(): string
     {
-        return '';
+        return 'Toutes les catégories';
     }
 
     protected function getActions(): array

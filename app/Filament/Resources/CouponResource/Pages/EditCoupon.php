@@ -10,6 +10,11 @@ class EditCoupon extends EditRecord
 {
     protected static string $resource = CouponResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Modifier le code promo : ' . $this->record->code;
+    }
+
     protected function mutateFormDataBeforeSave(array $data): array
     {
         $data['value'] = (int) round(str_replace(',', '.', $data['value']) * 100);

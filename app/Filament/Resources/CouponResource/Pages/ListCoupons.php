@@ -10,6 +10,11 @@ class ListCoupons extends ListRecords
 {
     protected static string $resource = CouponResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Tous les codes promo';
+    }
+
     protected function getActions(): array
     {
         return [

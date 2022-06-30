@@ -10,6 +10,11 @@ class EditProduct extends EditRecord
 {
     protected static string $resource = ProductResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Modifier le produit : ' . $this->record->name;
+    }
+
     protected function mutateFormDataBeforeSave(array $data): array
     {
         $data['price'] = (int) round(str_replace(',', '.', $data['price']) * 100);

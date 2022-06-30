@@ -10,6 +10,11 @@ class CreateProduct extends CreateRecord
 {
     protected static string $resource = ProductResource::class;
 
+    protected function getTitle(): string
+    {
+        return 'Créer un produit';
+    }
+
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['price'] = (int) round(($data['price'] * 100));
