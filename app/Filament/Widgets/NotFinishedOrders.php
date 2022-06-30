@@ -14,6 +14,8 @@ use Filament\Tables\Columns\TextColumn;
 class NotFinishedOrders extends BaseWidget
 {
     protected static ?string $heading = "Commandes non-terminées";
+    protected int | string | array $columnSpan = 'full';
+    protected static ?int $sort = 1;
 
     protected function getTableQuery(): Builder
     {

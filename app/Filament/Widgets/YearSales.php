@@ -7,9 +7,11 @@ use Filament\Widgets\LineChartWidget;
 
 class YearSales extends LineChartWidget
 {
+    protected static ?int $sort = 2;
+
     protected function getHeading(): ?string
     {
-        return "Nombre de commande terminée par mois sur l'année (" . date('Y') . ")";
+        return "Commande terminée sur l'année " . date('Y');
     }
 
     protected function getYearSalesData(): array

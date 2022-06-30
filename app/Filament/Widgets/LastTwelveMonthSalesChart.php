@@ -7,9 +7,11 @@ use Filament\Widgets\LineChartWidget;
 
 class LastTwelveMonthSalesChart extends LineChartWidget
 {
+    protected static ?int $sort = 3;
+
     protected function getHeading(): ?string
     {
-        return "Nombre de commande terminée sur les 12 derniers mois";
+        return "Commande terminée sur les 12 derniers mois";
     }
 
     protected function getMonthSales(int $month, $year): int
