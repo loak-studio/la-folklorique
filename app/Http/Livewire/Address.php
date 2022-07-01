@@ -8,7 +8,7 @@ class Address extends Component
 {
     public $shippingPlace = "home";
     public $showBillingForm = false;
-    public $billing_address;
+    public $billing_address = [];
     protected $listeners = ['shippingPlaceChanged'];
 
     public function shippingPlaceChanged($value)
