@@ -7,10 +7,10 @@
             Une bière brassée avec savoir se déguste avec sagesse.
         </p>
         <div>
-            <button wire:click="setOk(true)" class="px-5 py-2 rounded-md bg-primary-500">
+            <button wire:click="setOk(true)" class="px-5 py-2 transition rounded-md hover:bg-primary-600 bg-primary-500">
                 Oui, j'ai l'âge légal
             </button>
-            <button wire:click="setOk(false)" class="mt-4 lg:px-5 lg:py-2 lg:mt-0">
+            <button wire:click="setOk(false)" class="mt-4 hover:underline lg:px-5 lg:py-2 lg:mt-0">
                 Non, je n'ai pas l'âge légal
             </button>
         </div>
