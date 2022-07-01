@@ -20,7 +20,7 @@
                 </li>
                 <li class="flex items-center">
                     <input @checked(session('payment_method') === 'paypal') value="paypal" type="radio" class="mr-5"
-                        name="payment_method" value="paypal" id="paypal">
+                        name="payment_method" id="paypal">
                     <label for="paypal" class="w-full">
                         Paypal
                     </label>
@@ -29,7 +29,7 @@
 
                 <li class="flex">
                     <input @checked(session('payment_method') === 'transfer') value="transfer" type="radio" class="mr-5"
-                        name="payment_method" value="bankTransfer" id="bankTransfer">
+                        name="payment_method" id="bankTransfer">
                     <label for="bankTransfer" class="w-full">Virement bancaire</label>
                     <x-payment.virement class="hidden lg:block" />
                 </li>
@@ -37,7 +37,7 @@
                 @if (session('shipping_place') == 'home')
                     <li class="flex items-center">
                         <input @checked(session('payment_method') === 'cash') value="cash" type="radio" class="mr-5"
-                            name="payment_method" value="afterShipping" id="afterShipping">
+                            name="payment_method" id="afterShipping">
                         <label for="afterShipping" class="flex flex-col">
                             <span>Paiement à la livraison <br><small class="text-sm">Moyen de paiement disponible
                                     lors
