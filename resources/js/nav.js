@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+window.addEventListener("load", function() {
     const button = document.querySelector('[data-mobile-navigation-button]')
     const close = document.querySelector('[data-mobile-navigation-close]')
     const nav = document.querySelector('[data-mobile-navigation]')

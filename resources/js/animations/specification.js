@@ -1,5 +1,5 @@
 import { inView, animate, spring } from "motion";
-document.addEventListener("turbolinks:load", function() {
+window.addEventListener("load", function() {
     inView('[data-animation-specification-root]', ({ target }) => {
         const bottle = target.querySelector('[data-animation-specification="bottle"]');
         const text = target.querySelector('[data-animation-specification="text"]');

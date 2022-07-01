@@ -1,5 +1,5 @@
 import { inView, animate, spring } from "motion";
-document.addEventListener("turbolinks:load", function() {
+window.addEventListener("load", function() {
     const items = document.querySelectorAll('[data-animation-opacity]');
     items.forEach((item)=>{
         inView(item, ({ target }) => {

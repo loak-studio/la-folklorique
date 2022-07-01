@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+window.addEventListener("load", function() {
     const img = document.querySelectorAll('img[src="/assets/confetti.svg"]')
     if(img.length > 0){
         window.addEventListener('scroll',(e)=>{

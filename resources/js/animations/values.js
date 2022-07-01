@@ -1,5 +1,5 @@
 import { inView, animate, spring } from "motion";
-document.addEventListener("turbolinks:load", function() {
+window.addEventListener("load", function() {
     inView('[data-appear-values]', ({ target }) => {
         const items = target.querySelectorAll('[data-appear-values-item]');
         items.forEach((item, index)=>{

@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+window.addEventListener("load", function() {
     const questionsContainer = document.querySelectorAll('[data-question-container]')
 
     const initAccordion = (element)=>{

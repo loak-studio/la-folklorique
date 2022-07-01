@@ -17,7 +17,7 @@ const Icon = L.icon({
 
 
 
-document.addEventListener("turbolinks:load", function() {
+window.addEventListener("load", function() {
     const map = document.querySelector('#map')
     if(map){
         const map = L.map('map', {
