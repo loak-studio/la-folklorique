@@ -65,7 +65,7 @@
             </div>
             @if (session('payment_method') == 'transfer')
                 <div class="flex gap-3.5 p-4 mt-4 text-white bg-gray-700 rounded-md">
-                    <x-l-icon color="#E85011" size="24" class="shrink-0" name="receipt" />
+                    <x-l-icon color="white" size="24" class="shrink-0" name="receipt" />
                     <p>
                         Veuillez indiquer votre nom et prénom + n° de commande en communication. Votre commande ne sera
                         pas
