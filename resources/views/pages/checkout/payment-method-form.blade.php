@@ -9,7 +9,7 @@
                 <li class="flex items-center">
                     <input required @checked(empty(session('payment_method')) || session('payment_method') === 'stripe') value="stripe" type="radio" class="mr-5"
                         name="payment_method" value="creditCard" id="creditCard">
-                    <label for="creditCard" class="w-full">Carte de crédit</label>
+                    <label for="creditCard" class="w-full">Carte de banque</label>
                     <div class="hidden gap-5 lg:flex">
                         <x-payment.mastercard />
                         <x-payment.maestro />

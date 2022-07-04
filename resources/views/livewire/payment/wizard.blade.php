@@ -76,7 +76,7 @@
                         <li class="flex items-center">
                             <input value="creditCard" wire:model="paymentMethod" type="radio" class="mr-5"
                                 name="paymentMethod" value="creditCard" id="creditCard">
-                            <label for="creditCard" class="w-full">Carte de crédit</label>
+                            <label for="creditCard" class="w-full">Carte de banque</label>
                             <ul class="flex gap-5">
                                 <li>
                                     <x-payment.mastercard />
@@ -143,7 +143,7 @@
                 <div class="flex justify-between text-white">
                     @switch($paymentMethod)
                         @case('creditCard')
-                            <span>Carte de crédit</span>
+                            <span>Carte de banque</span>
                             <ul class="flex gap-5">
                                 <li>
                                     <x-payment.mastercard />

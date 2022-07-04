@@ -36,7 +36,7 @@
             <div class="flex justify-between pl-4 text-white">
                 @switch(session('payment_method'))
                     @case('stripe')
-                        <span>Carte de crédit</span>
+                        <span>Carte de banque</span>
                         <div class="hidden gap-5 lg:flex">
                             <x-payment.mastercard />
                             <x-payment.maestro />
