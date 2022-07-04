@@ -38,7 +38,7 @@ class CheckoutController extends Controller
             'billing_address_city' => 'required',
             'billing_address_zip' => 'required|integer',
             'billing_address_country' => 'required',
-            'billing_address_phone' => 'required|numeric',
+            'billing_address_phone' => 'required',
             'billing_address_email' => 'required|email',
             'billing_address_number' => 'required|numeric',
         ]);
