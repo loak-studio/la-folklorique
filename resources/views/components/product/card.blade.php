@@ -13,7 +13,7 @@
         {{ $product->getEuroPrice() }} €
 
         @if (!empty($product->old_price))
-            <del class="text-sm">{{ $product->old_price }}€</del>
+            <del class="text-sm">{{ $product->getEuroOldPrice() }}€</del>
         @endif
     </span>
     <a class="before:inset-0 before:absolute" href="{{ route('product', $product->slug) }}">

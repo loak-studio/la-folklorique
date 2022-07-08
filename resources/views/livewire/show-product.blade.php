@@ -23,7 +23,7 @@
             <div class="flex items-center gap-2 pt-4 pb-8 border-b-2 border-green-700">
                 <span class="text-lg font-semibold">{{ $product->getEuroPrice() }}€
                     @if (!empty($product->old_price))
-                        <del class="text-sm">{{ $product->old_price }}€</del>
+                        <del class="text-sm">{{ $product->getEuroOldPrice() }}€</del>
                     @endif
                 </span>
                 <span class="text-sm ">TVA incluse</span>

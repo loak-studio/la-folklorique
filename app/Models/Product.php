@@ -24,6 +24,11 @@ class Product extends Model
         return $this->price / 100;
     }
 
+    public function getEuroOldPrice()
+    {
+        return $this->old_price / 100;
+    }
+
     public function categories()
     {
         return $this->belongsToMany(Category::class);
