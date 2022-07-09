@@ -1,10 +1,17 @@
-.md-parsed{
+.md-parsed {
     @apply max-w-[64ch] text-white w-full mx-auto space-y-7;
 }
 
-.md-parsed h2{
+.md-parsed h2 {
     @apply text-3xl font-semibold;
 }
-.md-parsed h3{
+.md-parsed h3 {
     @apply text-lg font-semibold;
+}
+.md-parsed ul {
+    @apply pl-4 list-disc;
+}
+
+.md-parsed ol {
+    @apply pl-4 list-decimal;
 }

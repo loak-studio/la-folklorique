@@ -28,7 +28,7 @@
                 </span>
                 <span class="text-sm ">TVA incluse</span>
             </div>
-            <article class="mt-8">
+            <article class="mt-8 md-parsed">
                 {!! Str::of($product->description)->markdown() !!}
             </article>
             <div class="flex items-center gap-10 mt-8">
