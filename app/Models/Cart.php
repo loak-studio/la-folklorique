@@ -75,7 +75,7 @@ class Cart extends Model
             return 'Offerts';
         }
         else{
-            return $this->getShippingCostInEuros() + "€" ;
+            return $this->getShippingCostInEuros() . "€" ;
         }
     }
 
