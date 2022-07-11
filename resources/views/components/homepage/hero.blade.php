@@ -1,6 +1,6 @@
 <section class="static flex flex-col w-screen min-h-[900px] h-screen text-white lg:relative lg:flex-row">
     <picture
-        class="orange origin-center transition  duration-200 absolute top-20 -rotate-[30deg] hidden lg:block blur-sm left-72 w-60">
+        class="absolute hidden transition duration-200 origin-center orange top-20 lg:block blur-sm left-72 w-60">
         <source width="445" height="296" srcset="/assets/orange1.webp" type="image/webp">
         <img src="/assets/orange1.png" alt="">
     </picture>
@@ -62,7 +62,7 @@
                     <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_left.png" alt="">
                 </picture>
-                <picture class="absolute -mr-52 bottom-0 rotate-45 w-[130px]  lg:w-[200px]  -scale-x-100">
+                <picture class="absolute -mr-52 bottom-0  w-[130px]  lg:w-[200px]  -scale-x-100">
                     <source width="301" height="306" srcset="/assets/orange3.webp" type="image/webp">
                     <img width="301" height="306" src="/assets/orange3.png" alt="">
                 </picture>
