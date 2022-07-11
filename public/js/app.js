@@ -4048,9 +4048,10 @@ window.addEventListener("load", function () {
   var img = document.querySelectorAll('img[src="/assets/confetti.svg"]');
 
   if (img.length > 0) {
-    window.addEventListener('scroll', function (e) {
+    window.addEventListener("scroll", function (e) {
+      console.log(window.innerWidth);
       img.forEach(function (i) {
-        i.style.transform = "translateY(".concat(-window.scrollY / window.innerHeight * 100, "px)");
+        i.style.transform = "translateY(".concat(-window.scrollY / window.innerHeight * (window.innerWidth > 768 ? 100 : 20), "px)");
       });
     });
   }
