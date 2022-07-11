@@ -60,7 +60,6 @@ class ProductResource extends Resource
                     Toggle::make('available')
                         ->default(true)
                         ->label('Disponible'),
-
                     Toggle::make('visible')
                         ->default(true)
                         ->label('Visible'),
@@ -70,7 +69,7 @@ class ProductResource extends Resource
                         ->mask(
                             fn (TextInput\Mask $mask) => $mask
                                 ->numeric()
-                                ->thousandsSeparator('.')
+                                ->thousandsSeparator(' ')
                                 ->decimalSeparator(','),
                         )
                         ->required(),
@@ -80,7 +79,7 @@ class ProductResource extends Resource
                         ->mask(
                             fn (TextInput\Mask $mask) => $mask
                                 ->numeric()
-                                ->thousandsSeparator('.')
+                                ->thousandsSeparator(' ')
                                 ->decimalSeparator(','),
                         )
                 ])->columnSpan(1)

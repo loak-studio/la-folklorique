@@ -18,7 +18,7 @@ use Filament\Tables\Columns\TextColumn;
 class CouponResource extends Resource
 {
     protected static ?string $model = Coupon::class;
-    protected static ?string $recordTitleAttribute = 'name';
+    protected static ?string $recordTitleAttribute = 'code';
     protected static ?string $navigationGroup = 'Gestion e-commerce';
     protected static ?string $label = "Code promo";
     protected static ?string $pluralLabel = "Codes promos";
