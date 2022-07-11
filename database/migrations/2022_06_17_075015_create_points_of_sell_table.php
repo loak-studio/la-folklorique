@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('longitude');
             $table->string('street');
             $table->string('city');
+            $table->string('google_my_business')->nullable();
             $table->timestamps();
         });
     }

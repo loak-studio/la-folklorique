@@ -234,6 +234,7 @@ class DatabaseSeeder extends Seeder
         $pos->name = "Le Petit Mousse";
         $pos->street = "Avenue Charles Deliège 15";
         $pos->city = "Binche";
+        $pos->google_my_business = "https://www.google.com/maps/place/Le+Petit+Mousse/@50.4119269,4.1639282,17z/data=!3m1!4b1!4m5!3m4!1s0x47c2386a660da367:0xdec11617e8b020ac!8m2!3d50.4119384!4d4.1660757";
         $pos->save();
     }
 }
