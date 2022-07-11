@@ -19,6 +19,7 @@ class PointOfSellResource extends Resource
 {
     protected static ?string $model = PointOfSell::class;
     protected static ?string $navigationGroup = 'Gestion site internet';
+    protected static ?string $recordTitleAttribute = 'name';
     protected static ?string $label = "Point de vente";
     protected static ?string $pluralLabel = "Points de vente";
     protected static ?string $navigationLabel = 'Points de vente';
@@ -32,6 +33,7 @@ class PointOfSellResource extends Resource
                     TextInput::make('name')->label('Nom')->required(),
                     TextInput::make('street')->label('Rue')->required(),
                     TextInput::make('city')->label('Ville')->required(),
+                    TextInput::make('google_my_business')->label('Google My Business'),
                 ])->columnSpan(2),
                 Section::make('Coordonnées GPS')
                     ->description('À laisser vide à la création, les données sont récupérées automatiquement.')

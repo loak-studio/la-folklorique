@@ -17,18 +17,19 @@ class EditCoupon extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        if (!empty($data['value'])) {
-            $data['value'] = (int) round(str_replace(',', '.', $data['value']) * 100);
-        }
         if ($data['free_shipping']) {
             $data['value'] = 0;
+        } else {
+            $data['value'] == number_format($this->record->value / 100, 2, ',', ' ')
+                ? $data['value'] = $this->record->value
+                : $data['value'] = (float) $data['value'] * 100;
         }
         return $data;
     }
 
     protected function mutateFormDataBeforeFill(array $data): array
     {
-        $data['value'] = number_format($data['value'] / 100, 2, ',', '.');
+        $data['value'] = number_format($data['value'] / 100, 2, ',', ' ');
         return $data;
     }
 
