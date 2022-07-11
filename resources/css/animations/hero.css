@@ -1,55 +1,6 @@
-@keyframes leafOneLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(10deg);
-    }
-}
-@keyframes leafOneRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(-10deg);
-    }
-}
-@keyframes leafTwoLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(-15deg);
-    }
-}
-@keyframes leafTwoRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(15deg);
-    }
-}
-@keyframes leafThreeLeft {
-    0% {
-        transform: rotate(50deg);
-    }
-    100% {
-        transform: rotate(-35deg);
-    }
-}
-@keyframes leafThreeRight {
-    0% {
-        transform: rotate(-50deg);
-    }
-    100% {
-        transform: rotate(35deg);
-    }
-}
-
 @keyframes windOneLeft {
     0% {
-        transform: rotate(10deg);
+        transform: rotate(5deg);
     }
     50% {
         transform: rotate(7deg);
@@ -61,7 +12,7 @@
 
 @keyframes windOneRight {
     0% {
-        transform: rotate(-10deg);
+        transform: rotate(0deg);
     }
     50% {
         transform: rotate(-16deg);
@@ -85,7 +36,7 @@
 
 @keyframes windTwoRight {
     0% {
-        transform: rotate(15deg);
+        transform: rotate(20deg);
     }
     50% {
         transform: rotate(9deg);
@@ -109,7 +60,7 @@
 
 @keyframes windThreeRight {
     0% {
-        transform: rotate(35deg);
+        transform: rotate(40deg);
     }
     50% {
         transform: rotate(29deg);
@@ -120,51 +71,51 @@
 }
 
 .leafOneLeft {
-    animation-name: leafOneLeft, windOneLeft;
-    animation-duration: 1s, 5s;
-    animation-delay: 0ms, 1s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
+    animation-name: windOneLeft;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .leafOneRight {
-    animation-name: leafOneRight, windOneRight;
-    animation-duration: 1s, 5s;
-    animation-delay: 0ms, 1s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
+    animation-name: windOneRight;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .leafTwoLeft {
-    animation-name: leafTwoLeft, windTwoLeft;
-    animation-duration: 1s, 5s;
-    animation-delay: 0ms, 1s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
+    animation-name: windTwoLeft;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .leafTwoRight {
-    animation-name: leafTwoRight, windTwoRight;
-    animation-duration: 1s, 5s;
-    animation-delay: 0ms, 1s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
+    animation-name: windTwoRight;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .leafThreeLeft {
-    animation-name: leafThreeLeft, windThreeLeft;
-    animation-duration: 1s, 5s;
-    animation-delay: 0ms, 1s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
+    animation-name: windThreeLeft;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .leafThreeRight {
-    animation-name: leafThreeRight, windThreeRight;
-    animation-duration: 1s, 5s;
-    animation-delay: 0ms, 1s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
+    animation-name: windThreeRight;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }

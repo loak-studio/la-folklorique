@@ -25,39 +25,39 @@
         <div class="absolute bottom-[15%] left-20 lg:-left-1/2 w-full">
             <div class="relative flex justify-center w-full">
                 <picture
-                    class="absolute bottom-16 {{ session('is_ok') ? 'leafRight' : '' }}  lg:w-[209px] w-[140px] inline-block -mr-48 origin-bottom-left "
+                    class="absolute bottom-16 {{ session('is_ok') ? 'leafRight leafOneRight' : '' }}  lg:w-[209px] w-[140px] inline-block -mr-48 origin-bottom-left "
                     data-leafs="1r">
                     <source width="339" height="498" srcset="/assets/leaf_right.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_right.png" alt="">
                 </picture>
 
                 <picture
-                    class="absolute bottom-16 {{ session('is_ok') ? 'leafRight' : '' }}  lg:w-[209px] w-[140px] inline-block -mr-48 origin-bottom-left "
+                    class="absolute bottom-16 {{ session('is_ok') ? 'leafRight leafTwoRight' : '' }}  lg:w-[209px] w-[140px] inline-block -mr-48 origin-bottom-left "
                     data-leafs="2r">
                     <source width="339" height="498" srcset="/assets/leaf_right.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_right.png" alt="">
                 </picture>
 
                 <picture
-                    class="absolute inline-block  bottom-16  {{ session('is_ok') ? 'leafRight' : '' }} lg:w-[209px] w-[140px] origin-bottom-left inline-block -mr-48 "
+                    class="absolute inline-block  bottom-16  {{ session('is_ok') ? 'leafRight leafThreeRight' : '' }} lg:w-[209px] w-[140px] origin-bottom-left inline-block -mr-48 "
                     data-leafs="3r">
                     <source width="339" height="498" srcset="/assets/leaf_right.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_right.png" alt="">
                 </picture>
                 <picture
-                    class="absolute bottom-16 {{ session('is_ok') ? 'leafLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px]  origin-bottom-right "
+                    class="absolute bottom-16 {{ session('is_ok') ? 'leafLeft leafOneLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px]  origin-bottom-right "
                     data-leafs="1l">
                     <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_left.png" alt="">
                 </picture>
                 <picture
-                    class="absolute bottom-16 {{ session('is_ok') ? 'leafLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px] origin-bottom-right"
+                    class="absolute bottom-16 {{ session('is_ok') ? 'leafLeft leafTwoLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px] origin-bottom-right"
                     data-leafs="2l">
                     <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_left.png" alt="">
                 </picture>
                 <picture
-                    class="absolute bottom-16  {{ session('is_ok') ? 'leafLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px] origin-bottom-right "
+                    class="absolute bottom-16  {{ session('is_ok') ? 'leafLeft leafThreeLeft' : '' }} -ml-48 inline-block lg:w-[209px] w-[140px] origin-bottom-right "
                     data-leafs="3l">
                     <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
                     <img width="339" height="498" src="/assets/leaf_left.png" alt="">

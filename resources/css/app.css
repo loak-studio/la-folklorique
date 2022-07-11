@@ -2,7 +2,7 @@
 @import "./fonts.css";
 @import "./markdown.css";
 @import "./button.css";
-/* @import './animations/hero.css'; */
+@import "./animations/hero.css";
 @import "./animations/frontpage.css";
 @import "tailwindcss/base";
 @import "tailwindcss/components";

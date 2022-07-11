@@ -1,4 +1,4 @@
-import { inView, animate, spring } from "motion";
+import { animate } from "motion";
 window.addEventListener("load", function () {
     const hero = this.document.querySelector("#hero");
     const itemsRight = hero.querySelectorAll(".leafRight");
