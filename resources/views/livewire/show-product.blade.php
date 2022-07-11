@@ -57,7 +57,7 @@
                     <span class="flex items-center gap-2 mt-8">
                         <x-l-icon class="shrink-0" name="home" />
                         <span>
-                            Pas de livraison < 50km de leval-Trahegnies , vous pouvez livrer à la <a
+                            Pas de livraison < 50km de Leval-Trahegnies, possibilité de réaliser un retrait à la <a
                                 class="text-primary-500 hover:underline" href="{{ route('faq') }}" target="_blank">
                                 brasserie</a>
                         </span>

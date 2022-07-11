@@ -15,9 +15,9 @@
             @break
 
             @case($current > $step)
-                <span class="flex items-center justify-center w-8 h-8 border-2 rounded-full border-primary-500 ">
+                <a href="{{empty($route) ? '#' : route($route)}}" class="flex items-center justify-center w-8 h-8 border-2 rounded-full border-primary-500 ">
                     <x-l-icon name="check" />
-                </span>
+                </a>
             @break
         @endswitch
         <span class="mt-4 @if ($current >= $step) text-primary-500 @endif">{{ $label }}</span>

@@ -3,7 +3,7 @@
     <div class="p-4 space-y-10 text-white rounded-md lg:p-12 bg-zinc-700">
         <h1 class="text-3xl font-semibold text-center">La Folklorique</h1>
         <p>
-            Avez-vous l'âge légal de consommer de l'alcool <br>
+            Avez-vous l'âge légal de consommer de l'alcool ? <br>
             Une bière brassée avec savoir se déguste avec sagesse.
         </p>
         <div>

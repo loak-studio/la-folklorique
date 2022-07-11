@@ -20,7 +20,7 @@
                 <x-l-icon size="24" name="card" />
                 Moyens de paiement
             </h2>
-            <ul class="flex flex-wrap w-full max-w-xs gap-5 mt-5">
+            <ul class="flex flex-wrap w-full gap-2 mt-5">
                 <li title="Mastercard" class="cursor-help">
                     <x-payment.mastercard />
                 </li>

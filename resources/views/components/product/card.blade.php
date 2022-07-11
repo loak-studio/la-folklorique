@@ -1,5 +1,5 @@
 <div class="relative text-white group">
-    <div class="w-full md:w-auto relative overflow-hidden aspect-[3/4]">
+    <div class="relative w-full overflow-hidden md:w-auto aspect-square">
         <img src="/assets/confetti-hover.svg"
             class="absolute object-cover w-full h-full transition scale-150 opacity-0 group-hover:rotate-12 group-hover:opacity-100"
             alt="">
@@ -10,7 +10,7 @@
     </div>
     <h2 class="text-lg font-semibold ">{{ $product->name }}</h2>
     <span>
-        {{ $product->getEuroPrice() }} €
+        <span class="font-bold">{{ $product->getEuroPrice() }} €</span>
 
         @if (!empty($product->old_price))
             <del class="text-sm">{{ $product->getEuroOldPrice() }}€</del>
