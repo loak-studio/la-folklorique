@@ -120,6 +120,7 @@
 }
 
 .leafOneLeft {
+    transform: rotate(50deg);
     transform-style: preserve-3d;
     animation-name: leafOneLeft, windOneLeft;
     animation-duration: 1s, 5s;
@@ -129,6 +130,7 @@
     animation-direction: normal, alternate;
 }
 .leafOneRight {
+    transform: rotate(-50deg);
     transform-style: preserve-3d;
     animation-name: leafOneRight, windOneRight;
     animation-duration: 1s, 5s;
@@ -139,6 +141,7 @@
 }
 
 .leafTwoLeft {
+    transform: rotate(50deg);
     transform-style: preserve-3d;
     animation-name: leafTwoLeft, windTwoLeft;
     animation-duration: 1s, 5s;
@@ -148,6 +151,7 @@
     animation-direction: normal, alternate;
 }
 .leafTwoRight {
+    transform: rotate(-50deg);
     transform-style: preserve-3d;
     animation-name: leafTwoRight, windTwoRight;
     animation-duration: 1s, 5s;
@@ -157,6 +161,7 @@
     animation-direction: normal, alternate;
 }
 .leafThreeLeft {
+    transform: rotate(50deg);
     transform-style: preserve-3d;
     animation-name: leafThreeLeft, windThreeLeft;
     animation-duration: 1s, 5s;
@@ -166,6 +171,7 @@
     animation-direction: normal, alternate;
 }
 .leafThreeRight {
+    transform: rotate(-50deg);
     transform-style: preserve-3d;
     animation-name: leafThreeRight, windThreeRight;
     animation-duration: 1s, 5s;
