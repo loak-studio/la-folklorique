@@ -31,12 +31,18 @@
             <article class="mt-8 md-parsed">
                 {!! Str::of($product->description)->markdown() !!}
             </article>
+            @if($product->available)
             <div class="flex items-center gap-10 mt-8">
                 <livewire:input-number :quantity="$quantity" />
                 <div class="-mt-6">
                     <x-button wire:click="addToCart">Ajouter au panier</x-button>
                 </div>
             </div>
+            @else
+            <div class="mt-8">
+                <p class="italic">Ce produit n'est pas disponible à l'achat pour le moment.</p>
+            </div>
+            @endif
 
             <p id="success" class="h-4 mt-4 transition opacity-0">🎉 Le produit a bien été ajouté à votre panier</p>
 

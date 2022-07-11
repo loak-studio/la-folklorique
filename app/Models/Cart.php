@@ -69,6 +69,15 @@ class Cart extends Model
             return 0;
         }
     }
+    public function getShippingCostText()
+    {
+        if($this->getShippingCost() == 0){
+            return 'Offerts';
+        }
+        else{
+            return $this->getShippingCostInEuros() + "€" ;
+        }
+    }
 
     public function getShippingCostInEuros()
     {

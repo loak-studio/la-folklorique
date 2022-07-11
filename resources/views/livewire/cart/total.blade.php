@@ -14,7 +14,7 @@
     @if (session('shipping_place') == 'home' && $showShippingCost)
         <div class="flex justify-between">
             <span>Frais de livraison</span>
-            <span>{{ $cart->getShippingCostInEuros() }}€</span>
+            <span>{{ $cart->getShippingCostText() }}</span>
         </div>
     @else
         <p>Frais de livraison calculés à l'étape suivante</p>
@@ -35,7 +35,7 @@
             Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
         </p>
         <span>
-            {{ $cart->getTotalInEuros() }}€
+            {{ $cart->getTotalWithShippingCostInEuros() }}€
         </span>
     </div>
 
