@@ -123,7 +123,7 @@
     transform-style: preserve-3d;
     animation-name: leafOneLeft, windOneLeft;
     animation-duration: 1s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-delay: 100ms, 1.1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
@@ -132,7 +132,7 @@
     transform-style: preserve-3d;
     animation-name: leafOneRight, windOneRight;
     animation-duration: 1s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-delay: 100ms, 1.1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
@@ -142,7 +142,7 @@
     transform-style: preserve-3d;
     animation-name: leafTwoLeft, windTwoLeft;
     animation-duration: 1s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-delay: 100ms, 1.1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
@@ -151,7 +151,7 @@
     transform-style: preserve-3d;
     animation-name: leafTwoRight, windTwoRight;
     animation-duration: 1s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-delay: 100ms, 1.1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
@@ -160,7 +160,7 @@
     transform-style: preserve-3d;
     animation-name: leafThreeLeft, windThreeLeft;
     animation-duration: 1s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-delay: 100ms, 1.1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
@@ -169,7 +169,7 @@
     transform-style: preserve-3d;
     animation-name: leafThreeRight, windThreeRight;
     animation-duration: 1s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-delay: 100ms, 1.1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
