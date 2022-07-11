@@ -2,7 +2,6 @@
     0% {
         transform: rotate(50deg);
     }
-    50%,
     100% {
         transform: rotate(10deg);
     }
@@ -11,7 +10,6 @@
     0% {
         transform: rotate(-50deg);
     }
-    50%,
     100% {
         transform: rotate(-10deg);
     }
@@ -20,7 +18,6 @@
     0% {
         transform: rotate(50deg);
     }
-    50%,
     100% {
         transform: rotate(-15deg);
     }
@@ -29,7 +26,6 @@
     0% {
         transform: rotate(-50deg);
     }
-    50%,
     100% {
         transform: rotate(15deg);
     }
@@ -38,7 +34,6 @@
     0% {
         transform: rotate(50deg);
     }
-    50%,
     100% {
         transform: rotate(-35deg);
     }
@@ -47,7 +42,6 @@
     0% {
         transform: rotate(-50deg);
     }
-    50%,
     100% {
         transform: rotate(35deg);
     }
@@ -57,10 +51,9 @@
     0% {
         transform: rotate(10deg);
     }
-    25% {
+    50% {
         transform: rotate(7deg);
     }
-    50%,
     100% {
         transform: rotate(11deg);
     }
@@ -70,10 +63,9 @@
     0% {
         transform: rotate(-10deg);
     }
-    25% {
+    50% {
         transform: rotate(-16deg);
     }
-    50%,
     100% {
         transform: rotate(-9deg);
     }
@@ -83,10 +75,9 @@
     0% {
         transform: rotate(-15deg);
     }
-    25% {
+    50% {
         transform: rotate(-18deg);
     }
-    50%,
     100% {
         transform: rotate(-14deg);
     }
@@ -96,10 +87,9 @@
     0% {
         transform: rotate(15deg);
     }
-    25% {
+    50% {
         transform: rotate(9deg);
     }
-    50%,
     100% {
         transform: rotate(16deg);
     }
@@ -109,10 +99,9 @@
     0% {
         transform: rotate(-35deg);
     }
-    25% {
+    50% {
         transform: rotate(-38deg);
     }
-    50%,
     100% {
         transform: rotate(-34deg);
     }
@@ -122,10 +111,9 @@
     0% {
         transform: rotate(35deg);
     }
-    25% {
+    50% {
         transform: rotate(29deg);
     }
-    50%,
     100% {
         transform: rotate(36deg);
     }
@@ -133,16 +121,16 @@
 
 .leafOneLeft {
     animation-name: leafOneLeft, windOneLeft;
-    animation-duration: 2s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
 }
 .leafOneRight {
     animation-name: leafOneRight, windOneRight;
-    animation-duration: 2s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
@@ -150,32 +138,32 @@
 
 .leafTwoLeft {
     animation-name: leafTwoLeft, windTwoLeft;
-    animation-duration: 2s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
 }
 .leafTwoRight {
     animation-name: leafTwoRight, windTwoRight;
-    animation-duration: 2s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
 }
 .leafThreeLeft {
     animation-name: leafThreeLeft, windThreeLeft;
-    animation-duration: 2s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;
 }
 .leafThreeRight {
     animation-name: leafThreeRight, windThreeRight;
-    animation-duration: 2s, 5s;
-    animation-delay: 50ms, 1s;
+    animation-duration: 1s, 5s;
+    animation-delay: 0ms, 1s;
     animation-timing-function: ease-out, ease-in-out;
     animation-iteration-count: 1, infinite;
     animation-direction: normal, alternate;

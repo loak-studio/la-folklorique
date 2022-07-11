@@ -1,26 +1,27 @@
-@import url('./filament.css');
+@import url("./filament.css");
 @import "./fonts.css";
 @import "./markdown.css";
-@import './button.css';
-@import './animations/hero.css';
-@import './animations/frontpage.css';
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "./button.css";
+/* @import './animations/hero.css'; */
+@import "./animations/frontpage.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-input[type="text"], input[type="email"], textarea{
+input[type="text"],
+input[type="email"],
+textarea {
     @apply focus:ring-primary-500 focus:border-transparent;
 }
 
-input[type="radio"]:checked{
+input[type="radio"]:checked {
     @apply bg-primary-500 hover:bg-primary-500 focus:bg-primary-500;
 }
 
-
-input[type="radio"]{
-    @apply  focus:ring-primary-500;
+input[type="radio"] {
+    @apply focus:ring-primary-500;
 }
 
-.hr-green{
+.hr-green {
     @apply after:content-[''] after:mt-4 after:mb-8 after:block after:h-[2px] after:w-[200px] after:bg-green-700;
 }
