@@ -8,12 +8,13 @@ use Livewire\Component;
 
 class Total extends Component
 {
-    public $shipping_cost;
     public $coupon;
     public $cart;
     public $buttonLabel = "Passer la commande";
     public $type;
     public $acceptCGV = false;
+    public $lastStep = false;
+    public $showShippingCost = false;
 
     protected $listeners = ['updateCoupon', 'updatePrice'];
 

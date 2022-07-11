@@ -8,9 +8,18 @@
             {{ $cart->getProductsSumInEuros() }}€
         </span>
     </div>
-    @unless($shipping_cost)
+  
+        
+   
+    @if (session('shipping_place') == 'home' && $showShippingCost)
+        <div class="flex justify-between">
+            <span>Frais de livraison</span>
+            <span>{{ $cart->getShippingCostInEuros() }}€</span>
+        </div>
+    @else
         <p>Frais de livraison calculés à l'étape suivante</p>
-    @endunless
+    @endif
+
     @if ($coupon)
         <div class="flex justify-between">
             <span>
@@ -30,33 +39,28 @@
         </span>
     </div>
 
-    @if ($type == 'payment')
-        <div>
-            <p>Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner au cours
-                de votre visite du site web, et pour d’autres raisons décrites dans notre politique de confidentialité.
-            </p>
-            <div class="mt-5">
-                <input wire:model="acceptCGV" wire:change="setCGV" type="checkbox" name="cgv" id="cgv">
-                <span>
-                    <label for="cgv">J’ai lu et j’accepte les </label>
-                    <a class="text-primary-500 hover:underline" href="{{ route('cgv') }}">conditions
-                        générales</a>
-                </span>
-            </div>
-        </div>
+    @if ($lastStep)
+    <p>Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner
+        au cours de votre visite du site web, et pour d’autres raisons décrites dans notre
+        <a class="text-primary-500 hover:underline" href="{{ route('politique-de-confidentialite') }}"
+            target="_blank">politique de
+            confidentialité</a>
+        .
+    </p>
+    <div>
+        <input class="text-primary-500" type="checkbox" name="cgv" required id="cgv">
+        <span>
+            <label for="cgv">
+                J’ai lu et j’accepte
+            </label>
+            <a class="text-primary-500 hover:underline" target="_blank" href="{{ route('cgv') }}">
+                les conditions générales
+            </a>
+        </span>
+    </div>
     @endif
-    @if ($cart->getProductsSum() > 1200)
-        @if ($type == 'cart')
+    @if ($cart->getTotal() > 1200)
             <x-button wire:click="handleButton">{{ $buttonLabel }}</x-button>
-        @endif
-        @if ($type == 'payment')
-            @if ($acceptCGV)
-                <x-button wire:click="handleButton">{{ $buttonLabel }}</x-button>
-            @else
-                <p>Vous devez accepter nos conditions générales de vente afin de procéder au paiement</p>
-            @endif
-
-        @endif
     @else
         <p>Le minimum d’achat est de 12€ afin de pouvoir passer commande</p>
     @endif

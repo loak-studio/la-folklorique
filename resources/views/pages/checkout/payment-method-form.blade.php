@@ -48,41 +48,7 @@
                 @endif
             </ul>
         </div>
-        <div class="lg:col-span-4">
-            <div class="sticky top-0 z-10 p-4 text-white space-y-7">
-                <h2 class="text-3xl font-semibold border-b-2 border-gray-700 pb-7">Total</h2>
-                <div class="flex justify-between">
-                    <span>Sous-total</span>
-                    <span> {{ $cart->getProductsSumInEuros() }}€</span>
-                </div>
-                @if (session('shipping_place') == 'home')
-                    <div class="flex justify-between">
-                        <p>Frais de livraison </p>
-                        <span>{{ $cart->getShippingCostInEuros() }}€</span>
-                    </div>
-                @endif
-                @if ($cart->coupon)
-                    <div class="flex justify-between">
-                        <span>
-                            Code promo ({{ $cart->coupon->code }})
-                        </span>
-                        <span>
-                            {{ $cart->coupon->effect() }}
-                        </span>
-                    </div>
-                @endif
-                <div class="flex justify-between border-t-2 border-green-700 pt-7">
-                    <p class="text-lg">
-                        Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
-                    </p>
-                    <span>
-
-                        {{ $cart->getTotalWithShippingCostInEuros() }}€
-                    </span>
-                </div>
-                <x-button>Continuer</x-button>
-                <livewire:cart.coupon />
-            </div>
-        </div>
+       
+        <livewire:cart.total buttonLabel="Continuer" :showShippingCost="true"/>
     </form>
 </x-main-layout>

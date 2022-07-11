@@ -117,59 +117,6 @@
 
             </ul>
         </div>
-        <div class="lg:col-span-4">
-            <div class="sticky top-0 z-10 p-4 text-white space-y-7">
-                <h2 class="text-3xl font-semibold border-b-2 border-gray-700 pb-7">Total</h2>
-                <div class="flex justify-between">
-                    <span>Sous-total</span>
-                    <span> {{ $cart->getProductsSumInEuros() }}€</span>
-                </div>
-                @if (session('shipping_place') == 'home')
-                    <div class="flex justify-between">
-                        <span>Frais de livraison</span>
-                        <span>{{ $cart->getShippingCostInEuros() }}€</span>
-                    </div>
-                @endif
-                @if ($cart->coupon)
-                    <div class="flex justify-between">
-                        <span>
-                            Code promo ({{ $cart->coupon->code }})
-                        </span>
-                        <span>
-                            {{ $cart->coupon->effect() }}
-                        </span>
-                    </div>
-                @endif
-                <div class="flex justify-between border-t-2 border-green-700 pt-7">
-                    <p class="text-lg">
-                        Total <span class="text-sm text-gray-400 ">(TVA incluse)</span>
-                    </p>
-                    <span>
-
-                        {{ $cart->getTotalWithShippingCostInEuros() }}€
-                    </span>
-                </div>
-                <p>Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner
-                    au cours de votre visite du site web, et pour d’autres raisons décrites dans notre
-                    <a class="text-primary-500 hover:underline" href="{{ route('politique-de-confidentialite') }}"
-                        target="_blank">politique de
-                        confidentialité</a>
-                    .
-                </p>
-                <div>
-                    <input class="text-primary-500" type="checkbox" name="cgv" required id="cgv">
-                    <span>
-                        <label for="cgv">
-                            J’ai lu et j’accepte
-                        </label>
-                        <a class="text-primary-500 hover:underline" target="_blank" href="{{ route('cgv') }}">
-                            les conditions générales
-                        </a>
-                    </span>
-                </div>
-                <x-button>Payer</x-button>
-                <livewire:cart.coupon />
-            </div>
-        </div>
+        <livewire:cart.total :showShippingCost="true"/>
     </form>
 </x-main-layout>
