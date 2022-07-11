@@ -39,9 +39,9 @@ $navLinks = collect([
                 <x-logo />
             </div>
             <nav>
-                <ul class="flex flex-col gap-5 mt-10 text-lg lg:mt-0 lg:flex-row lg:w-auto lg:gap-14">
+                <ul class="flex flex-col items-start gap-5 mt-10 text-lg lg:grid lg:grid-cols-3 lg:mt-0 lg:w-auto">
                     @foreach ($navLinks as $link)
-                        <li>
+                        <li class="{{$loop->first ? 'text-right': ''}}">
                             <a title="{{ $link->get('label') }}"
                                 class="p-4 transition rounded-md hover:bg-white hover:bg-opacity-30"
                                 href="{{ route($link->get('route')) }}">
