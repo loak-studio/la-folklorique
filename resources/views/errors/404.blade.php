@@ -90,7 +90,7 @@
                     fill="#292825" />
             </g>
         </svg>
-        <p class="text-4xl ">Vous vous êtes trop éloigné du cortège ...</p>
+        <p class="text-4xl ">Vous vous êtes trop éloigné(e) du cortège ...</p>
         <x-button href="{{ route('home') }}">Retour à l'accueil</x-button>
     </div>
 </x-main-layout>
