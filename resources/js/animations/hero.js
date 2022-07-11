@@ -1,24 +1,27 @@
-import { animate } from "motion";
-window.addEventListener("load", function () {
-    const hero = this.document.querySelector("#hero");
-    const itemsRight = hero.querySelectorAll(".leafRight");
-    const itemsLeft = hero.querySelectorAll(".leafLeft");
-    itemsRight.forEach((item, index) => {
-        animate(
-            item,
-            {
-                rotate: [-30, 0 + index * 20],
-            },
-            { duration: 1 }
-        );
-    });
-    itemsLeft.forEach((item, index) => {
-        animate(
-            item,
-            {
-                rotate: [30, 5 - index * 20],
-            },
-            { duration: 1 }
-        );
+document.addEventListener("launch-hero-animation", (event) => {
+    const leafs = document.querySelectorAll("[data-leafs]");
+    leafs.forEach((leaf) => {
+        switch (leaf.dataset.leafs) {
+            case "1l":
+                leaf.classList.add("leafOneLeft");
+                break;
+            case "2l":
+                leaf.classList.add("leafTwoLeft");
+                break;
+            case "3l":
+                leaf.classList.add("leafThreeLeft");
+                break;
+            case "1r":
+                leaf.classList.add("leafOneRight");
+                break;
+            case "2r":
+                leaf.classList.add("leafTwoRight");
+                break;
+            case "3r":
+                leaf.classList.add("leafThreeRight");
+                break;
+            default:
+                break;
+        }
     });
 });
