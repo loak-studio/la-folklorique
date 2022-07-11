@@ -62,6 +62,6 @@
                 </li>
             @endforeach
         </ul>
-        <p>Nous n’avons plus qu’à vous souhaiter : “ Santééééé! “</p>
+        <p>Nous n’avons plus qu’à vous souhaiter : “ Santééééé ! “</p>
     </div>
 </x-main-layout>
