@@ -46,7 +46,7 @@ $title = $title != 'La Folklorique | La bière du folklore carnavalesque' ? $tit
     @livewireStyles
 </head>
 
-<body class="w-screen overflow-x-hidden font-outfit">
+<body class="z-0 overflow-x-hidden font-outfit">
     @if (!empty($banner))
         <x-banner />
     @endif

@@ -42,7 +42,7 @@ $values = [
         @endforeach
 
     </div>
-    <div class="leaf-group -z-10 absolute -rotate-[75deg] right-32 w-44 blur-sm">
+    <div class="hidden md:block leaf-group -z-10 absolute -rotate-[75deg] right-32 w-44 blur-sm">
         <picture class="absolute -rotate-12">
             <source width="339" height="498" srcset="/assets/leaf_left.webp" type="image/webp">
             <img width="339" height="498" src="/assets/leaf_left.png" alt="">
