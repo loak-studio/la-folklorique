@@ -46,7 +46,7 @@ $title = $title != 'La Folklorique | La bière du folklore carnavalesque' ? $tit
     @livewireStyles
 </head>
 
-<body class="font-outfit">
+<body class="overflow-x-hidden font-outfit w-scren">
     @if (!empty($banner))
         <x-banner />
     @endif
@@ -55,7 +55,7 @@ $title = $title != 'La Folklorique | La bière du folklore carnavalesque' ? $tit
             <livewire:age-verification />
         @endunless
     @endif
-    <div class="relative z-10 flex flex-col h-full min-h-screen overflow-x-clip bg-dark">
+    <div class="relative z-10 flex flex-col h-full min-h-screen bg-dark">
         @include('layouts.header')
         @if (count($breadcrumb) > 0)
             <x-layout.breadcrumb :hideTitle="$hideTitle" :title="$cleanTitle" :items="$breadcrumb" />
