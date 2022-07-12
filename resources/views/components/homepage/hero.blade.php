@@ -4,8 +4,8 @@
         <source width="445" height="296" srcset="/assets/orange1.webp" type="image/webp">
         <img src="/assets/orange1.png" alt="">
     </picture>
-    <div class="flex flex-col justify-center w-full h-full lg:w-9/12">
-        <div class="p-5 pt-32 mx-auto ">
+    <div class="flex flex-col w-full h-full md:justify-center lg:w-9/12">
+        <div class="p-5 mx-auto md:pt-32 ">
             <p class="pb-6 text-3xl font-semibold">
                 Celui qui vit folklore boit La Folklorique
             </p>
