@@ -41,7 +41,7 @@ $title = $title != 'La Folklorique | La bière du folklore carnavalesque' ? $tit
     <meta property="twitter:title" content="{{ $title }}">
     <meta property="twitter:description" content="Je suis UX/UI designer free-lance dans la région de Tournai !">
     <meta property="twitter:image" content="{{ env('APP_URL') }}/share.png">
-
+    <meta name="theme-color" content="#292825">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-185687064-1"></script>
     @livewireStyles
 </head>
