@@ -55,7 +55,7 @@ $title = $title != 'La Folklorique | La bière du folklore carnavalesque' ? $tit
             <livewire:age-verification />
         @endunless
     @endif
-    <div class="relative z-10 flex flex-col h-full min-h-screen overflow-x-hidden bg-dark">
+    <div class="relative z-10 flex flex-col h-full min-h-screen overflow-x-clip bg-dark">
         @include('layouts.header')
         @if (count($breadcrumb) > 0)
             <x-layout.breadcrumb :hideTitle="$hideTitle" :title="$cleanTitle" :items="$breadcrumb" />
